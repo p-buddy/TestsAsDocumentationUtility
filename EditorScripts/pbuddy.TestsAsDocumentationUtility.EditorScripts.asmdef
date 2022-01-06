@@ -1,0 +1,24 @@
+{
+    "name": "pbuddy.TestsAsDocumentationUtility.EditorScripts",
+    "rootNamespace": "pbuddy.TestsAsDocumentationUtility.EditorScripts",
+    "references": [
+        "UnityEditor.TestRunner",
+        "UnityEngine.TestRunner",
+        "pbuddy.TestUtility.EditorScripts",
+        "pbuddy.LoggingUtility.RuntimeScripts",
+        "pbuddy.TypeUtility.RuntimeScripts"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
