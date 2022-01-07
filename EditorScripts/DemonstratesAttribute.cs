@@ -12,9 +12,9 @@ using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
     [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-    public class DocumentsAttribute : Attribute
+    public class DemonstratesAttribute : Attribute
     { 
-        private const string ErrorContext = "[" + nameof(DocumentsAttribute) + " ERROR]: ";
+        private const string ErrorContext = "[" + nameof(DemonstratesAttribute) + " ERROR]: ";
         private const BindingFlags Flags = BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly;
         public TargetType TargetType { get; }
         public string FilePath { get; }
@@ -23,7 +23,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         public Type Type { get; }
         private MemberInfo memberInfo;
 
-        private DocumentsAttribute(Type type, TargetType targetType, string filePath, int lineNumber)
+        private DemonstratesAttribute(Type type, TargetType targetType, string filePath, int lineNumber)
         {
             Type = type;
             TargetType = targetType;
@@ -31,12 +31,12 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             LineNumberRange =  GetLineNumberRange(lineNumber, filePath);
         }
         
-        public DocumentsAttribute(Type type,
+        public DemonstratesAttribute(Type type,
                                   ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
                                   [CallerFilePath] string file = CompilerServicesDefaults.File,
                                   [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber) : this(type, TargetType.ObjectType, file, line) { }
         
-        public DocumentsAttribute(Type type,
+        public DemonstratesAttribute(Type type,
                                   string memberName,
                                   ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
                                   [CallerFilePath] string file = CompilerServicesDefaults.File,
@@ -47,9 +47,10 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                                     out memberInfo,
                                                     out string errorMsg),
                           $"{ErrorContext}: {errorMsg}");
+            DemonstratedByAttribute[] documentedByAttribute = memberInfo.GetCustomAttributes<DemonstratedByAttribute>().ToArray();
         }
         
-        public DocumentsAttribute(Type type,
+        public DemonstratesAttribute(Type type,
                                   string memberName,
                                   Type[] argumentTypes,
                                   ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
@@ -59,7 +60,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             
         }
         
-        public DocumentsAttribute(Type type,
+        public DemonstratesAttribute(Type type,
                                   string memberName,
                                   int genericArgumentCount,
                                   Type[] argumentTypes,
@@ -101,7 +102,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             
             memberInfo = default;
             errorMsg = $"There were multiple member methods named '{memberName}' on {type.Name} type. " +
-                       $"Use an alternative {nameof(DocumentsAttribute)} constructor to better specify which member you are targeting.";
+                       $"Use an alternative {nameof(DemonstratesAttribute)} constructor to better specify which member you are targeting.";
             return false;
         }
 
