@@ -7,16 +7,15 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-using static pbuddy.LoggingUtility.RuntimeScripts.ContextProvider;
+using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
     [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
     public class DocumentsAttribute : Attribute
-    {
-        public const int Dummy = 0;
-        private static BindingFlags Flags =
-            BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly;
+    { 
+        private const string ErrorContext = "[" + nameof(DocumentsAttribute) + " ERROR]: ";
+        private const BindingFlags Flags = BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly;
         public TargetType TargetType { get; }
         public string FilePath { get; }
         public LineNumberRange LineNumberRange { get; }
@@ -33,26 +32,29 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         }
         
         public DocumentsAttribute(Type type,
-                                  [CallerLineNumber] int line = Dummy,
-                                  [CallerFilePath] string file = "[Ignore]") : this(type, TargetType.ObjectType, file, line) { }
+                                  ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
+                                  [CallerFilePath] string file = CompilerServicesDefaults.File,
+                                  [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber) : this(type, TargetType.ObjectType, file, line) { }
         
         public DocumentsAttribute(Type type,
                                   string memberName,
-                                  [CallerFilePath] string file = "",
-                                  [CallerLineNumber] int line = 0) : this(type, TargetType.NonGenericMember, file, line)
+                                  ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
+                                  [CallerFilePath] string file = CompilerServicesDefaults.File,
+                                  [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber) : this(type, TargetType.NonGenericMember, file, line)
         {
             Assert.IsTrue(TryGetNonOverloadedMember(type,
                                                     memberName,
                                                     out memberInfo,
                                                     out string errorMsg),
-                          Context().WithMessage($"ERROR: {errorMsg}"));
+                          $"{ErrorContext}: {errorMsg}");
         }
         
         public DocumentsAttribute(Type type,
                                   string memberName,
                                   Type[] argumentTypes,
-                                  [CallerFilePath] string file = "",
-                                  [CallerLineNumber] int line = 0) : this(type, TargetType.NonGenericMember, file, line)
+                                  ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
+                                  [CallerFilePath] string file = CompilerServicesDefaults.File,
+                                  [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber) : this(type, TargetType.NonGenericMember, file, line)
         {
             
         }
@@ -61,8 +63,9 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                   string memberName,
                                   int genericArgumentCount,
                                   Type[] argumentTypes,
-                                  [CallerFilePath] string file = "",
-                                  [CallerLineNumber] int line = 0) : this(type, TargetType.GenericMember, file, line)
+                                  ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
+                                  [CallerFilePath] string file = CompilerServicesDefaults.File,
+                                  [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber) : this(type, TargetType.GenericMember, file, line)
         {
             
         }
@@ -84,18 +87,16 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                 return true;
             }
 
-            foreach (MemberInfo member in members)
+            foreach (MemberInfo member in members.Where(member => member.Name == memberName))
             {
-                if (member.MemberType == MemberTypes.Method)
+                if (member.MemberType != MemberTypes.Method || new MemberMethodProbe(member).ArgumentCount != 0)
                 {
-                    MemberMethodProbe probe = new MemberMethodProbe(member);
-                    if (probe.DescriptiveArgumentTypes.Length == 0)
-                    {
-                        memberInfo = member;
-                        errorMsg = default;
-                        return true;
-                    }
+                    continue;
                 }
+
+                memberInfo = member;
+                errorMsg = default;
+                return true;
             }
             
             memberInfo = default;
