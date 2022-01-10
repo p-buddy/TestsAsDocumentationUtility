@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 
 namespace pbuddy.TestsAsDocumentationUtility.RuntimeScripts
@@ -9,28 +10,41 @@ namespace pbuddy.TestsAsDocumentationUtility.RuntimeScripts
         public bool Valid { get; }
         public int StartingLineNumber { get; }
         public string FileLocation { get; }
+        public string DocumentingFileLocation { get; }
         public string DocumentingName { get; }
 
         
         public DemonstratedByAttribute(ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard, 
-                                       [CallerFilePath] string file = CompilerServicesDefaults.File, 
-                                       [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber)
+                                       [CallerFilePath] string filePassedByCompiler = CompilerServicesDefaults.File, 
+                                       [CallerLineNumber] int linePassedByCompiler = CompilerServicesDefaults.LineNumber)
         {
             Valid = false;
-            FileLocation = file;
-            StartingLineNumber = line;
+            FileLocation = filePassedByCompiler;
+            StartingLineNumber = linePassedByCompiler;
         }
         
         public DemonstratedByAttribute(string fileLocation, 
                                        string name, 
                                        ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard, 
-                                       [CallerFilePath] string file = CompilerServicesDefaults.File, 
-                                       [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber)
+                                       [CallerFilePath] string filePassedByCompiler = CompilerServicesDefaults.File, 
+                                       [CallerLineNumber] int linePassedByCompiler = CompilerServicesDefaults.LineNumber)
         {
             Valid = true;
-            FileLocation = file;
-            StartingLineNumber = line;
+            DocumentingFileLocation = fileLocation;
             DocumentingName = name;
+            FileLocation = filePassedByCompiler;
+            StartingLineNumber = linePassedByCompiler;
+        }
+
+        public static string GetDeclaration(string fileLocation, MemberInfo memberDoingTheDocumenting)
+        {
+            const string openBracket = "[";
+            const string closeBracket = "]";
+            switch (memberDoingTheDocumenting.MemberType)
+            {
+                
+            }
+            return $"{openBracket}{nameof(DemonstratedByAttribute)}({fileLocation}){closeBracket}";
         }
     }
 }

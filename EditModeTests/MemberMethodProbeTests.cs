@@ -18,7 +18,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         public class Generic<T0, T1, T2, T3>
         {
             private int callCount;
-            
+
             void AssertOneAndOnlyOneMatchingMemberProbe(string memberName, Type[] descriptiveTypes)
             {
                 Type genericType = typeof(Generic<,,,>);
@@ -86,6 +86,11 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
                                 callCount,
                                 $"Number of members ({members.Length}) does not match call count ({callCount})");
             }
+            
+            public class MyClass
+            {
+                
+            }
         }
 
         [Test]
@@ -102,6 +107,18 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
             instantiatedClass.Method2();
             
             instantiatedClass.ConfirmAllMembersCalled(instantiatedClass.GetType());
+        }
+
+        [Test]
+        public void T()
+        {
+            var members = typeof(Generic<,,,>).GetMembers();
+            var names = members.Select(m => m.GetTypeRecoverableName()).ToArray();
+            for (int i = 0; i < members.Length; i++)
+            {
+                Assert.AreNotEqual("", names[i], members[i].Name);
+                Assert.IsTrue(names[i].TryGetMemberFromTypeRecoverableName(out MemberInfo memberInfo), names[i]);
+            }
         }
     }
 }

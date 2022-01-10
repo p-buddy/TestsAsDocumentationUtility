@@ -20,6 +20,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         public Type[] ArgumentTypes { get; }
         public int ArgumentCount { get; }
         public Type[] DescriptiveArgumentTypes { get; }
+        public IEnumerable<string> DescriptiveArgumentTypeNames => DescriptiveArgumentTypes.Select(type => type.Name);
         
         private readonly Type[] genericTypeArguments;
         private readonly Type[] genericMethodArguments;

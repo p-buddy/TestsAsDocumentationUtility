@@ -15,65 +15,123 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
     public class DemonstratesAttribute : Attribute
     { 
         private const string ErrorContext = "[" + nameof(DemonstratesAttribute) + " ERROR]: ";
-        private const BindingFlags Flags = BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly;
-        public TargetType TargetType { get; }
-        public string FilePath { get; }
-        public LineNumberRange LineNumberRange { get; }
-        
-        public Type Type { get; }
-        private MemberInfo memberInfo;
+        private const BindingFlags ComprehensiveFlags = BindingFlags.Public | 
+                                                        BindingFlags.NonPublic | 
+                                                        BindingFlags.Static | 
+                                                        BindingFlags.Instance | 
+                                                        BindingFlags.DeclaredOnly;
+        private readonly string filePath;
+        private readonly string title;
+        private readonly string description;
+        private readonly Grouping grouping;
+        private readonly IndexInGroup indexInGroup;
+        private readonly LineNumberRange lineNumberRange;
+        private readonly Type typeOfThingBeingDemonstrated;
+        private readonly MemberInfo memberInfoOfThingBeingDemonstrated;
 
-        private DemonstratesAttribute(Type type, TargetType targetType, string filePath, int lineNumber)
+        private DemonstratesAttribute(Type typeOfThingBeingDemonstrated,
+                                      MemberTypes memberType,
+                                      Grouping grouping,
+                                      IndexInGroup indexInGroup,
+                                      string filePath,
+                                      int lineNumber,
+                                      string title, 
+                                      string description,
+                                      RelevantArea relevantArea)
         {
-            Type = type;
-            TargetType = targetType;
-            FilePath = filePath;
-            LineNumberRange =  GetLineNumberRange(lineNumber, filePath);
+            this.typeOfThingBeingDemonstrated = typeOfThingBeingDemonstrated;
+            if (memberType == MemberTypes.TypeInfo || memberType == MemberTypes.NestedType)
+            {
+                memberInfoOfThingBeingDemonstrated = typeOfThingBeingDemonstrated;
+            }
+            this.filePath = filePath;
+            this.grouping = grouping;
+            this.indexInGroup = indexInGroup;
+            this.title = title;
+            this.description = description;
+            lineNumberRange =  FileReaderHelper.GetLineNumberRange(lineNumber, filePath, relevantArea);
         }
         
-        public DemonstratesAttribute(Type type,
-                                  ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
-                                  [CallerFilePath] string file = CompilerServicesDefaults.File,
-                                  [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber) : this(type, TargetType.ObjectType, file, line) { }
-        
-        public DemonstratesAttribute(Type type,
-                                  string memberName,
-                                  ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
-                                  [CallerFilePath] string file = CompilerServicesDefaults.File,
-                                  [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber) : this(type, TargetType.NonGenericMember, file, line)
+        public DemonstratesAttribute(Type typeOfThingBeingDemonstrated,
+                                     RelevantArea relevantArea = RelevantArea.BodyOnly,
+                                     string title = "",
+                                     string description = "",
+                                     Grouping grouping = Grouping.Default,
+                                     IndexInGroup indexInGroup = IndexInGroup.Default,
+                                     ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard, 
+                                     [CallerFilePath] string file = CompilerServicesDefaults.File, 
+                                     [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber) 
+            : this(typeOfThingBeingDemonstrated,
+                   typeOfThingBeingDemonstrated.MemberType,
+                   grouping,
+                   indexInGroup,
+                   file,
+                   line,
+                   title,
+                   description,
+                   relevantArea)
         {
-            Assert.IsTrue(TryGetNonOverloadedMember(type,
+        }
+        
+        public DemonstratesAttribute(Type typeOfThingBeingDemonstrated, 
+                                     string memberName, 
+                                     RelevantArea relevantArea = RelevantArea.BodyOnly,
+                                     string title = "",
+                                     string description = "",
+                                     Grouping grouping = Grouping.Default,
+                                     IndexInGroup indexInGroup = IndexInGroup.Default,
+                                     ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard, 
+                                     [CallerFilePath] string file = CompilerServicesDefaults.File, 
+                                     [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber) 
+            : this(typeOfThingBeingDemonstrated, 
+                   default, 
+                   grouping, 
+                   indexInGroup, 
+                   file, 
+                   line, 
+                   title, 
+                   description, 
+                   relevantArea)
+        {
+            Assert.IsTrue(TryGetNonOverloadedMember(typeOfThingBeingDemonstrated,
                                                     memberName,
-                                                    out memberInfo,
+                                                    out memberInfoOfThingBeingDemonstrated,
                                                     out string errorMsg),
                           $"{ErrorContext}: {errorMsg}");
-            DemonstratedByAttribute[] documentedByAttribute = memberInfo.GetCustomAttributes<DemonstratedByAttribute>().ToArray();
         }
         
-        public DemonstratesAttribute(Type type,
-                                  string memberName,
-                                  Type[] argumentTypes,
-                                  ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
-                                  [CallerFilePath] string file = CompilerServicesDefaults.File,
-                                  [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber) : this(type, TargetType.NonGenericMember, file, line)
+        public DemonstratesAttribute(Type typeOfThingBeingDemonstrated, 
+                                     string memberName, 
+                                     Type[] argumentTypes,
+                                     RelevantArea relevantArea = RelevantArea.BodyOnly,
+                                     string title = "",
+                                     string description = "",
+                                     Grouping grouping = Grouping.Default,
+                                     IndexInGroup indexInGroup = IndexInGroup.Default,
+                                     ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard, 
+                                     [CallerFilePath] string file = CompilerServicesDefaults.File, 
+                                     [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber) 
+            : this(typeOfThingBeingDemonstrated, 
+                   default, 
+                   grouping, 
+                   indexInGroup, 
+                   file, 
+                   line, 
+                   title, 
+                   description, 
+                   relevantArea)
         {
-            
-        }
-        
-        public DemonstratesAttribute(Type type,
-                                  string memberName,
-                                  int genericArgumentCount,
-                                  Type[] argumentTypes,
-                                  ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
-                                  [CallerFilePath] string file = CompilerServicesDefaults.File,
-                                  [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber) : this(type, TargetType.GenericMember, file, line)
-        {
-            
+            Assert.IsTrue(TryGetOverloadedMember(typeOfThingBeingDemonstrated,
+                                                 memberName,
+                                                 argumentTypes,
+                                                 out memberInfoOfThingBeingDemonstrated,
+                                                 out string errorMsg),
+                          $"{ErrorContext}: {errorMsg}");
         }
 
         private static bool TryGetNonOverloadedMember(Type type, string memberName, out MemberInfo memberInfo, out string errorMsg)
         {
-            MemberInfo[] members = type.GetMember(memberName, Flags);
+            MemberInfo[] members = type.GetMember(memberName, ComprehensiveFlags);
             if (members.Length == 0)
             {
                 memberInfo = default;
@@ -88,7 +146,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                 return true;
             }
 
-            foreach (MemberInfo member in members.Where(member => member.Name == memberName))
+            foreach (MemberInfo member in members)
             {
                 if (member.MemberType != MemberTypes.Method || new MemberMethodProbe(member).ArgumentCount != 0)
                 {
@@ -113,43 +171,61 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                                    out MemberInfo memberInfo,
                                                    out string errorMsg)
         {
-            errorMsg = default;
+            MemberInfo[] members = type.GetMember(memberName, ComprehensiveFlags);
+            if (members.Length == 0)
+            {
+                memberInfo = default;
+                errorMsg = $"Unable to locate member '{memberName}' on {type.Name} type";
+                return false;
+            }
+            
+            foreach (MemberInfo member in members)
+            {
+                if (member.MemberType != MemberTypes.Method || !new MemberMethodProbe(member).TypesMatch(argumentTypes))
+                {
+                    continue;
+                }
+
+                memberInfo = member;
+                errorMsg = default;
+                return true;
+            }
+
+            IEnumerable<string> argumentsOfOverloads = members.Select(member => new MemberMethodProbe(member))
+                                                              .Select(probe => String.Join(", ", probe.DescriptiveArgumentTypeNames))
+                                                              .Select(args => $"({args})");
+
             memberInfo = default;
+            errorMsg = $"No method named '{memberName}' with arguments of " + 
+                       String.Join(", ", argumentTypes.Select(t => t.Name)) + " " +
+                       $"could be found on {type.Name} type. " +
+                       $"Below are the argument types for all of the overloads of '{memberName}' that do exist:" +
+                       String.Join($"\n\t-{memberName}", argumentsOfOverloads);
             return false;
         }
 
-        private static LineNumberRange GetLineNumberRange(int attributeLineNumber, string filePath)
+        public ThingDoingTheDocumenting GetThingDoingTheDocumenting(MemberInfo memberDoingTheDocumenting)
         {
-            const char openCurlyBrace = '{';
-            const char closeCurlyBrace = '}';
-            
-            string[] lines = File.ReadAllLines(filePath);
-            int lineIndex = attributeLineNumber - 1;
-            int openCurlyBraceCount = 0;
-            
-            int GetCharacterCount(char character) => lines[lineIndex].Count(c => c == character);
-            int GetOpenCount() => GetCharacterCount(openCurlyBrace) - GetCharacterCount(closeCurlyBrace);
-            void Step()
-            {
-                openCurlyBraceCount += GetOpenCount();
-                lineIndex++;
-            }
-            
-            // Step to method's opening bracket
-            while (openCurlyBraceCount == 0)
-            {
-                Step();
-            }
-            int lineStart = lineIndex + 1;
-            
-            // Step until closing bracket
-            while (openCurlyBraceCount > 0)
-            {
-                Step();
-            }
+            return new ThingDoingTheDocumenting(title,
+                                                description,
+                                                filePath,
+                                                lineNumberRange,
+                                                memberDoingTheDocumenting,
+                                                grouping,
+                                                indexInGroup);
+        }
 
-            var lineEnd = lineIndex - 1;
-            return new LineNumberRange(lineStart, lineEnd);
+        public bool TryGetThingBeingDocumented(out ThingBeingDocumented[] thingsBeingDocumented)
+        {
+            if (ThingBeingDocumented.TryCreate(memberInfoOfThingBeingDemonstrated,
+                                               out thingsBeingDocumented,
+                                               out string error))
+            {
+                return true;
+            }
+            
+            Debug.LogError(error);
+            return false;
         }
     }
 }
