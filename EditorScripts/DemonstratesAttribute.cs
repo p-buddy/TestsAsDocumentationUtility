@@ -30,7 +30,6 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         private readonly MemberInfo memberInfoOfThingBeingDemonstrated;
 
         private DemonstratesAttribute(Type typeOfThingBeingDemonstrated,
-                                      MemberTypes memberType,
                                       Grouping grouping,
                                       IndexInGroup indexInGroup,
                                       string filePath,
@@ -40,10 +39,6 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                       RelevantArea relevantArea)
         {
             this.typeOfThingBeingDemonstrated = typeOfThingBeingDemonstrated;
-            if (memberType == MemberTypes.TypeInfo || memberType == MemberTypes.NestedType)
-            {
-                memberInfoOfThingBeingDemonstrated = typeOfThingBeingDemonstrated;
-            }
             this.filePath = filePath;
             this.grouping = grouping;
             this.indexInGroup = indexInGroup;
@@ -59,10 +54,9 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                      Grouping grouping = Grouping.Default,
                                      IndexInGroup indexInGroup = IndexInGroup.Default,
                                      ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard, 
-                                     [CallerFilePath] string file = CompilerServicesDefaults.File, 
-                                     [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber) 
+                                     [CallerFilePath] string file = Default.CompilerServiceFile, 
+                                     [CallerLineNumber] int line = Default.CompilerServiceLineNumber) 
             : this(typeOfThingBeingDemonstrated,
-                   typeOfThingBeingDemonstrated.MemberType,
                    grouping,
                    indexInGroup,
                    file,
@@ -71,6 +65,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                    description,
                    relevantArea)
         {
+            memberInfoOfThingBeingDemonstrated = typeOfThingBeingDemonstrated;
         }
         
         public DemonstratesAttribute(Type typeOfThingBeingDemonstrated, 
@@ -81,10 +76,9 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                      Grouping grouping = Grouping.Default,
                                      IndexInGroup indexInGroup = IndexInGroup.Default,
                                      ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard, 
-                                     [CallerFilePath] string file = CompilerServicesDefaults.File, 
-                                     [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber) 
+                                     [CallerFilePath] string file = Default.CompilerServiceFile, 
+                                     [CallerLineNumber] int line = Default.CompilerServiceLineNumber) 
             : this(typeOfThingBeingDemonstrated, 
-                   default, 
                    grouping, 
                    indexInGroup, 
                    file, 
@@ -109,10 +103,9 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                      Grouping grouping = Grouping.Default,
                                      IndexInGroup indexInGroup = IndexInGroup.Default,
                                      ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard, 
-                                     [CallerFilePath] string file = CompilerServicesDefaults.File, 
-                                     [CallerLineNumber] int line = CompilerServicesDefaults.LineNumber) 
+                                     [CallerFilePath] string file = Default.CompilerServiceFile, 
+                                     [CallerLineNumber] int line = Default.CompilerServiceLineNumber) 
             : this(typeOfThingBeingDemonstrated, 
-                   default, 
                    grouping, 
                    indexInGroup, 
                    file, 
@@ -129,6 +122,30 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                           $"{ErrorContext}: {errorMsg}");
         }
 
+        public ThingDoingTheDocumenting GetThingDoingTheDocumenting(MemberInfo memberDoingTheDocumenting)
+        {
+            return new ThingDoingTheDocumenting(title,
+                                                description,
+                                                filePath,
+                                                lineNumberRange,
+                                                memberDoingTheDocumenting,
+                                                grouping,
+                                                indexInGroup);
+        }
+
+        public bool TryGetThingsBeingDocumented(out ThingBeingDocumented[] thingsBeingDocumented)
+        {
+            if (ThingBeingDocumented.TryCreate(memberInfoOfThingBeingDemonstrated,
+                                               out thingsBeingDocumented,
+                                               out string error))
+            {
+                return true;
+            }
+            
+            Debug.LogError(error);
+            return false;
+        }
+        
         private static bool TryGetNonOverloadedMember(Type type, string memberName, out MemberInfo memberInfo, out string errorMsg)
         {
             MemberInfo[] members = type.GetMember(memberName, ComprehensiveFlags);
@@ -164,7 +181,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             return false;
         }
 
-        
+
         private static bool TryGetOverloadedMember(Type type,
                                                    string memberName,
                                                    Type[] argumentTypes,
@@ -178,7 +195,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                 errorMsg = $"Unable to locate member '{memberName}' on {type.Name} type";
                 return false;
             }
-            
+
             foreach (MemberInfo member in members)
             {
                 if (member.MemberType != MemberTypes.Method || !new MemberMethodProbe(member).TypesMatch(argumentTypes))
@@ -192,39 +209,16 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             }
 
             IEnumerable<string> argumentsOfOverloads = members.Select(member => new MemberMethodProbe(member))
-                                                              .Select(probe => String.Join(", ", probe.DescriptiveArgumentTypeNames))
+                                                              .Select(probe => String.Join(", ",
+                                                                          probe.DescriptiveArgumentTypeNames))
                                                               .Select(args => $"({args})");
 
             memberInfo = default;
-            errorMsg = $"No method named '{memberName}' with arguments of " + 
+            errorMsg = $"No method named '{memberName}' with arguments of " +
                        String.Join(", ", argumentTypes.Select(t => t.Name)) + " " +
                        $"could be found on {type.Name} type. " +
                        $"Below are the argument types for all of the overloads of '{memberName}' that do exist:" +
                        String.Join($"\n\t-{memberName}", argumentsOfOverloads);
-            return false;
-        }
-
-        public ThingDoingTheDocumenting GetThingDoingTheDocumenting(MemberInfo memberDoingTheDocumenting)
-        {
-            return new ThingDoingTheDocumenting(title,
-                                                description,
-                                                filePath,
-                                                lineNumberRange,
-                                                memberDoingTheDocumenting,
-                                                grouping,
-                                                indexInGroup);
-        }
-
-        public bool TryGetThingBeingDocumented(out ThingBeingDocumented[] thingsBeingDocumented)
-        {
-            if (ThingBeingDocumented.TryCreate(memberInfoOfThingBeingDemonstrated,
-                                               out thingsBeingDocumented,
-                                               out string error))
-            {
-                return true;
-            }
-            
-            Debug.LogError(error);
             return false;
         }
     }

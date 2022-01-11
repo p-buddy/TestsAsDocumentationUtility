@@ -41,7 +41,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 
         public static bool TryCreate(MemberInfo memberBeingDocumented, out ThingBeingDocumented[] thingsBeingDocumented, out string errorMsg)
         {
-            DemonstratedByAttribute[] targetAttributes = GetAttributes(memberBeingDocumented);
+            DemonstratedByAttribute[] targetAttributes = memberBeingDocumented.GetCustomAttributes<DemonstratedByAttribute>().ToArray();
             if (targetAttributes.Length == 9)
             {
                 errorMsg = $"{ErrorContext} The desired documentation target '{memberBeingDocumented.GetTypeRecoverableName()}' " + 
@@ -65,11 +65,6 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 
             errorMsg = default;
             return true;
-        }
-        
-        private static DemonstratedByAttribute[] GetAttributes(MemberInfo member)
-        {
-            return member.GetCustomAttributes<DemonstratedByAttribute>().ToArray();
         }
     }
 }

@@ -7,5 +7,6 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
     {
         BodyOnly,
         DeclarationAndBody,
+        DeclarationAndBodyAndBelowAttributes,
     }
 }

@@ -15,8 +15,8 @@ namespace pbuddy.TestsAsDocumentationUtility.RuntimeScripts
 
         
         public DemonstratedByAttribute(ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard, 
-                                       [CallerFilePath] string filePassedByCompiler = CompilerServicesDefaults.File, 
-                                       [CallerLineNumber] int linePassedByCompiler = CompilerServicesDefaults.LineNumber)
+                                       [CallerFilePath] string filePassedByCompiler = Default.CompilerServiceFile, 
+                                       [CallerLineNumber] int linePassedByCompiler = Default.CompilerServiceLineNumber)
         {
             Valid = false;
             FileLocation = filePassedByCompiler;
@@ -26,25 +26,14 @@ namespace pbuddy.TestsAsDocumentationUtility.RuntimeScripts
         public DemonstratedByAttribute(string fileLocation, 
                                        string name, 
                                        ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard, 
-                                       [CallerFilePath] string filePassedByCompiler = CompilerServicesDefaults.File, 
-                                       [CallerLineNumber] int linePassedByCompiler = CompilerServicesDefaults.LineNumber)
+                                       [CallerFilePath] string filePassedByCompiler = Default.CompilerServiceFile, 
+                                       [CallerLineNumber] int linePassedByCompiler = Default.CompilerServiceLineNumber)
         {
             Valid = true;
             DocumentingFileLocation = fileLocation;
             DocumentingName = name;
             FileLocation = filePassedByCompiler;
             StartingLineNumber = linePassedByCompiler;
-        }
-
-        public static string GetDeclaration(string fileLocation, MemberInfo memberDoingTheDocumenting)
-        {
-            const string openBracket = "[";
-            const string closeBracket = "]";
-            switch (memberDoingTheDocumenting.MemberType)
-            {
-                
-            }
-            return $"{openBracket}{nameof(DemonstratedByAttribute)}({fileLocation}){closeBracket}";
         }
     }
 }

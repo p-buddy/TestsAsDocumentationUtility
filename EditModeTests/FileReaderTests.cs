@@ -1,0 +1,139 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using NUnit.Framework;
+using pbuddy.TestsAsDocumentationUtility.EditorScripts;
+using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
+
+namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
+{
+    public class FileReaderTests
+    {
+        [Test]
+        public void GetRangeBetweenCurlyBracketsExclusive()
+        {
+            int expectedStart = GetThisLineNumber();
+            string[] linesOfThisFile = GetLinesForThisFile();
+            const int lookBehind = 2;
+            LineNumberRange actualRange = FileReaderHelper.GetRangeBetweenCharacters(linesOfThisFile,
+                expectedStart - lookBehind,
+                CharacterPair.CurlyBrackets,
+                false);
+            int expectedEnd = GetThisLineNumber() + 2;
+            LineNumberRange expectedRange = new LineNumberRange(expectedStart, expectedEnd);
+            Assert.AreEqual(expectedRange, actualRange);
+        }
+        
+        [Test]
+        public void GetRangeBetweenCurlyBracketsInclusive()
+        {
+            int expectedStart = GetThisLineNumber() - 1;
+            string[] linesOfThisFile = GetLinesForThisFile();
+            const int lookBehind = 2;
+            LineNumberRange actualRange = FileReaderHelper.GetRangeBetweenCharacters(linesOfThisFile,
+                expectedStart - lookBehind,
+                CharacterPair.CurlyBrackets,
+                true);
+            int expectedEnd = GetThisLineNumber() + 3;
+            LineNumberRange expectedRange = new LineNumberRange(expectedStart, expectedEnd);
+            Assert.AreEqual(expectedRange, actualRange);
+        }
+        
+        [Test]
+        /*[Demonstrates(typeof(FileReaderHelper),
+                      nameof(FileReaderHelper.GetRangeBetweenCharacters),
+                      new []{typeof(string[]), typeof(int), typeof(CharacterPair), typeof(bool)},
+                      RelevantArea.DeclarationAndBodyAndBelowAttributes,
+                      Default.Title, 
+                      Default.Description,
+                      Grouping.Group0,
+                      IndexInGroup.Index1InGroup)]*/
+        [GetLineNumberAndFile(Dummy.Argument, 
+                              Dummy.Argument, 
+                              Dummy.Argument, 
+                              4)]
+        [GetLineNumberAndFile("test[][][]", 1)]
+        [GetLineNumberAndFile("test[[[[[[",
+                              2)]
+        [GetLineNumberAndFile("test ]" +
+                              "",
+                              3)]
+        [GetLineNumberAndFile(new object[0],
+                              2)]
+        public void GetRangeBetweenAttributeDeclaration()
+        {
+            Type type = GetType();
+            MethodInfo thisMethod = type.GetMethod(nameof(GetRangeBetweenAttributeDeclaration));
+            Assert.IsNotNull(thisMethod);
+            GetLineNumberAndFileAttribute[] attributes = thisMethod.GetCustomAttributes<GetLineNumberAndFileAttribute>().ToArray();
+            foreach (GetLineNumberAndFileAttribute attribute in attributes)
+            {
+                LineNumberRange actualRange = FileReaderHelper.GetRangeBetweenCharacters(attribute.FileContent,
+                                                               attribute.LineNumberStart,
+                                                               CharacterPair.SquareBrackets,
+                                                               true);
+                Assert.AreEqual(attribute.ExpectedRange, actualRange);
+            }
+        }
+
+        private static int GetThisLineNumber([CallerLineNumber] int line = default) => line;
+        private static string[] GetLinesForThisFile([CallerFilePath] string file = "") => File.ReadAllLines(file);
+
+        private enum Dummy
+        {
+            Argument
+        }
+        
+        [Demonstrates(typeof(FileReaderHelper),
+                      nameof(FileReaderHelper.GetRangeBetweenCharacters),
+                      new []{typeof(string[]), typeof(int), typeof(CharacterPair), typeof(bool)},
+                      RelevantArea.DeclarationAndBodyAndBelowAttributes,
+                      Default.Title, 
+                      Default.Description,
+                      Grouping.Group0,
+                      IndexInGroup.Index0InGroup)]
+        [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
+        private class GetLineNumberAndFileAttribute : Attribute
+        {
+            public int LineNumberStart { get; }
+            public string[] FileContent { get; }
+            public LineNumberRange ExpectedRange { get; }
+            
+            private GetLineNumberAndFileAttribute(int lineCount, int lineNumberFilledInByCompiler, string fileNameFilledInByCompiler)
+            {
+                LineNumberStart = lineNumberFilledInByCompiler;
+                FileContent = File.ReadAllLines(fileNameFilledInByCompiler);
+                FileContent = File.ReadAllLines(fileNameFilledInByCompiler);
+                ExpectedRange = new LineNumberRange(LineNumberStart, LineNumberStart + lineCount - 1);
+            }
+            
+            public GetLineNumberAndFileAttribute(Dummy a, 
+                                                 Dummy b, 
+                                                 Dummy c,
+                                                 int lineCount,
+                                                 [CallerLineNumber] int lineNumberFilledInByCompiler = default,
+                                                 [CallerFilePath] string fileNameFilledInByCompiler = "") 
+                : this(lineCount, lineNumberFilledInByCompiler, fileNameFilledInByCompiler)
+            {
+            }
+            
+            public GetLineNumberAndFileAttribute(string text,
+                                                 int lineCount,
+                                                 [CallerLineNumber] int lineNumberFilledInByCompiler = default,
+                                                 [CallerFilePath] string fileNameFilledInByCompiler = "")
+                : this(lineCount, lineNumberFilledInByCompiler, fileNameFilledInByCompiler)
+            {
+            }
+            
+            public GetLineNumberAndFileAttribute(object[] array,
+                                                 int lineCount,
+                                                 [CallerLineNumber] int lineNumberFilledInByCompiler = default,
+                                                 [CallerFilePath] string fileNameFilledInByCompiler = "")
+                : this(lineCount, lineNumberFilledInByCompiler, fileNameFilledInByCompiler)
+            {
+            }
+        }
+    }
+}

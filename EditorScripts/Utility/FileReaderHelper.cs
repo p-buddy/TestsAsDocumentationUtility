@@ -1,6 +1,8 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
@@ -28,7 +30,89 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 
             throw new Exception();
         }
-        
+
+        private enum SearchState
+        {
+            SearchingForOpenCharacter,
+            SearchingForCloseCharacter,
+        }
+
+        public static LineNumberRange GetRangeBetweenCharacters(string[] lines,
+                                                                int startingLineNumber,
+                                                                CharacterPair pair,
+                                                                bool includeCharacterLines)
+        {
+            char open = default, close = default;
+            switch (pair)
+            {
+                case CharacterPair.Parenthesis:
+                    open = '(';
+                    close = ')';
+                    break;
+                case CharacterPair.CurlyBrackets:
+                    open = '{';
+                    close = '}';
+                    break;
+                case CharacterPair.SquareBrackets:
+                    open = '[';
+                    close = ']';
+                    break;
+            }
+            
+            return GetRangeBetweenCharacters(lines, startingLineNumber, open, close, includeCharacterLines);
+
+        }
+        public static LineNumberRange GetRangeBetweenCharacters(string[] lines,
+                                                                 int startingLineNumber,
+                                                                 char openCharacter,
+                                                                 char closeCharacter,
+                                                                 bool includeCharacterLines)
+        {
+            int initialIndex = startingLineNumber - 1;
+            int rangeStart = default, openCharacterCount = default;
+            bool insideQuote = default;
+            bool IsOpenChar(char character) => character == openCharacter;
+            bool IsCloseChar(char character) => character == closeCharacter;
+            bool IsQuote(char character) => character == '"';
+            bool IsInsideQuote(char character)
+            {
+                insideQuote = insideQuote ? !IsQuote(character) : IsQuote(character);
+                return insideQuote;
+            }
+            SearchState state = SearchState.SearchingForOpenCharacter;
+            for (var index = initialIndex; index < lines.Length; index++)
+            {
+                foreach (char character in lines[index])
+                {
+                    if (IsInsideQuote(character))
+                    {
+                        continue;
+                    }
+                    switch (state)
+                    {
+                        case SearchState.SearchingForOpenCharacter:
+                            if (IsOpenChar(character))
+                            {
+                                state = SearchState.SearchingForCloseCharacter;
+                                openCharacterCount = 1;
+                                rangeStart = index + (includeCharacterLines ? 0 : 1);
+                            }
+                            break;
+                        case SearchState.SearchingForCloseCharacter:
+                            openCharacterCount += (IsOpenChar(character) ? 1 : 0) - (IsCloseChar(character) ? 1 : 0);
+                            if (openCharacterCount == 0)
+                            {
+                                int rangeEnd = index - (includeCharacterLines ? 0 : 1);
+                                return new LineNumberRange(rangeStart + 1, rangeEnd + 1);
+                            }
+                            break;
+                    }
+                }
+            }
+
+            throw new Exception();
+        }
+
         private static LineNumberRange GetMethodBodyRange(int attributeLineNumber, string[] lines)
         {
             const char openCurlyBrace = '{';

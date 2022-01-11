@@ -23,7 +23,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         private const string AppFooterProperty = "_appFooter";
         private const string BaseUrlProperty = "baseUrl";
 
-        private readonly Dictionary<string, List<ThingBeingDocumented>> ThingsBeingDocumentedByFilePath =
+        private readonly Dictionary<string, List<ThingBeingDocumented>> ThingsBeingDocumentedByFile =
             new Dictionary<string, List<ThingBeingDocumented>>();
 
         private readonly Dictionary<ThingBeingDocumented, DocumentationCollection> DocumentationCollectionMap = 
@@ -44,7 +44,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                                    ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
                                                    [CallerFilePath] string filePassedByCompiler = "")
         {
-            ThingsBeingDocumentedByFilePath.Clear();
+            ThingsBeingDocumentedByFile.Clear();
             DocumentationCollectionMap.Clear();
             
             /*
@@ -56,8 +56,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             }
             */
 
-            List<DemonstratedByAttribute> demonstratedByAttributes = new List<DemonstratedByAttribute>();
-            List<DemonstratesAttribute> demonstratesAttributes = new List<DemonstratesAttribute>();
+            var demonstratesAttributes = new List<DemonstratesAttribute>();
             
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
             foreach (Assembly assembly in assemblies)
@@ -71,22 +70,21 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 
             foreach (DemonstratesAttribute demonstratesAttribute in demonstratesAttributes)
             {
-                if (demonstratesAttribute.TryGetThingBeingDocumented(out ThingBeingDocumented thingBeingDocumented))
+                if (demonstratesAttribute.TryGetThingsBeingDocumented(out ThingBeingDocumented[] thingsBeingDocumented))
                 {
-                    if (ThingsBeingDocumentedByFilePath.TryGetValue(thingBeingDocumented, out List<ThingBeingDocumented> thingsBeingDocumented))
+                    foreach (ThingBeingDocumented thingBeingDocumented in thingsBeingDocumented)
                     {
-                        
+                        string file = thingBeingDocumented.FileLocation;
+                        if (ThingsBeingDocumentedByFile.TryGetValue(file, out List<ThingBeingDocumented> collection))
+                        {
+                            collection.Add(thingBeingDocumented);
+                        }
+                        else
+                        {
+                            ThingsBeingDocumentedByFile[file] = new List<ThingBeingDocumented>() { thingBeingDocumented };
+                        }
                     }
-                }
-            }
-
-            Type type = GetType();
-            MethodInfo[] memberInfos = type.GetMethods();
-            foreach (MethodInfo memberInfo in memberInfos)
-            {
-                IEnumerable<DemonstratesAttribute> documentsAttributes = memberInfo.GetCustomAttributes<DemonstratesAttribute>();
-                foreach (DemonstratesAttribute documentation in documentsAttributes)
-                {
+                    
                 }
             }
         }

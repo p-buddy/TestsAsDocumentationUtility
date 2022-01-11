@@ -1,9 +1,12 @@
+using System;
+using System.Collections.Generic;
+
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
     /// <summary>
     /// 
     /// </summary>
-    public readonly struct LineNumberRange
+    public readonly struct LineNumberRange : IEquatable<LineNumberRange>
     {
         /// <summary>
         /// 
@@ -25,6 +28,29 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         {
             Start = start;
             End = end;
+        }
+
+        public bool Equals(LineNumberRange other)
+        {
+            return Start == other.Start && End == other.End;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is LineNumberRange other && Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (Start * 397) ^ End;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"{Start}-{End}";
         }
     }
 }
