@@ -23,9 +23,10 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         private readonly string filePath;
         private readonly string title;
         private readonly string description;
+        private LineNumberRange attributeLineNumberRange; 
         private readonly Grouping grouping;
         private readonly IndexInGroup indexInGroup;
-        private readonly LineNumberRange lineNumberRange;
+        private readonly RelevantArea relevantArea;
         private readonly Type typeOfThingBeingDemonstrated;
         private readonly MemberInfo memberInfoOfThingBeingDemonstrated;
 
@@ -44,7 +45,8 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             this.indexInGroup = indexInGroup;
             this.title = title;
             this.description = description;
-            lineNumberRange =  FileReaderHelper.GetLineNumberRange(lineNumber, filePath, relevantArea);
+            this.relevantArea = relevantArea;
+            attributeLineNumberRange = FileParser.GetLineNumberRangeForAttribute(lineNumber, filePath);
         }
         
         public DemonstratesAttribute(Type typeOfThingBeingDemonstrated,
@@ -127,7 +129,8 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             return new ThingDoingTheDocumenting(title,
                                                 description,
                                                 filePath,
-                                                lineNumberRange,
+                                                attributeLineNumberRange,
+                                                relevantArea,
                                                 memberDoingTheDocumenting,
                                                 grouping,
                                                 indexInGroup);

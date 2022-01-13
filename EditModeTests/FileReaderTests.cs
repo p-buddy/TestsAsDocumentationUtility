@@ -15,9 +15,9 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         public void GetRangeBetweenCurlyBracketsExclusive()
         {
             int expectedStart = GetThisLineNumber();
-            string[] linesOfThisFile = GetLinesForThisFile();
+            string thisFileName = GetThisFileName();
             const int lookBehind = 2;
-            LineNumberRange actualRange = FileReaderHelper.GetRangeBetweenCharacters(linesOfThisFile,
+            LineNumberRange actualRange = FileParser.GetRangeBetweenCharacters(thisFileName,
                 expectedStart - lookBehind,
                 CharacterPair.CurlyBrackets,
                 false);
@@ -30,9 +30,9 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         public void GetRangeBetweenCurlyBracketsInclusive()
         {
             int expectedStart = GetThisLineNumber() - 1;
-            string[] linesOfThisFile = GetLinesForThisFile();
+            string thisFileName = GetThisFileName();
             const int lookBehind = 2;
-            LineNumberRange actualRange = FileReaderHelper.GetRangeBetweenCharacters(linesOfThisFile,
+            LineNumberRange actualRange = FileParser.GetRangeBetweenCharacters(thisFileName,
                 expectedStart - lookBehind,
                 CharacterPair.CurlyBrackets,
                 true);
@@ -42,14 +42,14 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         }
         
         [Test]
-        /*[Demonstrates(typeof(FileReaderHelper),
-                      nameof(FileReaderHelper.GetRangeBetweenCharacters),
-                      new []{typeof(string[]), typeof(int), typeof(CharacterPair), typeof(bool)},
+        [Demonstrates(typeof(FileParser),
+                      nameof(FileParser.GetRangeBetweenCharacters),
+                      new []{typeof(string), typeof(int), typeof(CharacterPair), typeof(bool)},
                       RelevantArea.DeclarationAndBodyAndBelowAttributes,
                       Default.Title, 
                       Default.Description,
                       Grouping.Group0,
-                      IndexInGroup.Index1InGroup)]*/
+                      IndexInGroup.Index1InGroup)]
         [GetLineNumberAndFile(Dummy.Argument, 
                               Dummy.Argument, 
                               Dummy.Argument, 
@@ -70,7 +70,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
             GetLineNumberAndFileAttribute[] attributes = thisMethod.GetCustomAttributes<GetLineNumberAndFileAttribute>().ToArray();
             foreach (GetLineNumberAndFileAttribute attribute in attributes)
             {
-                LineNumberRange actualRange = FileReaderHelper.GetRangeBetweenCharacters(attribute.FileContent,
+                LineNumberRange actualRange = FileParser.GetRangeBetweenCharacters(attribute.FileName,
                                                                attribute.LineNumberStart,
                                                                CharacterPair.SquareBrackets,
                                                                true);
@@ -79,15 +79,15 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         }
 
         private static int GetThisLineNumber([CallerLineNumber] int line = default) => line;
-        private static string[] GetLinesForThisFile([CallerFilePath] string file = "") => File.ReadAllLines(file);
+        private static string GetThisFileName([CallerFilePath] string file = "") => file;
 
         private enum Dummy
         {
             Argument
         }
         
-        [Demonstrates(typeof(FileReaderHelper),
-                      nameof(FileReaderHelper.GetRangeBetweenCharacters),
+        [Demonstrates(typeof(FileParser),
+                      nameof(FileParser.GetRangeBetweenCharacters),
                       new []{typeof(string[]), typeof(int), typeof(CharacterPair), typeof(bool)},
                       RelevantArea.DeclarationAndBodyAndBelowAttributes,
                       Default.Title, 
@@ -98,14 +98,13 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         private class GetLineNumberAndFileAttribute : Attribute
         {
             public int LineNumberStart { get; }
-            public string[] FileContent { get; }
+            public string FileName { get; }
             public LineNumberRange ExpectedRange { get; }
             
             private GetLineNumberAndFileAttribute(int lineCount, int lineNumberFilledInByCompiler, string fileNameFilledInByCompiler)
             {
                 LineNumberStart = lineNumberFilledInByCompiler;
-                FileContent = File.ReadAllLines(fileNameFilledInByCompiler);
-                FileContent = File.ReadAllLines(fileNameFilledInByCompiler);
+                FileName = fileNameFilledInByCompiler;
                 ExpectedRange = new LineNumberRange(LineNumberStart, LineNumberStart + lineCount - 1);
             }
             

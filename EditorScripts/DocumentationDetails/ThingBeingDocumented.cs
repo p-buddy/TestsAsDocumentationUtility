@@ -20,8 +20,16 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         /// <summary>
         /// 
         /// </summary>
+        public LineNumberRange[] AttributeRanges { get; }
+        
+        /// <summary>
+        /// 
+        /// </summary>
         public MemberInfo MemberBeingDocumented { get; }
         
+        /// <summary>
+        /// 
+        /// </summary>
         public string FileLocation { get; }
 
         public ThingBeingDocumented(MemberInfo memberBeingDocumented,
@@ -30,6 +38,12 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         {
             MemberBeingDocumented = memberBeingDocumented;
             DemonstratedByAttributes = demonstratedByAttributes;
+            AttributeRanges = demonstratedByAttributes
+                              .Select(attr => FileParser.GetRangeBetweenCharacters(attr.FileLocation,
+                                          attr.StartingLineNumber,
+                                          CharacterPair.SquareBrackets,
+                                          true))
+                              .ToArray();
             FileLocation = fileLocation;
         }
 

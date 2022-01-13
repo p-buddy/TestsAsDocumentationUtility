@@ -46,7 +46,8 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         public ThingDoingTheDocumenting(string title,
                                         string description,
                                         string containingFile,
-                                        LineNumberRange lineNumberRange,
+                                        LineNumberRange attributeLineNumberRange,
+                                        RelevantArea relevantArea,
                                         MemberInfo memberDoingTheDocumenting,
                                         Grouping group,
                                         IndexInGroup indexInGroup)
@@ -57,7 +58,10 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             Group = group;
             IndexInGroup = indexInGroup;
             MemberDoingTheDocumenting = memberDoingTheDocumenting;
-            DocumentationLineNumberRange = lineNumberRange;
+            DocumentationLineNumberRange = FileParser.GetLineNumberRangeForMember(memberDoingTheDocumenting,
+                containingFile,
+                relevantArea,
+                attributeLineNumberRange.End);
         }
     }
 }

@@ -1,17 +1,25 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
+using System.Reflection;
+using NUnit.Framework;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
-    public static class FileReaderHelper
+    public static class FileParser
     {
-        public static LineNumberRange GetLineNumberRangeForAttribute(int startingLineNumber, 
-                                                                     string filePath)
+        private static readonly char[] WhiteSpaceCharacters = {' ', '\t'};
+        public static LineNumberRange GetLineNumberRangeForAttribute(int startingLineNumber, string filePath)
         {
-            // TODO
+            return GetRangeBetweenCharacters(filePath, startingLineNumber, CharacterPair.SquareBrackets, true);
+        }
+
+        public static LineNumberRange GetLineNumberRangeForMember(MemberInfo memberInfo,
+                                                                  string fileLocation,
+                                                                  RelevantArea relevantArea,
+                                                                  int beginSearchLineNumber)
+        {
             return default;
         }
         
@@ -30,15 +38,22 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 
             throw new Exception();
         }
+        
 
-        private enum SearchState
+        public static int FindDeclarationStartLineForMember(MemberInfo memberInfo, string fileLocation, int beginSearchLineNumber)
         {
-            SearchingForOpenCharacter,
-            SearchingForCloseCharacter,
+            string[] lines = File.ReadAllLines(fileLocation);
+            int initialIndex = beginSearchLineNumber - 1;
+            for (var index = initialIndex; index < lines.Length; index++)
+            {
+                string[] tokens = lines[index].Split(WhiteSpaceCharacters);
+            }
+
+            return 0;
         }
 
-        public static LineNumberRange GetRangeBetweenCharacters(string[] lines,
-                                                                int startingLineNumber,
+        public static LineNumberRange GetRangeBetweenCharacters(string fileLocation,
+                                                                int beginSearchLineNumber,
                                                                 CharacterPair pair,
                                                                 bool includeCharacterLines)
         {
@@ -59,16 +74,22 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                     break;
             }
             
-            return GetRangeBetweenCharacters(lines, startingLineNumber, open, close, includeCharacterLines);
+            return GetRangeBetweenCharacters(File.ReadAllLines(fileLocation), beginSearchLineNumber, open, close, includeCharacterLines);
 
         }
-        public static LineNumberRange GetRangeBetweenCharacters(string[] lines,
-                                                                 int startingLineNumber,
-                                                                 char openCharacter,
-                                                                 char closeCharacter,
-                                                                 bool includeCharacterLines)
+        
+        private enum SearchState
         {
-            int initialIndex = startingLineNumber - 1;
+            SearchingForOpenCharacter,
+            SearchingForCloseCharacter,
+        }
+        public static LineNumberRange GetRangeBetweenCharacters(string[] lines, 
+                                                                int beginSearchLineNumber, 
+                                                                char openCharacter, 
+                                                                char closeCharacter, 
+                                                                bool includeCharacterLines)
+        {
+            int initialIndex = beginSearchLineNumber - 1;
             int rangeStart = default, openCharacterCount = default;
             bool insideQuote = default;
             bool IsOpenChar(char character) => character == openCharacter;
