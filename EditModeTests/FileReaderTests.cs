@@ -42,14 +42,14 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         }
         
         [Test]
-        [Demonstrates(typeof(FileParser),
+        /*[Demonstrates(typeof(FileParser),
                       nameof(FileParser.GetRangeBetweenCharacters),
                       new []{typeof(string), typeof(int), typeof(CharacterPair), typeof(bool)},
                       RelevantArea.DeclarationAndBodyAndBelowAttributes,
                       Default.Title, 
                       Default.Description,
                       Grouping.Group0,
-                      IndexInGroup.Index1InGroup)]
+                      IndexInGroup.Index1InGroup)]*/
         [GetLineNumberAndFile(Dummy.Argument, 
                               Dummy.Argument, 
                               Dummy.Argument, 
@@ -61,7 +61,31 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
                               "",
                               3)]
         [GetLineNumberAndFile(new object[0],
-                              2)]
+                              3)
+        ]
+        [GetLineNumberAndFile("test ]" +
+                              "",/*
+                              
+                              ] [] // ]]]]]
+                              */
+                              6)]
+        [GetLineNumberAndFile("test ]" +
+                              "",
+                              4/*"]"*/)
+        ]
+        [GetLineNumberAndFile("test ]" +
+                              "", // ]
+                              
+                              // ]
+                              5)]
+        [GetLineNumberAndFile("test ]" +
+                              "",
+                              /*
+                               
+                                ]
+                               */
+                              8/**/)
+        ]
         public void GetRangeBetweenAttributeDeclaration()
         {
             Type type = GetType();

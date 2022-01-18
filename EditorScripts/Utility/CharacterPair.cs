@@ -4,6 +4,8 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
     {
         CurlyBrackets,
         SquareBrackets,
-        Parenthesis
+        Parenthesis,
+        MultiLineComment,
+        DoubleQuote,
     }
 }

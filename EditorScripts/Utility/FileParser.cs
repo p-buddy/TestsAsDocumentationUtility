@@ -38,20 +38,53 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 
             throw new Exception();
         }
-        
 
         public static int FindDeclarationStartLineForMember(MemberInfo memberInfo, string fileLocation, int beginSearchLineNumber)
         {
+            const string matchAnyWhiteSpaceCharacter = "\\s";
+            string BuildRegex() =>
+            string regex = \s+Test\s?[<\n];
             string[] lines = File.ReadAllLines(fileLocation);
-            int initialIndex = beginSearchLineNumber - 1;
+            int initialIndex = LineNumberToIndex(beginSearchLineNumber);
             for (var index = initialIndex; index < lines.Length; index++)
             {
+                if (lines[index].StartsWith("//"))
+                {
+                    continue;
+                }
+
+                if (lines.Contains(""))
+                {
+                    GetRangeBetweenCharacters(fileLocation, LineNumberToIndex(index), CharacterPair.DoubleQuote, true);
+                    // skip amount of range and then delete quoted segment from string
+                }
+                
                 string[] tokens = lines[index].Split(WhiteSpaceCharacters);
+                if (tokens.Length == 0)
+                {
+                    continue;
+                }
+
+                if (tokens[0].StartsWith("["))
+                {
+                    LineNumberRange attributeRange = GetRangeBetweenCharacters(fileLocation,
+                                                                               index + 1,
+                                                                               CharacterPair.SquareBrackets,
+                                                                               true);
+                    index = LineNumberToIndex(attributeRange.End);
+                    continue;
+                }
+
+                // remove quotes and comments
+                foreach (var VARIABLE in tokens)
+                {
+                    memberInfo.Name;
+                }
             }
 
             return 0;
         }
-
+        
         public static LineNumberRange GetRangeBetweenCharacters(string fileLocation,
                                                                 int beginSearchLineNumber,
                                                                 CharacterPair pair,
@@ -77,7 +110,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             return GetRangeBetweenCharacters(File.ReadAllLines(fileLocation), beginSearchLineNumber, open, close, includeCharacterLines);
 
         }
-        
+
         private enum SearchState
         {
             SearchingForOpenCharacter,
@@ -92,23 +125,52 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             int initialIndex = beginSearchLineNumber - 1;
             int rangeStart = default, openCharacterCount = default;
             bool insideQuote = default;
+            bool insideMultiLineComment = default;
             bool IsOpenChar(char character) => character == openCharacter;
             bool IsCloseChar(char character) => character == closeCharacter;
             bool IsQuote(char character) => character == '"';
+            bool IsSlash(char character) => character == '/';
+            bool IsAstrix(char character) => character == '*';
+            
             bool IsInsideQuote(char character)
             {
                 insideQuote = insideQuote ? !IsQuote(character) : IsQuote(character);
                 return insideQuote;
             }
+            
+            bool IsInsideMultiLineComment(char character, char previousCharacter)
+            {
+                insideMultiLineComment = insideMultiLineComment
+                    ? !(IsAstrix(previousCharacter) && IsSlash(character))
+                    : IsAstrix(character) && IsSlash(previousCharacter);
+                return insideMultiLineComment;
+            }
+
+            bool IsSingleLineComment(char character, char previousCharacter) =>
+                IsSlash(character) && IsSlash(previousCharacter);
+            
+            
             SearchState state = SearchState.SearchingForOpenCharacter;
             for (var index = initialIndex; index < lines.Length; index++)
             {
+                char previousCharacter = default;
                 foreach (char character in lines[index])
                 {
                     if (IsInsideQuote(character))
                     {
-                        continue;
+                        goto SetPreviousCharacter;
                     }
+
+                    if (IsInsideMultiLineComment(character, previousCharacter))
+                    {
+                        goto SetPreviousCharacter;
+                    }
+                    
+                    if (IsSingleLineComment(character, previousCharacter))
+                    {
+                        break;
+                    }
+                    
                     switch (state)
                     {
                         case SearchState.SearchingForOpenCharacter:
@@ -128,6 +190,9 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                             }
                             break;
                     }
+                    
+                    SetPreviousCharacter:
+                        previousCharacter = character;
                 }
             }
 
@@ -171,5 +236,9 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             LineNumberRange bodyRange = GetMethodBodyRange(attributeLineNumber, lines);
             return new LineNumberRange(bodyRange.Start /*TODO*/, bodyRange.End + 1);
         }
+
+        private static int LineNumberToIndex(int lineNumber) => lineNumber - 1;
+        private static int IndexToLineNumber(int lineNumber) => lineNumber + 1;
+
     }
 }

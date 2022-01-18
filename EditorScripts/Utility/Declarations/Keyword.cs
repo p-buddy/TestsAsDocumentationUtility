@@ -5,15 +5,13 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts.Declarations
 {
     public readonly struct Keyword
     {
-        public string Text { get; }
+        public string Label { get; }
         public MemberTypes ApplicableMemberTypes { get; }
         
-        public Keyword(string text, params MemberTypes[] applicableMemberTypes)
+        public Keyword(string label, params MemberTypes[] applicableMemberTypes)
         {
-            Text = text;
+            Label = label;
             ApplicableMemberTypes = applicableMemberTypes.Aggregate((x, y) => x | y);
         }
-        
-        public static Keyword Required()
     }
 }
