@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using NUnit.Framework;
 
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts.Declarations
 {
-    public static class Keywords
+    public static class CodeMatcher
     {
         static MemberTypes AllMembersExcept(MemberTypes except) => MemberTypes.All ^ except;
 
@@ -15,6 +16,8 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts.Declarations
         private static readonly Keyword Private = new Keyword("private", AllMembersExcept(MemberTypes.TypeInfo));
         private static readonly Keyword Internal = new Keyword("internal", MemberTypes.All);
         private static readonly Keyword Protected = new Keyword("protected", MemberTypes.All);
+        private static readonly Keyword[] AccessModifiers = { Public, Private, Internal, Protected };
+        private static readonly string MatchAnyAccessModifier = String.Join(Or, AccessModifiers.Select(modifier => modifier.Label));
         #endregion AccessModifiers
 
         #region Type Declarations
@@ -63,7 +66,16 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts.Declarations
 
         private const string MatchAnyWhiteSpaceCharacter = "\\s";
         private const string OneOrMoreTimes = "+";
-        
+        private const string ZeroOrMoreTimes = "*";
+        private const string Period = "\\.";
+        private const string Or = "|";
+        private const string WordBoundary = "\b";
+        private const string OpenGroup = "(";
+        private const string CloseGroup = ")";
+        private const string OpenNonCapturingGroup = OpenGroup + "?:";
+        private const string AtStartOfString = "^";
+        private const string EndOfString = "$";
+
         public static string GetDeclarationRegex(MemberInfo memberInfo)
         {
             switch (memberInfo.MemberType)
@@ -83,33 +95,72 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts.Declarations
                     return null;
             }
         }
+        
+        public static int GetGenericCount(Type type)
+        {
+            if (type.IsGenericType)
+            {
+                int sum = IsTuple(type) ? 0 : 1;
+                Type[] genericArgs = type.GetGenericArguments();
+                foreach (Type argType in genericArgs)
+                {
+                    sum += GetGenericCount(argType);
+                }
+
+                return sum;
+            }
+
+            return 0;
+        }
+        
+        private static string GetTypeName(Type type) => BuiltInTypes.ContainsKey(type)
+            ? BuiltInTypes[type]
+            : type.GetNonGenericName();
+
+        private static string GetTypeLabel(Type type)
+        {
+            if (type.IsClass)
+            {
+                return Class.Label;
+            }
+
+            if (type.IsInterface)
+            {
+                return Interface.Label;
+            }
+
+            if (type.IsValueType)
+            {
+                return Struct.Label;
+            }
+
+            if (type.IsEnum)
+            {
+                return Enum.Label;
+            }
+
+            return null;
+        }
 
         private static string GetDeclarationRegex(Type type)
         {
-            string typeString = default;
-            typeString = type.IsClass ? Class.Label : typeString;
-            typeString = type.IsInterface ? Interface.Label : typeString;
-            typeString = type.IsValueType ? Struct.Label : typeString;
-            typeString = type.IsEnum ? Enum.Label : typeString;
-            
+            string typeString = GetTypeLabel(type);
             Assert.IsNotNull(typeString);
 
-            string nextChar = type.IsGenericType ? "<" : "";
+            string matchClose = $"{EndOfString}{Or}{MatchAnyWhiteSpaceCharacter}{OneOrMoreTimes}";
+            matchClose = type.IsGenericType ? $"{matchClose}{Or}<" : matchClose;
             return $"{MatchAnyWhiteSpaceCharacter}{OneOrMoreTimes}{typeString}" + 
-                   $"{MatchAnyWhiteSpaceCharacter}{OneOrMoreTimes}{type.Name}" + 
-                   $"[{nextChar}{MatchAnyWhiteSpaceCharacter}]{OneOrMoreTimes}";
+                   $"{MatchAnyWhiteSpaceCharacter}{OneOrMoreTimes}{type.GetNonGenericName()}" + 
+                   $"{OpenNonCapturingGroup}{matchClose}{CloseGroup}";
         }
+
+        
         
         public static string GetDeclarationRegex(MethodInfo methodInfo)
         {
             Type returnType = methodInfo.ReturnType;
-            string returnTypeString = returnType == typeof(Void)
-                ? Void.Label
-                : BuiltInTypes.ContainsKey(returnType)
-                    ? BuiltInTypes[returnType]
-                    : returnType.Name;
             string nextChar = methodInfo.IsGenericMethod ? "<" : "(";
-            return $"[{MatchAnyWhiteSpaceCharacter}\\.]{returnTypeString}" + 
+            return $"{GetMatchReturnType(returnType)}" + 
                    $"{MatchAnyWhiteSpaceCharacter}{OneOrMoreTimes}{methodInfo.Name}" + 
                    $"[{nextChar}{MatchAnyWhiteSpaceCharacter}]{OneOrMoreTimes}";
         }
@@ -117,10 +168,8 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts.Declarations
         public static string GetDeclarationRegex(FieldInfo fieldInfo)
         {
             Type returnType = fieldInfo.FieldType;
-            string returnTypeString = BuiltInTypes.ContainsKey(returnType)
-                    ? BuiltInTypes[returnType]
-                    : returnType.Name;
-            return $"[{MatchAnyWhiteSpaceCharacter}\\.]{returnTypeString}" + 
+            string returnTypeString = GetTypeName(returnType);
+            return $"[{MatchAnyWhiteSpaceCharacter}{Period}]{returnTypeString}" + 
                    $"{MatchAnyWhiteSpaceCharacter}{OneOrMoreTimes}{fieldInfo.Name}" + 
                    $"[;={MatchAnyWhiteSpaceCharacter}]{OneOrMoreTimes}";
         }
@@ -141,32 +190,46 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts.Declarations
             
         }
 
-        
+
         public static string GetDeclarationRegex(ConstructorInfo constructorInfo)
         {
-            // (?:^\s+|\b(?:|protected|private|public|internal)\b)\s+FileReaderTests
-            // FileReaderTests = name
+            string matchWhiteSpaceAtStart = $"{AtStartOfString}{MatchAnyWhiteSpaceCharacter}{OneOrMoreTimes}";
+            string matchAccessModifier = constructorInfo.IsStatic ? GetMatchWord(Static.Label) : GetMatchWord(MatchAnyAccessModifier);
+            string matchOpener = $"{OpenNonCapturingGroup}{matchWhiteSpaceAtStart}{Or}{matchAccessModifier}{CloseGroup}";
+            return $"{matchOpener}{MatchAnyWhiteSpaceCharacter}{OneOrMoreTimes}{constructorInfo.Name}";
         }
         
-        private static void AddIf<T>(this List<T> list, bool condition, T item)
+        private static string GetMatchReturnType(Type type)
         {
-            if (condition)
+            if (IsTuple(type))
             {
-                list.Add(item);
+                return "\\([^)]*\\)";
             }
-        }
-        
-        
-        private static void AddNameWithAllNamespaceLevels(this List<String> list, Type type)
-        {
-            list.Add(type.Name);
-            string fullName = type.FullName;
-            if (fullName is null)
-            {
-                return;
-            }
+
+            string typeName = type == typeof(void) ? Void.Label : GetTypeName(type);
+            string matchTypeWithinAnyNameSpace = $"[{MatchAnyWhiteSpaceCharacter}{Period}]{typeName}";
             
-            string[] parts = fullName.Split('.');
+            if (IsArray(type))
+            {
+                string matchArrayIdentifiers = $"\\[{MatchAnyWhiteSpaceCharacter}{ZeroOrMoreTimes}\\]";
+                return $"{matchTypeWithinAnyNameSpace}{MatchAnyWhiteSpaceCharacter}{ZeroOrMoreTimes}{matchArrayIdentifiers}";
+            }
+
+            if (!type.IsGenericType)
+            {
+                return matchTypeWithinAnyNameSpace;
+            }
+
+            int genericCount = GetGenericCount(type);
+            string closeGeneric = "[^>]*>";
+            string matchGenericArgs = $"<{string.Concat(Enumerable.Repeat(closeGeneric, genericCount))}";
+            return $"{matchTypeWithinAnyNameSpace}{MatchAnyWhiteSpaceCharacter}{ZeroOrMoreTimes}{matchGenericArgs}";
         }
+
+        private static bool IsTuple(Type type) => type.Name.StartsWith("ValueTuple`");
+        private static bool IsArray(Type type) => type.IsArray;
+
+        private static string GetMatchWord(string word) =>
+            $"{WordBoundary}{OpenNonCapturingGroup}{word}{CloseGroup}{WordBoundary}";
     }
 }

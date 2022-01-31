@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using NUnit.Framework;
+using pbuddy.TestsAsDocumentationUtility.EditorScripts.Declarations;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
@@ -39,46 +41,38 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             throw new Exception();
         }
 
-        public static int FindDeclarationStartLineForMember(MemberInfo memberInfo, string fileLocation, int beginSearchLineNumber)
+        public static int FindDeclarationStartLine(MemberInfo memberInfo, string fileLocation, int beginSearchLineNumber)
         {
             const string matchAnyWhiteSpaceCharacter = "\\s";
-            string BuildRegex() =>
-            string regex = \s+Test\s?[<\n];
             string[] lines = File.ReadAllLines(fileLocation);
             int initialIndex = LineNumberToIndex(beginSearchLineNumber);
+            RegexOptions options = RegexOptions.Multiline;
+            string pattern = CodeMatcher.GetDeclarationRegex(memberInfo);
             for (var index = initialIndex; index < lines.Length; index++)
             {
-                if (lines[index].StartsWith("//"))
+                var tokens = lines[index].Split();
+                if (tokens.Length == 0)
                 {
                     continue;
                 }
-
-                if (lines.Contains(""))
-                {
-                    GetRangeBetweenCharacters(fileLocation, LineNumberToIndex(index), CharacterPair.DoubleQuote, true);
-                    // skip amount of range and then delete quoted segment from string
-                }
                 
-                string[] tokens = lines[index].Split(WhiteSpaceCharacters);
-                if (tokens.Length == 0)
+                if (tokens[0].StartsWith("//"))
                 {
                     continue;
                 }
 
                 if (tokens[0].StartsWith("["))
                 {
-                    LineNumberRange attributeRange = GetRangeBetweenCharacters(fileLocation,
-                                                                               index + 1,
-                                                                               CharacterPair.SquareBrackets,
-                                                                               true);
-                    index = LineNumberToIndex(attributeRange.End);
+                    (char open, char close) query = GetCharacters(CharacterPair.SquareBrackets);
+                    int lineNumber = IndexToLineNumber(index);
+                    LineNumberRange range = GetRangeBetweenCharacters(lines, lineNumber, query, true);
+                    index = LineNumberToIndex(range.End) - 1;
                     continue;
                 }
 
-                // remove quotes and comments
-                foreach (var VARIABLE in tokens)
+                if (Regex.Matches(lines[index], pattern, options).Count > 0)
                 {
-                    memberInfo.Name;
+                    return IndexToLineNumber(index);
                 }
             }
 
@@ -90,25 +84,26 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                                                 CharacterPair pair,
                                                                 bool includeCharacterLines)
         {
-            char open = default, close = default;
+            (char open, char close) c = GetCharacters(pair);
+            return GetRangeBetweenCharacters(File.ReadAllLines(fileLocation), beginSearchLineNumber, c.open, c.close, includeCharacterLines);
+
+        }
+
+        public static (char open, char close) GetCharacters(CharacterPair pair)
+        {
             switch (pair)
             {
                 case CharacterPair.Parenthesis:
-                    open = '(';
-                    close = ')';
-                    break;
+                    return ('(', ')');
                 case CharacterPair.CurlyBrackets:
-                    open = '{';
-                    close = '}';
-                    break;
+                    return ('{', '}');
                 case CharacterPair.SquareBrackets:
-                    open = '[';
-                    close = ']';
-                    break;
+                    return ('[', ']');
+                case CharacterPair.DoubleQuote:
+                    return ('\"', '\"');
             }
-            
-            return GetRangeBetweenCharacters(File.ReadAllLines(fileLocation), beginSearchLineNumber, open, close, includeCharacterLines);
 
+            return default;
         }
 
         private enum SearchState
@@ -116,6 +111,15 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             SearchingForOpenCharacter,
             SearchingForCloseCharacter,
         }
+
+        public static LineNumberRange GetRangeBetweenCharacters(string[] lines,
+                                                                int beginSearchLineNumber,
+                                                                (char open, char close) query,
+                                                                bool includeCharacterLines)
+        {
+            return GetRangeBetweenCharacters(lines, beginSearchLineNumber, query.open, query.close, includeCharacterLines);
+        }
+
         public static LineNumberRange GetRangeBetweenCharacters(string[] lines, 
                                                                 int beginSearchLineNumber, 
                                                                 char openCharacter, 
@@ -201,34 +205,8 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 
         private static LineNumberRange GetMethodBodyRange(int attributeLineNumber, string[] lines)
         {
-            const char openCurlyBrace = '{';
-            const char closeCurlyBrace = '}';
-            int lineIndex = attributeLineNumber - 1;
-            int openCurlyBraceCount = 0;
-            
-            int GetCharacterCount(char character) => lines[lineIndex].Count(c => c == character);
-            int GetOpenCount() => GetCharacterCount(openCurlyBrace) - GetCharacterCount(closeCurlyBrace);
-            void Step()
-            {
-                openCurlyBraceCount += GetOpenCount();
-                lineIndex++;
-            }
-            
-            // Step to method's opening bracket
-            while (openCurlyBraceCount == 0)
-            {
-                Step();
-            }
-            int lineStart = lineIndex + 1;
-            
-            // Step until closing bracket
-            while (openCurlyBraceCount > 0)
-            {
-                Step();
-            }
-
-            var lineEnd = lineIndex - 1;
-            return new LineNumberRange(lineStart, lineEnd);
+            (char open, char close) c = GetCharacters(CharacterPair.CurlyBrackets);
+            return GetRangeBetweenCharacters(lines, attributeLineNumber, c.open, c.close, false);
         }
         
         private static LineNumberRange GetBodyAndDeclarationRange(int attributeLineNumber, string[] lines)

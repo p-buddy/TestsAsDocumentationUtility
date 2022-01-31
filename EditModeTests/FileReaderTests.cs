@@ -42,14 +42,6 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         }
         
         [Test]
-        /*[Demonstrates(typeof(FileParser),
-                      nameof(FileParser.GetRangeBetweenCharacters),
-                      new []{typeof(string), typeof(int), typeof(CharacterPair), typeof(bool)},
-                      RelevantArea.DeclarationAndBodyAndBelowAttributes,
-                      Default.Title, 
-                      Default.Description,
-                      Grouping.Group0,
-                      IndexInGroup.Index1InGroup)]*/
         [GetLineNumberAndFile(Dummy.Argument, 
                               Dummy.Argument, 
                               Dummy.Argument, 
@@ -72,6 +64,14 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         [GetLineNumberAndFile("test ]" +
                               "",
                               4/*"]"*/)
+        ]
+        [GetLineNumberAndFile("test ]", "]", "]",
+                              3/*"]"*/)
+        ]
+        [GetLineNumberAndFile("test ]", 
+                              "]", 
+                              "]",
+                              5/*"]"*/)
         ]
         [GetLineNumberAndFile("test ]" +
                               "", // ]
@@ -110,14 +110,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
             Argument
         }
         
-        [Demonstrates(typeof(FileParser),
-                      nameof(FileParser.GetRangeBetweenCharacters),
-                      new []{typeof(string[]), typeof(int), typeof(CharacterPair), typeof(bool)},
-                      RelevantArea.DeclarationAndBodyAndBelowAttributes,
-                      Default.Title, 
-                      Default.Description,
-                      Grouping.Group0,
-                      IndexInGroup.Index0InGroup)]
+        
         [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
         private class GetLineNumberAndFileAttribute : Attribute
         {
@@ -143,6 +136,16 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
             }
             
             public GetLineNumberAndFileAttribute(string text,
+                                                 int lineCount,
+                                                 [CallerLineNumber] int lineNumberFilledInByCompiler = default,
+                                                 [CallerFilePath] string fileNameFilledInByCompiler = "")
+                : this(lineCount, lineNumberFilledInByCompiler, fileNameFilledInByCompiler)
+            {
+            }
+            
+            public GetLineNumberAndFileAttribute(string text1,
+                                                 string text2,
+                                                 string text3,
                                                  int lineCount,
                                                  [CallerLineNumber] int lineNumberFilledInByCompiler = default,
                                                  [CallerFilePath] string fileNameFilledInByCompiler = "")

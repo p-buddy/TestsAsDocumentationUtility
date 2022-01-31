@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-
+using System.Text;
 using UnityEngine.Assertions;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
@@ -45,13 +45,15 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                     ? Wrap(Combine(args.Select(GetTypeName)), "<", ">")
                     : string.Empty;
             }
+            
+            
 
             switch (memberInfo.MemberType)
             {
                 case MemberTypes.TypeInfo:
                     Type type = memberInfo as Type;
                     Assert.IsNotNull(type);
-                    return $"{type.Name}{GetGenericArgumentsString(type)}";
+                    return $"{type.GetNonGenericName()}{GetGenericArgumentsString(type)}";
                 case MemberTypes.NestedType:
                     Type nestedType = memberInfo as Type;
                     Assert.IsNotNull(nestedType);
@@ -166,6 +168,38 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 
             memberInfo = default;
             return false;
+        }
+
+        public static string GetNonGenericName(this Type type, bool fullName = false)
+        {
+            if (!type.IsGenericType)
+            {
+                return type.Name;
+            }
+            string name = fullName ? type.FullName : type.Name;
+            Assert.IsNotNull(name);
+            return name.Substring(0, name.LastIndexOf("`", StringComparison.Ordinal));
+        }
+        
+        private static string GetReadableTypeName(this Type type)
+        {
+            if (!type.IsGenericType)
+            {
+                return type.FullName;
+            }
+            
+            StringBuilder sb = new StringBuilder();
+            
+            string AppendGenericTypeArgument(string aggregate, Type genericTypeArgument)
+            {
+                return aggregate + (aggregate == "<" ? "" : ",") + GetReadableTypeName(genericTypeArgument);
+            }
+
+            sb.Append(type.FullName.Substring(0, type.FullName.LastIndexOf("`", StringComparison.Ordinal)));
+            sb.Append(type.GetGenericArguments().Aggregate("<", AppendGenericTypeArgument));
+            sb.Append(">");
+
+            return sb.ToString();
         }
 
         private static bool TryGetMemberFromText(this string text, Type declaringType, out ConstructorInfo constructorInfo)

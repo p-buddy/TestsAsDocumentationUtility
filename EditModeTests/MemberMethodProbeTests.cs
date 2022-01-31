@@ -86,11 +86,6 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
                                 callCount,
                                 $"Number of members ({members.Length}) does not match call count ({callCount})");
             }
-            
-            public class MyClass
-            {
-                
-            }
         }
 
         [Test]
