@@ -16,6 +16,16 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         Group8,
         Group9,
         Group10,
+        Group11, 
+        Group12, 
+        Group13,
+        Group14, 
+        Group15,
+        Group16, 
+        Group17,
+        Group18,
+        Group19,
+        Group20,
         Default,
     }
 }

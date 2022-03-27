@@ -5,7 +5,7 @@ using System.Reflection;
 using NUnit.Framework;
 
 
-namespace pbuddy.TestsAsDocumentationUtility.EditorScripts.Declarations
+namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
     public static class CodeMatcher
     {
@@ -187,7 +187,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts.Declarations
         
         public static void GetDeclarationRegex(EventInfo eventInfo)
         {
-            
+            // TODO 
         }
 
 

@@ -56,7 +56,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
             var attribute = member.GetCustomAttribute<ImmediatelyAboveDeclarationAttribute>();
             if (attribute != null)
             {
-                int actualDeclarationLine = FileParser.FindDeclarationStartLine(member, attribute.FileName, 1);
+                int actualDeclarationLine = FileParser.GetDeclarationStartLine(member, attribute.FileName, 1);
                 Assert.AreEqual(attribute.ExpectedDeclarationLine,
                                 actualDeclarationLine,
                                 $"Retrieved declaration for {member.Name} did not match expected");

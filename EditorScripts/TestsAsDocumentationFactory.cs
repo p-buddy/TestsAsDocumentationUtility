@@ -7,12 +7,13 @@ using System.Runtime.CompilerServices;
 using NUnit.Framework;
 using Newtonsoft.Json;
 using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
+using UnityEngine;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
-    public static class TestsAsDocumentationBase
+    public static class TestsAsDocumentationFactory
     {
-        private const string ErrorContext = "[" + nameof(TestsAsDocumentationBase) + " ERROR]:";
+        private const string ErrorContext = "[" + nameof(TestsAsDocumentationFactory) + " ERROR]:";
         private const string DocumentationDirectory = "GeneratedDocumentation";
         private const string DocFxDirectoryName = "DocFx";
         private const string DocFxConfig = "docfx.json";
@@ -26,7 +27,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                                             BindingFlags.DeclaredOnly |
                                                             BindingFlags.Instance;
         
-        public static void InternalCreateDocumentation(bool enforceJsonHasBeenConfigured = true,
+        public static void CreateDocumentation(bool enforceJsonHasBeenConfigured = true,
                                                        ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
                                                        [CallerFilePath] string filePassedByCompiler = "")
         {
@@ -39,7 +40,6 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                 ConfirmJsonIsModified(documentationDirectory);
             }
             */
-            
             Assembly editorAssembly = typeof(DemonstratesAttribute).Assembly;
             Assembly[] editorDependentAssemblies = editorAssembly.GetDependentAssemblies();
             List<MemberInfo> demonstratingMembers = editorDependentAssemblies.GetAllMembersWith<DemonstratesAttribute>();
@@ -56,7 +56,12 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                 {
                     documentationBySubject[doc.MemberBeingDocumnted] = new DocumentationCollection(in doc);
                 }
+                Debug.Log("hi");
+                Debug.Log(doc.GenerateMarkdown());
             });
+            
+            
+            return;
 
             Assembly runtimeAssembly = typeof(DemonstratedByAttribute).Assembly;
             Assembly[] runtimeDependentAssemblies = runtimeAssembly.GetDependentAssemblies();
@@ -121,7 +126,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 
         private static Assembly[] GetDependentAssemblies(this Assembly assembly)
         {
-            bool IsDependencyAssembly(AssemblyName assemblyRef) => assemblyRef.Name == assembly.FullName;
+            bool IsDependencyAssembly(AssemblyName assemblyRef) => assemblyRef.Name == assembly.GetName().Name;
 
             bool DoesReferenceDependency(Assembly otherAssembly)
             { 

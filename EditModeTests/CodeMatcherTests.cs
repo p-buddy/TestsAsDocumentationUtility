@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 using NUnit.Framework;
-using pbuddy.TestsAsDocumentationUtility.EditorScripts.Declarations;
+using pbuddy.TestsAsDocumentationUtility.EditorScripts;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
 {

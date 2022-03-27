@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace pbuddy.TestsAsDocumentationUtility.EditorScripts.Declarations
+namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
     public readonly struct Keyword
     {

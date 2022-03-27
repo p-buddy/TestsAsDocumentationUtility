@@ -8,17 +8,21 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
     public class DocumentationTestExample 
     {
         [Test]
-        [Demonstrates(typeof(DocumentedByTestExample), nameof(DocumentedByTestExample.SomeMethod))]
-        public void TestOfSomeMethod()
+        [Demonstrates(typeof(DocumentedByTestExample), nameof(DocumentedByTestExample.SomeMethod), RelevantArea.DeclarationAndBody)]
+        public void 
+            TestOfSomeMethod()
         {
-            
+            var x = new DocumentedByTestExample();
+            var y = x.SomeProperty;
         }
         
         [Test]
-        [Demonstrates(typeof(DocumentedByTestExample), nameof(DocumentedByTestExample.SomeProperty), RelevantArea.BodyOnly, Grouping.Group0, IndexInGroup.Index0 )]
+        [Demonstrates(typeof(DocumentedByTestExample), nameof(DocumentedByTestExample.SomeProperty), RelevantArea.DeclarationAndBodyAndBelowAttributes, Grouping.Group0, IndexInGroup.Index0 )]
+        //Howdy
         public void TestOfSomeProperty()
         {
-            
+            var x = new DocumentedByTestExample();
+            x.SomeMethod();
         }
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
@@ -69,6 +70,38 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                 containingFile,
                 relevantArea,
                 attributeLineNumberRange.End);
+        }
+
+        public string GetContents()
+        {
+            string[] lines = File.ReadAllLines(ContainingFile);
+            int index = DocumentationLineNumberRange.Start - 1;
+            int length = DocumentationLineNumberRange.End - index;
+            return String.Join(Environment.NewLine, new ArraySegment<string>(lines, index, length));
+        }
+
+        public string GenerateMarkdown()
+        {
+            static string ToTitle(string text) => $"# {text}{Environment.NewLine}";
+            static string ToDescription(string text) => $"{text}{Environment.NewLine}";
+            static string ToCode(string text) => $"```csharp{Environment.NewLine}{text}{Environment.NewLine}```{Environment.NewLine}";
+            
+            static string ToMarkdown(string text, Func<string, string> converter)
+            {
+                if (String.IsNullOrEmpty(text))
+                {
+                    return "";
+                }
+
+                return converter.Invoke(text);
+            }
+
+            var builder = new StringBuilder();
+            builder.Append(ToMarkdown(Title, ToTitle));
+            builder.Append(ToMarkdown(Description, ToDescription));
+            builder.Append(ToMarkdown(GetContents(), ToCode));
+            
+            return builder.ToString();
         }
         
         

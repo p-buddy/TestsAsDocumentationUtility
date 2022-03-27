@@ -1,17 +1,12 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using NUnit.Framework;
-using pbuddy.TestsAsDocumentationUtility.EditorScripts.Declarations;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
     public static class FileParser
     {
-        private static readonly char[] WhiteSpaceCharacters = {' ', '\t'};
         public static LineNumberRange GetLineNumberRangeForAttribute(int startingLineNumber, string filePath)
         {
             return GetRangeBetweenCharacters(filePath, startingLineNumber, CharacterPair.SquareBrackets, true);
@@ -22,63 +17,28 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                                                   RelevantArea relevantArea,
                                                                   int beginSearchLineNumber)
         {
-            return default;
-        }
-        
-        public static LineNumberRange GetLineNumberRange(int startingLineNumber, 
-                                                         string filePath, 
-                                                         RelevantArea relevantArea)
-        {
-            string[] lines = File.ReadAllLines(filePath);
+            LineNumberRange attributesRange = GetAttributesRange<DemonstratesAttribute>(memberInfo);
+            int declarationStartLine = GetDeclarationStartLine(memberInfo, fileLocation, beginSearchLineNumber);
+            string[] lines = File.ReadAllLines(fileLocation);
+            
             switch (relevantArea)
             {
                 case RelevantArea.BodyOnly:
-                    return GetMethodBodyRange(startingLineNumber, lines);
+                    return GetBodyRange(declarationStartLine, lines, false);
                 case RelevantArea.DeclarationAndBody:
-                    return GetBodyAndDeclarationRange(startingLineNumber, lines);
-            }
-
-            throw new Exception();
-        }
-
-        public static int FindDeclarationStartLine(MemberInfo memberInfo, string fileLocation, int beginSearchLineNumber)
-        {
-            const string matchAnyWhiteSpaceCharacter = "\\s";
-            string[] lines = File.ReadAllLines(fileLocation);
-            int initialIndex = LineNumberToIndex(beginSearchLineNumber);
-            RegexOptions options = RegexOptions.Multiline;
-            string pattern = CodeMatcher.GetDeclarationRegex(memberInfo);
-            for (var index = initialIndex; index < lines.Length; index++)
-            {
-                var tokens = lines[index].Split();
-                if (tokens.Length == 0)
                 {
-                    continue;
+                    LineNumberRange fullBodyRange = GetBodyRange(declarationStartLine, lines, true);
+                    return new LineNumberRange(declarationStartLine, fullBodyRange.End);
                 }
-                
-                if (tokens[0].StartsWith("//"))
-                {
-                    continue;
-                }
-
-                if (tokens[0].StartsWith("["))
-                {
-                    (char open, char close) query = GetCharacters(CharacterPair.SquareBrackets);
-                    int lineNumber = IndexToLineNumber(index);
-                    LineNumberRange range = GetRangeBetweenCharacters(lines, lineNumber, query, true);
-                    index = LineNumberToIndex(range.End) - 1;
-                    continue;
-                }
-
-                if (Regex.Matches(lines[index], pattern, options).Count > 0)
-                {
-                    return IndexToLineNumber(index);
+                case RelevantArea.DeclarationAndBodyAndBelowAttributes:
+                {                  
+                    LineNumberRange fullBodyRange = GetBodyRange(declarationStartLine, lines, true);
+                    return new LineNumberRange(attributesRange.End + 1, fullBodyRange.End); 
                 }
             }
-
-            return 0;
+            throw new Exception("");
         }
-        
+
         public static LineNumberRange GetRangeBetweenCharacters(string fileLocation,
                                                                 int beginSearchLineNumber,
                                                                 CharacterPair pair,
@@ -110,14 +70,6 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         {
             SearchingForOpenCharacter,
             SearchingForCloseCharacter,
-        }
-
-        public static LineNumberRange GetRangeBetweenCharacters(string[] lines,
-                                                                int beginSearchLineNumber,
-                                                                (char open, char close) query,
-                                                                bool includeCharacterLines)
-        {
-            return GetRangeBetweenCharacters(lines, beginSearchLineNumber, query.open, query.close, includeCharacterLines);
         }
 
         public static LineNumberRange GetRangeBetweenCharacters(string[] lines, 
@@ -202,21 +154,33 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 
             throw new Exception();
         }
+        
+        public static int GetDeclarationStartLine(MemberInfo memberInfo, string fileLocation, int startSearchLineNumber)
+        {
+            string regex = CodeMatcher.GetDeclarationRegex(memberInfo);
+            string contents = File.ReadAllText(fileLocation).Substring(startSearchLineNumber);
+            var match = Regex.Match(contents, regex);
+            string sub = contents.Substring(0, match.Index);
+            return sub.Split(new [] { Environment.NewLine }, StringSplitOptions.None).Length;
+        }
 
-        private static LineNumberRange GetMethodBodyRange(int attributeLineNumber, string[] lines)
+        private static LineNumberRange GetBodyRange(int attributeLineNumber, string[] lines, bool includeCharacterLines)
         {
             (char open, char close) c = GetCharacters(CharacterPair.CurlyBrackets);
-            return GetRangeBetweenCharacters(lines, attributeLineNumber, c.open, c.close, false);
+            return GetRangeBetweenCharacters(lines, attributeLineNumber, c.open, c.close, includeCharacterLines);
         }
-        
-        private static LineNumberRange GetBodyAndDeclarationRange(int attributeLineNumber, string[] lines)
+
+        private static LineNumberRange GetAttributesRange<TAttributeType>(MemberInfo memberInfo) where TAttributeType: Attribute, ILineNumberRangeProvider
         {
-            LineNumberRange bodyRange = GetMethodBodyRange(attributeLineNumber, lines);
-            return new LineNumberRange(bodyRange.Start /*TODO*/, bodyRange.End + 1);
+            int min = int.MaxValue, max = int.MinValue;
+            foreach (var attribute in memberInfo.GetCustomAttributes<TAttributeType>())
+            {
+                LineNumberRange range = attribute.LineNumberRange;
+                min = range.Start < min ? range.Start : min;
+                max = range.End > max ? range.End : max;
+            }
+
+            return new LineNumberRange(min, max);
         }
-
-        private static int LineNumberToIndex(int lineNumber) => lineNumber - 1;
-        private static int IndexToLineNumber(int lineNumber) => lineNumber + 1;
-
     }
 }

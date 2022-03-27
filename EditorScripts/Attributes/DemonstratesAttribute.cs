@@ -12,8 +12,10 @@ using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
     [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-    public class DemonstratesAttribute : Attribute
-    { 
+    public class DemonstratesAttribute : Attribute, ILineNumberRangeProvider
+    {
+        public LineNumberRange LineNumberRange => attributeLineNumberRange;
+        
         private const string ErrorContext = "[" + nameof(DemonstratesAttribute) + " ERROR]: ";
         private const BindingFlags ComprehensiveFlags = BindingFlags.Public | 
                                                         BindingFlags.NonPublic | 
