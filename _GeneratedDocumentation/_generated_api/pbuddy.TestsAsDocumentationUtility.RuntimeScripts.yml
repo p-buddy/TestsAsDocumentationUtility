@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: pbuddy.TestsAsDocumentationUtility.RuntimeScripts
+  commentId: N:pbuddy.TestsAsDocumentationUtility.RuntimeScripts
+  id: pbuddy.TestsAsDocumentationUtility.RuntimeScripts
+  children:
+  - pbuddy.TestsAsDocumentationUtility.RuntimeScripts.ArgumentGuard
+  - pbuddy.TestsAsDocumentationUtility.RuntimeScripts.CompilerServicesDefaults
+  - pbuddy.TestsAsDocumentationUtility.RuntimeScripts.DemonstratedByAttribute
+  - pbuddy.TestsAsDocumentationUtility.RuntimeScripts.StringHelper
+  langs:
+  - csharp
+  - vb
+  name: pbuddy.TestsAsDocumentationUtility.RuntimeScripts
+  nameWithType: pbuddy.TestsAsDocumentationUtility.RuntimeScripts
+  fullName: pbuddy.TestsAsDocumentationUtility.RuntimeScripts
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+references:
+- uid: pbuddy.TestsAsDocumentationUtility.RuntimeScripts.DemonstratedByAttribute
+  commentId: T:pbuddy.TestsAsDocumentationUtility.RuntimeScripts.DemonstratedByAttribute
+  name: DemonstratedByAttribute
+  nameWithType: DemonstratedByAttribute
+  fullName: pbuddy.TestsAsDocumentationUtility.RuntimeScripts.DemonstratedByAttribute
+- uid: pbuddy.TestsAsDocumentationUtility.RuntimeScripts.CompilerServicesDefaults
+  commentId: T:pbuddy.TestsAsDocumentationUtility.RuntimeScripts.CompilerServicesDefaults
+  name: CompilerServicesDefaults
+  nameWithType: CompilerServicesDefaults
+  fullName: pbuddy.TestsAsDocumentationUtility.RuntimeScripts.CompilerServicesDefaults
+- uid: pbuddy.TestsAsDocumentationUtility.RuntimeScripts.ArgumentGuard
+  commentId: T:pbuddy.TestsAsDocumentationUtility.RuntimeScripts.ArgumentGuard
+  parent: pbuddy.TestsAsDocumentationUtility.RuntimeScripts
+  name: ArgumentGuard
+  nameWithType: ArgumentGuard
+  fullName: pbuddy.TestsAsDocumentationUtility.RuntimeScripts.ArgumentGuard
+- uid: pbuddy.TestsAsDocumentationUtility.RuntimeScripts.StringHelper
+  commentId: T:pbuddy.TestsAsDocumentationUtility.RuntimeScripts.StringHelper
+  name: StringHelper
+  nameWithType: StringHelper
+  fullName: pbuddy.TestsAsDocumentationUtility.RuntimeScripts.StringHelper
+- uid: pbuddy.TestsAsDocumentationUtility.RuntimeScripts
+  commentId: N:pbuddy.TestsAsDocumentationUtility.RuntimeScripts
+  name: pbuddy.TestsAsDocumentationUtility.RuntimeScripts
+  nameWithType: pbuddy.TestsAsDocumentationUtility.RuntimeScripts
+  fullName: pbuddy.TestsAsDocumentationUtility.RuntimeScripts

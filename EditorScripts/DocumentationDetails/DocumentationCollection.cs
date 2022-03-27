@@ -11,41 +11,40 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
     public class DocumentationCollection
     {
-        private struct DocumentComparer : IComparer<ThingDoingTheDocumenting>
-        {
-            public int Compare(ThingDoingTheDocumenting x, ThingDoingTheDocumenting y)
-            {
-                return ((int)x.IndexInGroup).CompareTo((int)y.IndexInGroup);
-            }
-        }
-        
-        private readonly Dictionary<Grouping, List<ThingDoingTheDocumenting>> groupingMap = new Dictionary<Grouping, List<ThingDoingTheDocumenting>>();
+        private readonly Dictionary<Grouping, DocumentationGroup> groupingMap = new Dictionary<Grouping, DocumentationGroup>();
         private static readonly Grouping[] GroupNames = Enum.GetValues(typeof(Grouping)) as Grouping[];
 
-        public void Add(in ThingDoingTheDocumenting doer)
+        public DocumentationCollection(in Documentation doc)
         {
-            if (groupingMap.TryGetValue(doer.Group, out List<ThingDoingTheDocumenting> documents))
-            {
-                documents.Add(doer);
-            }
+            Add(doc);
         }
 
-        public ThingDoingTheDocumenting[][] Get()
+        public void Add(in Documentation doc)
         {
-            DocumentComparer comparer = new DocumentComparer();
-            List<ThingDoingTheDocumenting[]> documentation = new List<ThingDoingTheDocumenting[]>();
+            if (groupingMap.TryGetValue(doc.Group, out DocumentationGroup group))
+            {
+                group.AddToGroup(doc);
+                return;
+            }
+
+            groupingMap[doc.Group] = new DocumentationGroup(doc);
+        }
+
+        public DocumentationGroup[] GetGroups()
+        {
+            List<DocumentationGroup> documentation = new List<DocumentationGroup>();
             foreach (Grouping groupName in GroupNames)
             {
-                if (groupingMap.TryGetValue(groupName, out List<ThingDoingTheDocumenting> documents))
+                if (groupingMap.TryGetValue(groupName, out DocumentationGroup group))
                 {
-                    documents.Sort(comparer);
                     if (groupName == Grouping.Default)
                     {
-                        documents.ForEach(doc => documentation.Add(new []{doc}));
+                        // Split out default documents into their own separate groups
+                        group.GetDocuments().ForEach(doc => documentation.Add(new DocumentationGroup(doc)));
                     }
                     else
                     {
-                        documentation.Add(documents.ToArray());
+                        documentation.Add(group);
                     }
                 }
             }

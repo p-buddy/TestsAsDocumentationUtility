@@ -1,0 +1,621 @@
+### YamlMime:ManagedReference
+items:
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample
+  id: DocumentationTestExample
+  parent: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  children:
+  - pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.CreateDocumentation
+  - pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.T
+  - pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeMethod
+  - pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeProperty
+  langs:
+  - csharp
+  - vb
+  name: DocumentationTestExample
+  nameWithType: DocumentationTestExample
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample
+  type: Class
+  source:
+    id: DocumentationTestExample
+    path: ''
+    startLine: 114
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  syntax:
+    content: 'public class DocumentationTestExample : TestsAsDocumentationBase'
+    content.vb: >-
+      Public Class DocumentationTestExample
+          Inherits TestsAsDocumentationBase
+  inheritance:
+  - System.Object
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase
+  inheritedMembers:
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.InternalCreateDocumentation(System.Boolean,pbuddy.TestsAsDocumentationUtility.EditorScripts.ArgumentGuard,System.String)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeMethod
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeMethod
+  id: TestOfSomeMethod
+  parent: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample
+  langs:
+  - csharp
+  - vb
+  name: TestOfSomeMethod()
+  nameWithType: DocumentationTestExample.TestOfSomeMethod()
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeMethod()
+  type: Method
+  source:
+    id: TestOfSomeMethod
+    path: ''
+    startLine: 116
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  syntax:
+    content: >-
+      [Demonstrates(typeof(DocumentedByTestExample), "SomeMethod", ArgumentGuard.GeneratedArgumentsGuard, "", 118)]
+
+      public void TestOfSomeMethod()
+    content.vb: >-
+      <Demonstrates(GetType(DocumentedByTestExample), "SomeMethod", ArgumentGuard.GeneratedArgumentsGuard, "", 118)>
+
+      Public Sub TestOfSomeMethod
+  overload: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeMethod*
+  attributes:
+  - type: pbuddy.TestsAsDocumentationUtility.EditorScripts.DemonstratesAttribute
+    ctor: pbuddy.TestsAsDocumentationUtility.EditorScripts.DemonstratesAttribute.#ctor(System.Type,System.String,pbuddy.TestsAsDocumentationUtility.EditorScripts.ArgumentGuard,System.String,System.Int32)
+    arguments:
+    - type: System.Type
+      value: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentedByTestExample
+    - type: System.String
+      value: SomeMethod
+    - type: pbuddy.TestsAsDocumentationUtility.EditorScripts.ArgumentGuard
+      value: 0
+    - type: System.String
+      value: ''
+    - type: System.Int32
+      value: 118
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeProperty
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeProperty
+  id: TestOfSomeProperty
+  parent: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample
+  langs:
+  - csharp
+  - vb
+  name: TestOfSomeProperty()
+  nameWithType: DocumentationTestExample.TestOfSomeProperty()
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeProperty()
+  type: Method
+  source:
+    id: TestOfSomeProperty
+    path: ''
+    startLine: 123
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  syntax:
+    content: >-
+      [Demonstrates(typeof(DocumentedByTestExample), "SomeProperty", ArgumentGuard.GeneratedArgumentsGuard, "", 125)]
+
+      public void TestOfSomeProperty()
+    content.vb: >-
+      <Demonstrates(GetType(DocumentedByTestExample), "SomeProperty", ArgumentGuard.GeneratedArgumentsGuard, "", 125)>
+
+      Public Sub TestOfSomeProperty
+  overload: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeProperty*
+  attributes:
+  - type: pbuddy.TestsAsDocumentationUtility.EditorScripts.DemonstratesAttribute
+    ctor: pbuddy.TestsAsDocumentationUtility.EditorScripts.DemonstratesAttribute.#ctor(System.Type,System.String,pbuddy.TestsAsDocumentationUtility.EditorScripts.ArgumentGuard,System.String,System.Int32)
+    arguments:
+    - type: System.Type
+      value: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentedByTestExample
+    - type: System.String
+      value: SomeProperty
+    - type: pbuddy.TestsAsDocumentationUtility.EditorScripts.ArgumentGuard
+      value: 0
+    - type: System.String
+      value: ''
+    - type: System.Int32
+      value: 125
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.CreateDocumentation
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.CreateDocumentation
+  id: CreateDocumentation
+  parent: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample
+  langs:
+  - csharp
+  - vb
+  name: CreateDocumentation()
+  nameWithType: DocumentationTestExample.CreateDocumentation()
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.CreateDocumentation()
+  type: Method
+  source:
+    id: CreateDocumentation
+    path: ''
+    startLine: 130
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  syntax:
+    content: public override void CreateDocumentation()
+    content.vb: Public Overrides Sub CreateDocumentation
+  overridden: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.CreateDocumentation
+  overload: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.CreateDocumentation*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.T
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.T
+  id: T
+  parent: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample
+  langs:
+  - csharp
+  - vb
+  name: T()
+  nameWithType: DocumentationTestExample.T()
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.T()
+  type: Method
+  source:
+    id: T
+    path: ''
+    startLine: 133
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  syntax:
+    content: public void T()
+    content.vb: Public Sub T
+  overload: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.T*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  commentId: N:pbuddy.TestsAsDocumentationUtility.EditModeTests
+  name: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  nameWithType: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  name: TestsAsDocumentationBase
+  nameWithType: TestsAsDocumentationBase
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.InternalCreateDocumentation(System.Boolean,pbuddy.TestsAsDocumentationUtility.EditorScripts.ArgumentGuard,System.String)
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.InternalCreateDocumentation(System.Boolean,pbuddy.TestsAsDocumentationUtility.EditorScripts.ArgumentGuard,System.String)
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase
+  isExternal: true
+  name: InternalCreateDocumentation(Boolean, ArgumentGuard, String)
+  nameWithType: TestsAsDocumentationBase.InternalCreateDocumentation(Boolean, ArgumentGuard, String)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.InternalCreateDocumentation(System.Boolean, pbuddy.TestsAsDocumentationUtility.EditorScripts.ArgumentGuard, System.String)
+  spec.csharp:
+  - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.InternalCreateDocumentation(System.Boolean,pbuddy.TestsAsDocumentationUtility.EditorScripts.ArgumentGuard,System.String)
+    name: InternalCreateDocumentation
+    nameWithType: TestsAsDocumentationBase.InternalCreateDocumentation
+    fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.InternalCreateDocumentation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.ArgumentGuard
+    name: ArgumentGuard
+    nameWithType: ArgumentGuard
+    fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.ArgumentGuard
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.InternalCreateDocumentation(System.Boolean,pbuddy.TestsAsDocumentationUtility.EditorScripts.ArgumentGuard,System.String)
+    name: InternalCreateDocumentation
+    nameWithType: TestsAsDocumentationBase.InternalCreateDocumentation
+    fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.InternalCreateDocumentation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.ArgumentGuard
+    name: ArgumentGuard
+    nameWithType: ArgumentGuard
+    fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.ArgumentGuard
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  commentId: N:pbuddy.TestsAsDocumentationUtility.EditorScripts
+  name: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  nameWithType: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeMethod*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeMethod
+  name: TestOfSomeMethod
+  nameWithType: DocumentationTestExample.TestOfSomeMethod
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeMethod
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeProperty*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeProperty
+  name: TestOfSomeProperty
+  nameWithType: DocumentationTestExample.TestOfSomeProperty
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.TestOfSomeProperty
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.CreateDocumentation
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.CreateDocumentation
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase
+  name: CreateDocumentation()
+  nameWithType: TestsAsDocumentationBase.CreateDocumentation()
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.CreateDocumentation()
+  spec.csharp:
+  - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.CreateDocumentation
+    name: CreateDocumentation
+    nameWithType: TestsAsDocumentationBase.CreateDocumentation
+    fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.CreateDocumentation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.CreateDocumentation
+    name: CreateDocumentation
+    nameWithType: TestsAsDocumentationBase.CreateDocumentation
+    fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.CreateDocumentation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.CreateDocumentation*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.CreateDocumentation
+  name: CreateDocumentation
+  nameWithType: DocumentationTestExample.CreateDocumentation
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.CreateDocumentation
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.T*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.T
+  name: T
+  nameWithType: DocumentationTestExample.T
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.T

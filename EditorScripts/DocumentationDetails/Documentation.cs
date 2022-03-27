@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
-    public readonly struct ThingDoingTheDocumenting
+    public readonly struct Documentation
     {
         /// <summary>
         /// 
@@ -17,6 +17,11 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         /// 
         /// </summary>
         public IndexInGroup IndexInGroup { get; }
+        
+        /// <summary>
+        ///
+        /// </summary>
+        public MemberInfo MemberBeingDocumnted { get; }
 
         /// <summary>
         /// 
@@ -43,15 +48,17 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         /// </summary>
         public LineNumberRange DocumentationLineNumberRange { get; }
 
-        public ThingDoingTheDocumenting(string title,
-                                        string description,
-                                        string containingFile,
-                                        LineNumberRange attributeLineNumberRange,
-                                        RelevantArea relevantArea,
-                                        MemberInfo memberDoingTheDocumenting,
-                                        Grouping group,
-                                        IndexInGroup indexInGroup)
+        public Documentation(MemberInfo documentationSubject,
+                             string title,
+                             string description,
+                             string containingFile,
+                             LineNumberRange attributeLineNumberRange,
+                             RelevantArea relevantArea,
+                             MemberInfo memberDoingTheDocumenting,
+                             Grouping group,
+                             IndexInGroup indexInGroup)
         {
+            MemberBeingDocumnted = documentationSubject;
             Title = title;
             Description = description;
             ContainingFile = containingFile;
@@ -63,5 +70,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                 relevantArea,
                 attributeLineNumberRange.End);
         }
+        
+        
     }
 }

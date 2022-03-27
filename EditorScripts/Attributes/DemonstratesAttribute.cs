@@ -23,7 +23,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         private readonly string filePath;
         private readonly string title;
         private readonly string description;
-        private LineNumberRange attributeLineNumberRange; 
+        private readonly LineNumberRange attributeLineNumberRange; 
         private readonly Grouping grouping;
         private readonly IndexInGroup indexInGroup;
         private readonly RelevantArea relevantArea;
@@ -49,10 +49,24 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             attributeLineNumberRange = FileParser.GetLineNumberRangeForAttribute(lineNumber, filePath);
         }
         
+        #region Public Constructors
+        
+        /// <summary>
+        /// Constructor for documenting a type
+        /// </summary>
+        /// <param name="typeOfThingBeingDemonstrated"></param>
+        /// <param name="relevantArea"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="grouping"></param>
+        /// <param name="indexInGroup"></param>
+        /// <param name="guard"></param>
+        /// <param name="file"></param>
+        /// <param name="line"></param>
         public DemonstratesAttribute(Type typeOfThingBeingDemonstrated,
                                      RelevantArea relevantArea = RelevantArea.BodyOnly,
-                                     string title = "",
-                                     string description = "",
+                                     string title = null,
+                                     string description = null,
                                      Grouping grouping = Grouping.Default,
                                      IndexInGroup indexInGroup = IndexInGroup.Default,
                                      ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard, 
@@ -70,11 +84,24 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             memberInfoOfThingBeingDemonstrated = typeOfThingBeingDemonstrated;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="typeOfThingBeingDemonstrated"></param>
+        /// <param name="memberName"></param>
+        /// <param name="relevantArea"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="grouping"></param>
+        /// <param name="indexInGroup"></param>
+        /// <param name="guard"></param>
+        /// <param name="file"></param>
+        /// <param name="line"></param>
         public DemonstratesAttribute(Type typeOfThingBeingDemonstrated, 
                                      string memberName, 
                                      RelevantArea relevantArea = RelevantArea.BodyOnly,
-                                     string title = "",
-                                     string description = "",
+                                     string title = null,
+                                     string description = null,
                                      Grouping grouping = Grouping.Default,
                                      IndexInGroup indexInGroup = IndexInGroup.Default,
                                      ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard, 
@@ -96,12 +123,26 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                           $"{ErrorContext}: {errorMsg}");
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="typeOfThingBeingDemonstrated"></param>
+        /// <param name="memberName"></param>
+        /// <param name="argumentTypes"></param>
+        /// <param name="relevantArea"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="grouping"></param>
+        /// <param name="indexInGroup"></param>
+        /// <param name="guard"></param>
+        /// <param name="file"></param>
+        /// <param name="line"></param>
         public DemonstratesAttribute(Type typeOfThingBeingDemonstrated, 
                                      string memberName, 
                                      Type[] argumentTypes,
                                      RelevantArea relevantArea = RelevantArea.BodyOnly,
-                                     string title = "",
-                                     string description = "",
+                                     string title = null,
+                                     string description = null,
                                      Grouping grouping = Grouping.Default,
                                      IndexInGroup indexInGroup = IndexInGroup.Default,
                                      ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard, 
@@ -123,22 +164,98 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                                  out string errorMsg),
                           $"{ErrorContext}: {errorMsg}");
         }
-
-        public ThingDoingTheDocumenting GetThingDoingTheDocumenting(MemberInfo memberDoingTheDocumenting)
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="typeOfThingBeingDemonstrated"></param>
+        /// <param name="memberName"></param>
+        /// <param name="relevantArea"></param>
+        /// <param name="grouping"></param>
+        /// <param name="indexInGroup"></param>
+        /// <param name="guard"></param>
+        /// <param name="file"></param>
+        /// <param name="line"></param>
+        public DemonstratesAttribute(Type typeOfThingBeingDemonstrated, 
+                                     string memberName, 
+                                     RelevantArea relevantArea,
+                                     Grouping grouping,
+                                     IndexInGroup indexInGroup = IndexInGroup.Default,
+                                     ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard, 
+                                     [CallerFilePath] string file = Default.CompilerServiceFile, 
+                                     [CallerLineNumber] int line = Default.CompilerServiceLineNumber) 
+            : this(typeOfThingBeingDemonstrated, 
+                   grouping, 
+                   indexInGroup, 
+                   file, 
+                   line, 
+                   null, 
+                   null, 
+                   relevantArea)
         {
-            return new ThingDoingTheDocumenting(title,
-                                                description,
-                                                filePath,
-                                                attributeLineNumberRange,
-                                                relevantArea,
-                                                memberDoingTheDocumenting,
-                                                grouping,
-                                                indexInGroup);
+            Assert.IsTrue(TryGetNonOverloadedMember(typeOfThingBeingDemonstrated,
+                                                    memberName,
+                                                    out memberInfoOfThingBeingDemonstrated,
+                                                    out string errorMsg),
+                          $"{ErrorContext}: {errorMsg}");
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="typeOfThingBeingDemonstrated"></param>
+        /// <param name="memberName"></param>
+        /// <param name="argumentTypes"></param>
+        /// <param name="relevantArea"></param>
+        /// <param name="grouping"></param>
+        /// <param name="indexInGroup"></param>
+        /// <param name="guard"></param>
+        /// <param name="file"></param>
+        /// <param name="line"></param>
+        public DemonstratesAttribute(Type typeOfThingBeingDemonstrated, 
+                                     string memberName, 
+                                     Type[] argumentTypes,
+                                     RelevantArea relevantArea = RelevantArea.BodyOnly,
+                                     Grouping grouping = Grouping.Default,
+                                     IndexInGroup indexInGroup = IndexInGroup.Default,
+                                     ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard, 
+                                     [CallerFilePath] string file = Default.CompilerServiceFile, 
+                                     [CallerLineNumber] int line = Default.CompilerServiceLineNumber) 
+            : this(typeOfThingBeingDemonstrated, 
+                   grouping, 
+                   indexInGroup, 
+                   file, 
+                   line, 
+                   null, 
+                   null, 
+                   relevantArea)
+        {
+            Assert.IsTrue(TryGetOverloadedMember(typeOfThingBeingDemonstrated,
+                                                 memberName,
+                                                 argumentTypes,
+                                                 out memberInfoOfThingBeingDemonstrated,
+                                                 out string errorMsg),
+                          $"{ErrorContext}: {errorMsg}");
+        }
+        
+        #endregion Public Constructors
+
+        public Documentation GetDocument(MemberInfo memberDoingTheDocumenting)
+        {
+            return new Documentation(memberInfoOfThingBeingDemonstrated,
+                                     title,
+                                     description,
+                                     filePath,
+                                     attributeLineNumberRange,
+                                     relevantArea,
+                                     memberDoingTheDocumenting,
+                                     grouping,
+                                     indexInGroup);
         }
 
-        public bool TryGetThingsBeingDocumented(out ThingBeingDocumented[] thingsBeingDocumented)
+        public bool TryGetDocumentationSubjects(out DocumentationSubject[] thingsBeingDocumented)
         {
-            if (ThingBeingDocumented.TryCreate(memberInfoOfThingBeingDemonstrated,
+            if (DocumentationSubject.TryCreate(memberInfoOfThingBeingDemonstrated,
                                                out thingsBeingDocumented,
                                                out string error))
             {

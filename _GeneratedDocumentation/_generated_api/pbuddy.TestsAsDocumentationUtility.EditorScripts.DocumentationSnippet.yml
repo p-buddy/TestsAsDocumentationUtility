@@ -1,0 +1,911 @@
+### YamlMime:ManagedReference
+items:
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  id: DocumentationSnippet
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  children:
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.#ctor(System.String,System.String,System.String,System.Int32,System.Reflection.MemberInfo,pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea,System.Reflection.MemberInfo,pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping,pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup)
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ContainingFile
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.DemonstratedByTarget
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Description
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Group
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.IndexInGroup
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.LineNumberRange
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberBeingDocumented
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberDoingTheDocumenting
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Title
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToMarkdown
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToTargetAttributeDeclaration
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToXML
+  langs:
+  - csharp
+  - vb
+  name: DocumentationSnippet
+  nameWithType: DocumentationSnippet
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  type: Struct
+  source:
+    id: DocumentationSnippet
+    path: ''
+    startLine: 823
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: public readonly struct DocumentationSnippet
+    content.vb: Public Structure DocumentationSnippet
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - readonly
+  - struct
+  modifiers.vb:
+  - Public
+  - Structure
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Title
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Title
+  id: Title
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  langs:
+  - csharp
+  - vb
+  name: Title
+  nameWithType: DocumentationSnippet.Title
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Title
+  type: Property
+  source:
+    id: Title
+    path: ''
+    startLine: 831
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public readonly string Title { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Title As String
+  overload: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Title*
+  modifiers.csharp:
+  - public
+  - readonly
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Description
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Description
+  id: Description
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: DocumentationSnippet.Description
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Description
+  type: Property
+  source:
+    id: Description
+    path: ''
+    startLine: 836
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public readonly string Description { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Description As String
+  overload: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Description*
+  modifiers.csharp:
+  - public
+  - readonly
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ContainingFile
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ContainingFile
+  id: ContainingFile
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  langs:
+  - csharp
+  - vb
+  name: ContainingFile
+  nameWithType: DocumentationSnippet.ContainingFile
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ContainingFile
+  type: Property
+  source:
+    id: ContainingFile
+    path: ''
+    startLine: 841
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public readonly string ContainingFile { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ContainingFile As String
+  overload: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ContainingFile*
+  modifiers.csharp:
+  - public
+  - readonly
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.LineNumberRange
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.LineNumberRange
+  id: LineNumberRange
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  langs:
+  - csharp
+  - vb
+  name: LineNumberRange
+  nameWithType: DocumentationSnippet.LineNumberRange
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.LineNumberRange
+  type: Property
+  source:
+    id: LineNumberRange
+    path: ''
+    startLine: 846
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public readonly LineNumberRange LineNumberRange { get; }
+    parameters: []
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.LineNumberRange
+    content.vb: Public ReadOnly Property LineNumberRange As LineNumberRange
+  overload: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.LineNumberRange*
+  modifiers.csharp:
+  - public
+  - readonly
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.DemonstratedByTarget
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.DemonstratedByTarget
+  id: DemonstratedByTarget
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  langs:
+  - csharp
+  - vb
+  name: DemonstratedByTarget
+  nameWithType: DocumentationSnippet.DemonstratedByTarget
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.DemonstratedByTarget
+  type: Property
+  source:
+    id: DemonstratedByTarget
+    path: ''
+    startLine: 851
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public readonly DemonstratedByAttribute DemonstratedByTarget { get; }
+    parameters: []
+    return:
+      type: Global.DemonstratedByAttribute
+    content.vb: Public ReadOnly Property DemonstratedByTarget As DemonstratedByAttribute
+  overload: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.DemonstratedByTarget*
+  modifiers.csharp:
+  - public
+  - readonly
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Group
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Group
+  id: Group
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  langs:
+  - csharp
+  - vb
+  name: Group
+  nameWithType: DocumentationSnippet.Group
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Group
+  type: Property
+  source:
+    id: Group
+    path: ''
+    startLine: 856
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public readonly Grouping Group { get; }
+    parameters: []
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+    content.vb: Public ReadOnly Property Group As Grouping
+  overload: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Group*
+  modifiers.csharp:
+  - public
+  - readonly
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.IndexInGroup
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.IndexInGroup
+  id: IndexInGroup
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  langs:
+  - csharp
+  - vb
+  name: IndexInGroup
+  nameWithType: DocumentationSnippet.IndexInGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.IndexInGroup
+  type: Property
+  source:
+    id: IndexInGroup
+    path: ''
+    startLine: 861
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public readonly IndexInGroup IndexInGroup { get; }
+    parameters: []
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+    content.vb: Public ReadOnly Property IndexInGroup As IndexInGroup
+  overload: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.IndexInGroup*
+  modifiers.csharp:
+  - public
+  - readonly
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberDoingTheDocumenting
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberDoingTheDocumenting
+  id: MemberDoingTheDocumenting
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  langs:
+  - csharp
+  - vb
+  name: MemberDoingTheDocumenting
+  nameWithType: DocumentationSnippet.MemberDoingTheDocumenting
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberDoingTheDocumenting
+  type: Property
+  source:
+    id: MemberDoingTheDocumenting
+    path: ''
+    startLine: 866
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public readonly MemberInfo MemberDoingTheDocumenting { get; }
+    parameters: []
+    return:
+      type: System.Reflection.MemberInfo
+    content.vb: Public ReadOnly Property MemberDoingTheDocumenting As MemberInfo
+  overload: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberDoingTheDocumenting*
+  modifiers.csharp:
+  - public
+  - readonly
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberBeingDocumented
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberBeingDocumented
+  id: MemberBeingDocumented
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  langs:
+  - csharp
+  - vb
+  name: MemberBeingDocumented
+  nameWithType: DocumentationSnippet.MemberBeingDocumented
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberBeingDocumented
+  type: Property
+  source:
+    id: MemberBeingDocumented
+    path: ''
+    startLine: 871
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public readonly MemberInfo MemberBeingDocumented { get; }
+    parameters: []
+    return:
+      type: System.Reflection.MemberInfo
+    content.vb: Public ReadOnly Property MemberBeingDocumented As MemberInfo
+  overload: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberBeingDocumented*
+  modifiers.csharp:
+  - public
+  - readonly
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.#ctor(System.String,System.String,System.String,System.Int32,System.Reflection.MemberInfo,pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea,System.Reflection.MemberInfo,pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping,pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup)
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.#ctor(System.String,System.String,System.String,System.Int32,System.Reflection.MemberInfo,pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea,System.Reflection.MemberInfo,pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping,pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup)
+  id: '#ctor(System.String,System.String,System.String,System.Int32,System.Reflection.MemberInfo,pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea,System.Reflection.MemberInfo,pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping,pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup)'
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  langs:
+  - csharp
+  - vb
+  name: DocumentationSnippet(String, String, String, Int32, MemberInfo, RelevantArea, MemberInfo, Grouping, IndexInGroup)
+  nameWithType: DocumentationSnippet.DocumentationSnippet(String, String, String, Int32, MemberInfo, RelevantArea, MemberInfo, Grouping, IndexInGroup)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.DocumentationSnippet(System.String, System.String, System.String, System.Int32, System.Reflection.MemberInfo, pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea, System.Reflection.MemberInfo, pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping, pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup)
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 873
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: public DocumentationSnippet(string title, string description, string containingFile, int startingLineNumber, MemberInfo memberDoingTheDocumenting, RelevantArea relevantArea, MemberInfo memberBeingDocumented, Grouping group, IndexInGroup indexInGroup)
+    parameters:
+    - id: title
+      type: System.String
+    - id: description
+      type: System.String
+    - id: containingFile
+      type: System.String
+    - id: startingLineNumber
+      type: System.Int32
+    - id: memberDoingTheDocumenting
+      type: System.Reflection.MemberInfo
+    - id: relevantArea
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea
+    - id: memberBeingDocumented
+      type: System.Reflection.MemberInfo
+    - id: group
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+    - id: indexInGroup
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+    content.vb: Public Sub New(title As String, description As String, containingFile As String, startingLineNumber As Integer, memberDoingTheDocumenting As MemberInfo, relevantArea As RelevantArea, memberBeingDocumented As MemberInfo, group As Grouping, indexInGroup As IndexInGroup)
+  overload: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToMarkdown
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToMarkdown
+  id: ToMarkdown
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  langs:
+  - csharp
+  - vb
+  name: ToMarkdown()
+  nameWithType: DocumentationSnippet.ToMarkdown()
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToMarkdown()
+  type: Method
+  source:
+    id: ToMarkdown
+    path: ''
+    startLine: 894
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: public readonly string[] ToMarkdown()
+    return:
+      type: System.String[]
+    content.vb: Public Function ToMarkdown As String()
+  overload: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToMarkdown*
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToXML
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToXML
+  id: ToXML
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  langs:
+  - csharp
+  - vb
+  name: ToXML()
+  nameWithType: DocumentationSnippet.ToXML()
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToXML()
+  type: Method
+  source:
+    id: ToXML
+    path: ''
+    startLine: 899
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: public readonly string[] ToXML()
+    return:
+      type: System.String[]
+    content.vb: Public Function ToXML As String()
+  overload: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToXML*
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToTargetAttributeDeclaration
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToTargetAttributeDeclaration
+  id: ToTargetAttributeDeclaration
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet
+  langs:
+  - csharp
+  - vb
+  name: ToTargetAttributeDeclaration()
+  nameWithType: DocumentationSnippet.ToTargetAttributeDeclaration()
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToTargetAttributeDeclaration()
+  type: Method
+  source:
+    id: ToTargetAttributeDeclaration
+    path: ''
+    startLine: 919
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: public readonly string ToTargetAttributeDeclaration()
+    return:
+      type: System.String
+    content.vb: Public Function ToTargetAttributeDeclaration As String
+  overload: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToTargetAttributeDeclaration*
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+references:
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  commentId: N:pbuddy.TestsAsDocumentationUtility.EditorScripts
+  name: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  nameWithType: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: ValueType.Equals(Object)
+  fullName: System.ValueType.Equals(System.Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    nameWithType: ValueType.Equals
+    fullName: System.ValueType.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    nameWithType: ValueType.Equals
+    fullName: System.ValueType.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    nameWithType: ValueType.GetHashCode
+    fullName: System.ValueType.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    nameWithType: ValueType.GetHashCode
+    fullName: System.ValueType.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    nameWithType: ValueType.ToString
+    fullName: System.ValueType.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    nameWithType: ValueType.ToString
+    fullName: System.ValueType.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Title*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Title
+  name: Title
+  nameWithType: DocumentationSnippet.Title
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Title
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Description*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Description
+  name: Description
+  nameWithType: DocumentationSnippet.Description
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Description
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ContainingFile*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ContainingFile
+  name: ContainingFile
+  nameWithType: DocumentationSnippet.ContainingFile
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ContainingFile
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.LineNumberRange*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.LineNumberRange
+  name: LineNumberRange
+  nameWithType: DocumentationSnippet.LineNumberRange
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.LineNumberRange
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.LineNumberRange
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.LineNumberRange
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  name: LineNumberRange
+  nameWithType: LineNumberRange
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.LineNumberRange
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.DemonstratedByTarget*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.DemonstratedByTarget
+  name: DemonstratedByTarget
+  nameWithType: DocumentationSnippet.DemonstratedByTarget
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.DemonstratedByTarget
+- uid: Global.DemonstratedByAttribute
+  commentId: '!:Global.DemonstratedByAttribute'
+  isExternal: true
+  name: DemonstratedByAttribute
+  nameWithType: DemonstratedByAttribute
+  fullName: DemonstratedByAttribute
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Group*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Group
+  name: Group
+  nameWithType: DocumentationSnippet.Group
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Group
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  name: Grouping
+  nameWithType: Grouping
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.IndexInGroup*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.IndexInGroup
+  name: IndexInGroup
+  nameWithType: DocumentationSnippet.IndexInGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.IndexInGroup
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  name: IndexInGroup
+  nameWithType: IndexInGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberDoingTheDocumenting*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberDoingTheDocumenting
+  name: MemberDoingTheDocumenting
+  nameWithType: DocumentationSnippet.MemberDoingTheDocumenting
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberDoingTheDocumenting
+- uid: System.Reflection.MemberInfo
+  commentId: T:System.Reflection.MemberInfo
+  parent: System.Reflection
+  isExternal: true
+  name: MemberInfo
+  nameWithType: MemberInfo
+  fullName: System.Reflection.MemberInfo
+- uid: System.Reflection
+  commentId: N:System.Reflection
+  isExternal: true
+  name: System.Reflection
+  nameWithType: System.Reflection
+  fullName: System.Reflection
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberBeingDocumented*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberBeingDocumented
+  name: MemberBeingDocumented
+  nameWithType: DocumentationSnippet.MemberBeingDocumented
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.MemberBeingDocumented
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.#ctor*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.#ctor
+  name: DocumentationSnippet
+  nameWithType: DocumentationSnippet.DocumentationSnippet
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.DocumentationSnippet
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  name: RelevantArea
+  nameWithType: RelevantArea
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToMarkdown*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToMarkdown
+  name: ToMarkdown
+  nameWithType: DocumentationSnippet.ToMarkdown
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToMarkdown
+- uid: System.String[]
+  isExternal: true
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToXML*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToXML
+  name: ToXML
+  nameWithType: DocumentationSnippet.ToXML
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToXML
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToTargetAttributeDeclaration*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToTargetAttributeDeclaration
+  name: ToTargetAttributeDeclaration
+  nameWithType: DocumentationSnippet.ToTargetAttributeDeclaration
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ToTargetAttributeDeclaration

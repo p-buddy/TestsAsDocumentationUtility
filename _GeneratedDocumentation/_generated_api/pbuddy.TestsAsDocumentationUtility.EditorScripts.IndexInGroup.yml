@@ -1,0 +1,392 @@
+### YamlMime:ManagedReference
+items:
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  id: IndexInGroup
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  children:
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Default
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index0InGroup
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index10InGroup
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index1InGroup
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index2InGroup
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index3InGroup
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index4InGroup
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index5InGroup
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index6InGroup
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index7InGroup
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index8InGroup
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index9InGroup
+  langs:
+  - csharp
+  - vb
+  name: IndexInGroup
+  nameWithType: IndexInGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  type: Enum
+  source:
+    id: IndexInGroup
+    path: ''
+    startLine: 746
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public enum IndexInGroup
+    content.vb: Public Enum IndexInGroup
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index0InGroup
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index0InGroup
+  id: Index0InGroup
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  langs:
+  - csharp
+  - vb
+  name: Index0InGroup
+  nameWithType: IndexInGroup.Index0InGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index0InGroup
+  type: Field
+  source:
+    id: Index0InGroup
+    path: ''
+    startLine: 748
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Index0InGroup = 0
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index1InGroup
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index1InGroup
+  id: Index1InGroup
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  langs:
+  - csharp
+  - vb
+  name: Index1InGroup
+  nameWithType: IndexInGroup.Index1InGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index1InGroup
+  type: Field
+  source:
+    id: Index1InGroup
+    path: ''
+    startLine: 749
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Index1InGroup = 1
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index2InGroup
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index2InGroup
+  id: Index2InGroup
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  langs:
+  - csharp
+  - vb
+  name: Index2InGroup
+  nameWithType: IndexInGroup.Index2InGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index2InGroup
+  type: Field
+  source:
+    id: Index2InGroup
+    path: ''
+    startLine: 750
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Index2InGroup = 2
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index3InGroup
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index3InGroup
+  id: Index3InGroup
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  langs:
+  - csharp
+  - vb
+  name: Index3InGroup
+  nameWithType: IndexInGroup.Index3InGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index3InGroup
+  type: Field
+  source:
+    id: Index3InGroup
+    path: ''
+    startLine: 751
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Index3InGroup = 3
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index4InGroup
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index4InGroup
+  id: Index4InGroup
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  langs:
+  - csharp
+  - vb
+  name: Index4InGroup
+  nameWithType: IndexInGroup.Index4InGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index4InGroup
+  type: Field
+  source:
+    id: Index4InGroup
+    path: ''
+    startLine: 752
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Index4InGroup = 4
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index5InGroup
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index5InGroup
+  id: Index5InGroup
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  langs:
+  - csharp
+  - vb
+  name: Index5InGroup
+  nameWithType: IndexInGroup.Index5InGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index5InGroup
+  type: Field
+  source:
+    id: Index5InGroup
+    path: ''
+    startLine: 753
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Index5InGroup = 5
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index6InGroup
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index6InGroup
+  id: Index6InGroup
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  langs:
+  - csharp
+  - vb
+  name: Index6InGroup
+  nameWithType: IndexInGroup.Index6InGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index6InGroup
+  type: Field
+  source:
+    id: Index6InGroup
+    path: ''
+    startLine: 754
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Index6InGroup = 6
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index7InGroup
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index7InGroup
+  id: Index7InGroup
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  langs:
+  - csharp
+  - vb
+  name: Index7InGroup
+  nameWithType: IndexInGroup.Index7InGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index7InGroup
+  type: Field
+  source:
+    id: Index7InGroup
+    path: ''
+    startLine: 755
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Index7InGroup = 7
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index8InGroup
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index8InGroup
+  id: Index8InGroup
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  langs:
+  - csharp
+  - vb
+  name: Index8InGroup
+  nameWithType: IndexInGroup.Index8InGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index8InGroup
+  type: Field
+  source:
+    id: Index8InGroup
+    path: ''
+    startLine: 756
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Index8InGroup = 8
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index9InGroup
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index9InGroup
+  id: Index9InGroup
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  langs:
+  - csharp
+  - vb
+  name: Index9InGroup
+  nameWithType: IndexInGroup.Index9InGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index9InGroup
+  type: Field
+  source:
+    id: Index9InGroup
+    path: ''
+    startLine: 757
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Index9InGroup = 9
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index10InGroup
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index10InGroup
+  id: Index10InGroup
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  langs:
+  - csharp
+  - vb
+  name: Index10InGroup
+  nameWithType: IndexInGroup.Index10InGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index10InGroup
+  type: Field
+  source:
+    id: Index10InGroup
+    path: ''
+    startLine: 758
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Index10InGroup = 10
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Default
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Default
+  id: Default
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: IndexInGroup.Default
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Default
+  type: Field
+  source:
+    id: Default
+    path: ''
+    startLine: 759
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Default = 11
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  commentId: N:pbuddy.TestsAsDocumentationUtility.EditorScripts
+  name: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  nameWithType: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  name: IndexInGroup
+  nameWithType: IndexInGroup
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup

@@ -10,11 +10,9 @@ using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
-    public abstract class TestsAsDocumentationBase
+    public static class TestsAsDocumentationBase
     {
         private const string ErrorContext = "[" + nameof(TestsAsDocumentationBase) + " ERROR]:";
-        private static readonly string EditorScriptsAssembly = $"{nameof(pbuddy)}.{nameof(TestsAsDocumentationUtility)}.{nameof(EditorScripts)}";
-        private static readonly string RuntimeScriptsAssembly = $"{nameof(pbuddy)}.{nameof(TestsAsDocumentationUtility)}.{nameof(RuntimeScripts)}";
         private const string DocumentationDirectory = "GeneratedDocumentation";
         private const string DocFxDirectoryName = "DocFx";
         private const string DocFxConfig = "docfx.json";
@@ -22,31 +20,17 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         private const string AppTitleProperty = "_appTitle";
         private const string AppFooterProperty = "_appFooter";
         private const string BaseUrlProperty = "baseUrl";
-
-        private readonly Dictionary<string, List<ThingBeingDocumented>> ThingsBeingDocumentedByFile =
-            new Dictionary<string, List<ThingBeingDocumented>>();
-
-        private readonly Dictionary<ThingBeingDocumented, DocumentationCollection> DocumentationCollectionMap = 
-            new Dictionary<ThingBeingDocumented, DocumentationCollection>();
-
-        /// <summary>
-        /// To make things work nicely, you are required to implement this <see cref="CreateDocumentation"/>
-        /// function on your classes deriving from <see cref="TestsAsDocumentationBase"/>.
-        /// However, you can/should implement it EXACTLY like the code snippet below (don't forget the <see cref="TestAttribute"/> [Test Attribute]):
-        /// <code>
-        /// [Test]
-        /// public override void CreateDocumentation() => CreateDocumentationInternal();
-        /// </code>
-        /// </summary>
-        public abstract void CreateDocumentation();
-
-        protected void InternalCreateDocumentation(bool enforceJsonHasBeenConfigured = true,
-                                                   ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
-                                                   [CallerFilePath] string filePassedByCompiler = "")
+        private const BindingFlags PermissiveBindingFlags = BindingFlags.Public |
+                                                            BindingFlags.NonPublic |
+                                                            BindingFlags.Static |
+                                                            BindingFlags.DeclaredOnly |
+                                                            BindingFlags.Instance;
+        
+        public static void InternalCreateDocumentation(bool enforceJsonHasBeenConfigured = true,
+                                                       ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
+                                                       [CallerFilePath] string filePassedByCompiler = "")
         {
-            ThingsBeingDocumentedByFile.Clear();
-            DocumentationCollectionMap.Clear();
-            
+
             /*
             string documentationDirectory = GetDocumentationDirectory(filePassedByCompiler);
             PrepDocumentationDirectory(documentationDirectory);
@@ -55,38 +39,28 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                 ConfirmJsonIsModified(documentationDirectory);
             }
             */
-
-            var demonstratesAttributes = new List<DemonstratesAttribute>();
             
-            Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            foreach (Assembly assembly in assemblies)
-            {
-                AssemblyName[] referencedAssemblies = assembly.GetReferencedAssemblies();
-                if (referencedAssemblies.FirstOrDefault(a => a.Name == EditorScriptsAssembly) != default)
-                {
-                    demonstratesAttributes.AddRange(assembly.GetCustomAttributes<DemonstratesAttribute>());
-                }
-            }
+            Assembly editorAssembly = typeof(DemonstratesAttribute).Assembly;
+            Assembly[] editorDependentAssemblies = editorAssembly.GetDependentAssemblies();
+            List<MemberInfo> demonstratingMembers = editorDependentAssemblies.GetAllMembersWith<DemonstratesAttribute>();
+            List<Documentation> documents = demonstratingMembers.CreateDocuments();
 
-            foreach (DemonstratesAttribute demonstratesAttribute in demonstratesAttributes)
+            var documentationBySubject = new Dictionary<MemberInfo, DocumentationCollection>();
+            documents.ForEach(doc =>
             {
-                if (demonstratesAttribute.TryGetThingsBeingDocumented(out ThingBeingDocumented[] thingsBeingDocumented))
+                if (documentationBySubject.TryGetValue(doc.MemberBeingDocumnted, out DocumentationCollection collection))
                 {
-                    foreach (ThingBeingDocumented thingBeingDocumented in thingsBeingDocumented)
-                    {
-                        string file = thingBeingDocumented.FileLocation;
-                        if (ThingsBeingDocumentedByFile.TryGetValue(file, out List<ThingBeingDocumented> collection))
-                        {
-                            collection.Add(thingBeingDocumented);
-                        }
-                        else
-                        {
-                            ThingsBeingDocumentedByFile[file] = new List<ThingBeingDocumented>() { thingBeingDocumented };
-                        }
-                    }
-                    
+                    collection.Add(doc);
                 }
-            }
+                else
+                {
+                    documentationBySubject[doc.MemberBeingDocumnted] = new DocumentationCollection(in doc);
+                }
+            });
+
+            Assembly runtimeAssembly = typeof(DemonstratedByAttribute).Assembly;
+            Assembly[] runtimeDependentAssemblies = runtimeAssembly.GetDependentAssemblies();
+            var demonstratedByAttributes = runtimeDependentAssemblies.GetAllAttributes<DemonstratedByAttribute>();
         }
 
         private static void PrepDocumentationDirectory(string documentationDirectory)
@@ -144,5 +118,88 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         private static string GetDocumentationDirectory(string testFile) =>
             Path.Combine(Directory.GetParent(Path.GetDirectoryName(testFile)).FullName, DocumentationDirectory);
         private static string GetEditorScriptsPath([CallerFilePath] string callingFile = "") => Path.GetDirectoryName(callingFile);
+
+        private static Assembly[] GetDependentAssemblies(this Assembly assembly)
+        {
+            bool IsDependencyAssembly(AssemblyName assemblyRef) => assemblyRef.Name == assembly.FullName;
+
+            bool DoesReferenceDependency(Assembly otherAssembly)
+            { 
+                return otherAssembly.GetReferencedAssemblies().ToList().Any(IsDependencyAssembly);
+            }
+            
+            return AppDomain.CurrentDomain.GetAssemblies()
+                            .ToList()
+                            .Where(DoesReferenceDependency)
+                            .ToArray();
+        }
+
+        private static List<MemberInfo> GetAllMembersWith<TAttributeType>(this Assembly[] assemblies)
+            where TAttributeType : Attribute
+        {
+            var members = new List<MemberInfo>();
+            foreach (Assembly assembly in assemblies)
+            {
+                foreach (Type type in assembly.GetTypes())
+                {
+                    members.AddIf(type.Has<TAttributeType>(), type);
+                    members.AddRange(type.GetMembers(PermissiveBindingFlags).Where(member => member.Has<TAttributeType>()));
+                }
+            }
+
+            return members;
+        }
+        
+        private static List<TAttributeType> GetAllAttributes<TAttributeType>(this Assembly[] assemblies)
+            where TAttributeType : Attribute
+        {
+            var attributes = new List<TAttributeType>();
+            foreach (Assembly assembly in assemblies)
+            {
+                attributes.AddRange(assembly.GetCustomAttributes<TAttributeType>());
+            }
+
+            return attributes;
+        }
+
+        private static List<Documentation> CreateDocuments(this List<MemberInfo> memberInfos)
+        {
+            var documents = new List<Documentation>(memberInfos.Count);
+            foreach (MemberInfo member in memberInfos)
+            {
+                foreach (DemonstratesAttribute demonstrates in member.GetCustomAttributes<DemonstratesAttribute>())
+                { 
+                    documents.Add(demonstrates.GetDocument(member));
+                }
+            }
+
+            return documents;
+        }
+        
+        private static void AddOrInsert<TKeyType, TListItemType>(this Dictionary<TKeyType, List<TListItemType>> map,
+                                                                 TKeyType key,
+                                                                 TListItemType item)
+        {
+            if (map.TryGetValue(key, out List<TListItemType> collection))
+            {
+                collection.Add(item);
+                return;
+            }
+
+            map[key] = new List<TListItemType> { item };
+        }
+        
+        
+        
+        private static void AddIf<TListItemType>(this List<TListItemType> list, bool condition, TListItemType item)
+        {
+            if (condition)
+            {
+                list.Add(item);
+            }
+        }
+
+        private static bool Has<TAttributeType>(this MemberInfo memberInfo) where TAttributeType: Attribute =>
+            memberInfo.GetCustomAttribute<TAttributeType>() != null;
     }
 }

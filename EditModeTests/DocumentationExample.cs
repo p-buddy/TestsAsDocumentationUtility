@@ -5,7 +5,7 @@ using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
 {
-    public class DocumentationTestExample : TestsAsDocumentationBase
+    public class DocumentationTestExample 
     {
         [Test]
         [Demonstrates(typeof(DocumentedByTestExample), nameof(DocumentedByTestExample.SomeMethod))]
@@ -15,14 +15,12 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         }
         
         [Test]
-        [Demonstrates(typeof(DocumentedByTestExample), nameof(DocumentedByTestExample.SomeProperty))]
+        [Demonstrates(typeof(DocumentedByTestExample), nameof(DocumentedByTestExample.SomeProperty), RelevantArea.BodyOnly, Grouping.Group0, IndexInGroup.Index0 )]
         public void TestOfSomeProperty()
         {
             
         }
 
-        [Test]
-        public override void CreateDocumentation() => InternalCreateDocumentation();
 
         [Test]
         public void T()
@@ -42,16 +40,14 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         /// <summary>
         /// Hello
         /// </summary>
-        /// <example>
-        /// # Howdy
-        /// ### Hi hi
-        /// [!code-csharp[Main](../../EditModeTests/DocumentationExample.cs?range=34,26-30)]
-        /// [!code-csharp[Main](../../EditModeTests/DocumentationExample.cs?range=40-42)]
-        /// </example>
-        /// /// <example>
-        /// [!code-csharp[Main](../../EditModeTests/DocumentationExample.cs?range=34,26-30)]
-        /// </example>
-        [DemonstratedBy]
+        [DemonstratedBy("File: ../../EditModeTests/DocumentationExample.cs", "Line range: 26-30")]
+        [DemonstratedBy("Title: This is how", "File: ../../EditModeTests/DocumentationExample.cs", "Line numbers: 26-30")]
+        [DemonstratedBy("Title: This is how", "Description: A way to do it", "File: ../../EditModeTests/DocumentationExample.cs", "Line numbers: 26-30")]
+        [DemonstratedBy(new []
+        {
+            "File: ../../EditModeTests/DocumentationExample.cs", "Line(s): 26-30",
+            "File: ../../EditModeTests/DocumentationExample.cs", "Line(s): 26-30",
+        })]
         public void SomeMethod()
         {
             

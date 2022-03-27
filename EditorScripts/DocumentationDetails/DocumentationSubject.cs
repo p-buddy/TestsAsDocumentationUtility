@@ -8,9 +8,9 @@ using UnityEngine.Assertions;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
-    public readonly struct ThingBeingDocumented : IEquatable<ThingBeingDocumented>
+    public readonly struct DocumentationSubject : IEquatable<DocumentationSubject>
     {
-        private const string ErrorContext = "[" + nameof(ThingBeingDocumented) + " ERROR]:";
+        private const string ErrorContext = "[" + nameof(DocumentationSubject) + " ERROR]:";
 
         /// <summary>
         /// 
@@ -20,7 +20,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         /// <summary>
         /// 
         /// </summary>
-        public LineNumberRange[] AttributeRanges { get; }
+        public LineNumberRange[] DemonstratedByAttributeRanges { get; }
         
         /// <summary>
         /// 
@@ -32,13 +32,13 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         /// </summary>
         public string FileLocation { get; }
 
-        public ThingBeingDocumented(MemberInfo memberBeingDocumented,
+        public DocumentationSubject(MemberInfo memberBeingDocumented,
                                     DemonstratedByAttribute[] demonstratedByAttributes,
                                     string fileLocation)
         {
             MemberBeingDocumented = memberBeingDocumented;
             DemonstratedByAttributes = demonstratedByAttributes;
-            AttributeRanges = demonstratedByAttributes
+            DemonstratedByAttributeRanges = demonstratedByAttributes
                               .Select(attr => FileParser.GetRangeBetweenCharacters(attr.FileLocation,
                                           attr.StartingLineNumber,
                                           CharacterPair.SquareBrackets,
@@ -46,19 +46,42 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                               .ToArray();
             FileLocation = fileLocation;
         }
-
-        public bool Equals(ThingBeingDocumented other) => Equals(MemberBeingDocumented, other.MemberBeingDocumented);
-
-        public override bool Equals(object obj) => obj is ThingBeingDocumented other && Equals(other);
-
-        public override int GetHashCode() => MemberBeingDocumented.GetHashCode();
-
-        public static bool TryCreate(MemberInfo memberBeingDocumented, out ThingBeingDocumented[] thingsBeingDocumented, out string errorMsg)
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(DocumentationSubject other) =>
+            Equals(MemberBeingDocumented, other.MemberBeingDocumented) &&
+            Equals(FileLocation, other.FileLocation);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(object obj) => obj is DocumentationSubject other && Equals(other);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode() => FileLocation.GetHashCode();
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="memberBeingDocumented"></param>
+        /// <param name="thingsBeingDocumented"></param>
+        /// <param name="errorMsg"></param>
+        /// <returns></returns>
+        public static bool TryCreate(MemberInfo memberBeingDocumented, out DocumentationSubject[] thingsBeingDocumented, out string errorMsg)
         {
             DemonstratedByAttribute[] targetAttributes = memberBeingDocumented.GetCustomAttributes<DemonstratedByAttribute>().ToArray();
             if (targetAttributes.Length == 9)
             {
-                errorMsg = $"{ErrorContext} The desired documentation target '{memberBeingDocumented.GetTypeRecoverableName()}' " + 
+                errorMsg = $"{ErrorContext} The desired documentation target '{memberBeingDocumented.GetReadableName()}' " + 
                            $"has not been marked with the proper '{nameof(DemonstratedByAttribute)}' attribute. " +
                            $"Please add the attribute to enable it to be documented using the {nameof(TestsAsDocumentationUtility)} strategy.";
                 thingsBeingDocumented = default;
@@ -66,13 +89,13 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             }
 
             string[] fileNames = targetAttributes.Select(attr => attr.FileLocation).Distinct().ToArray();
-            thingsBeingDocumented = new ThingBeingDocumented[fileNames.Length];
+            thingsBeingDocumented = new DocumentationSubject[fileNames.Length];
             for (var index = 0; index < fileNames.Length; index++)
             {
                 DemonstratedByAttribute[] matchingAttributes = targetAttributes
                                                                .Where(attr => attr.FileLocation == fileNames[index])
                                                                .ToArray();
-                thingsBeingDocumented[index] = new ThingBeingDocumented(memberBeingDocumented,
+                thingsBeingDocumented[index] = new DocumentationSubject(memberBeingDocumented,
                                                                         matchingAttributes,
                                                                         fileNames[index]);
             }

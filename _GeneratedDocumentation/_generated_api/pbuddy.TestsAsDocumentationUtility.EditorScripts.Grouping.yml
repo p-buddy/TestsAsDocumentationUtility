@@ -1,0 +1,392 @@
+### YamlMime:ManagedReference
+items:
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  id: Grouping
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  children:
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Default
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group0
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group1
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group10
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group2
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group3
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group4
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group5
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group6
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group7
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group8
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group9
+  langs:
+  - csharp
+  - vb
+  name: Grouping
+  nameWithType: Grouping
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  type: Enum
+  source:
+    id: Grouping
+    path: ''
+    startLine: 767
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public enum Grouping
+    content.vb: Public Enum Grouping
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group0
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group0
+  id: Group0
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  langs:
+  - csharp
+  - vb
+  name: Group0
+  nameWithType: Grouping.Group0
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group0
+  type: Field
+  source:
+    id: Group0
+    path: ''
+    startLine: 769
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Group0 = 0
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group1
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group1
+  id: Group1
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  langs:
+  - csharp
+  - vb
+  name: Group1
+  nameWithType: Grouping.Group1
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group1
+  type: Field
+  source:
+    id: Group1
+    path: ''
+    startLine: 770
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Group1 = 1
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group2
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group2
+  id: Group2
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  langs:
+  - csharp
+  - vb
+  name: Group2
+  nameWithType: Grouping.Group2
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group2
+  type: Field
+  source:
+    id: Group2
+    path: ''
+    startLine: 771
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Group2 = 2
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group3
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group3
+  id: Group3
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  langs:
+  - csharp
+  - vb
+  name: Group3
+  nameWithType: Grouping.Group3
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group3
+  type: Field
+  source:
+    id: Group3
+    path: ''
+    startLine: 772
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Group3 = 3
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group4
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group4
+  id: Group4
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  langs:
+  - csharp
+  - vb
+  name: Group4
+  nameWithType: Grouping.Group4
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group4
+  type: Field
+  source:
+    id: Group4
+    path: ''
+    startLine: 773
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Group4 = 4
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group5
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group5
+  id: Group5
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  langs:
+  - csharp
+  - vb
+  name: Group5
+  nameWithType: Grouping.Group5
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group5
+  type: Field
+  source:
+    id: Group5
+    path: ''
+    startLine: 774
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Group5 = 5
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group6
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group6
+  id: Group6
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  langs:
+  - csharp
+  - vb
+  name: Group6
+  nameWithType: Grouping.Group6
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group6
+  type: Field
+  source:
+    id: Group6
+    path: ''
+    startLine: 775
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Group6 = 6
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group7
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group7
+  id: Group7
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  langs:
+  - csharp
+  - vb
+  name: Group7
+  nameWithType: Grouping.Group7
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group7
+  type: Field
+  source:
+    id: Group7
+    path: ''
+    startLine: 776
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Group7 = 7
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group8
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group8
+  id: Group8
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  langs:
+  - csharp
+  - vb
+  name: Group8
+  nameWithType: Grouping.Group8
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group8
+  type: Field
+  source:
+    id: Group8
+    path: ''
+    startLine: 777
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Group8 = 8
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group9
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group9
+  id: Group9
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  langs:
+  - csharp
+  - vb
+  name: Group9
+  nameWithType: Grouping.Group9
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group9
+  type: Field
+  source:
+    id: Group9
+    path: ''
+    startLine: 778
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Group9 = 9
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group10
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group10
+  id: Group10
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  langs:
+  - csharp
+  - vb
+  name: Group10
+  nameWithType: Grouping.Group10
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Group10
+  type: Field
+  source:
+    id: Group10
+    path: ''
+    startLine: 779
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Group10 = 10
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Default
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Default
+  id: Default
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: Grouping.Default
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.Default
+  type: Field
+  source:
+    id: Default
+    path: ''
+    startLine: 780
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: Default = 11
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  commentId: N:pbuddy.TestsAsDocumentationUtility.EditorScripts
+  name: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  nameWithType: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  name: Grouping
+  nameWithType: Grouping
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping

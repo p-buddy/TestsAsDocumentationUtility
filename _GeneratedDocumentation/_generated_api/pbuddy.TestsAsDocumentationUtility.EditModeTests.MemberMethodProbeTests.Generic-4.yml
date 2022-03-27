@@ -1,0 +1,728 @@
+### YamlMime:ManagedReference
+items:
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4
+  id: MemberMethodProbeTests.Generic`4
+  parent: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  children:
+  - pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.ConfirmAllMembersCalled(System.Type)
+  - pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method0``1(`0,``0,`1)
+  - pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method1(`3,System.Int32)
+  - pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2
+  - pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2(`2,`3)
+  - pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2(`3,`2)
+  - pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2``2(``0,``1)
+  - pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2``2(``1,``0)
+  langs:
+  - csharp
+  - vb
+  name: MemberMethodProbeTests.Generic<T0, T1, T2, T3>
+  nameWithType: MemberMethodProbeTests.Generic<T0, T1, T2, T3>
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic<T0, T1, T2, T3>
+  type: Class
+  source:
+    id: Generic
+    path: ''
+    startLine: 17
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  syntax:
+    content: public class Generic<T0, T1, T2, T3>
+    typeParameters:
+    - id: T0
+    - id: T1
+    - id: T2
+    - id: T3
+    content.vb: Public Class Generic(Of T0, T1, T2, T3)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  nameWithType.vb: MemberMethodProbeTests.Generic(Of T0, T1, T2, T3)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic(Of T0, T1, T2, T3)
+  name.vb: MemberMethodProbeTests.Generic(Of T0, T1, T2, T3)
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method0``1(`0,``0,`1)
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method0``1(`0,``0,`1)
+  id: Method0``1(`0,``0,`1)
+  parent: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4
+  langs:
+  - csharp
+  - vb
+  name: Method0<M0>(T0, M0, T1)
+  nameWithType: MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method0<M0>(T0, M0, T1)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method0<M0>(T0, M0, T1)
+  type: Method
+  source:
+    id: Method0
+    path: ''
+    startLine: 32
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  syntax:
+    content: public void Method0<M0>(T0 a, M0 b, T1 c)
+    parameters:
+    - id: a
+      type: '{T0}'
+    - id: b
+      type: '{M0}'
+    - id: c
+      type: '{T1}'
+    typeParameters:
+    - id: M0
+    content.vb: Public Sub Method0(Of M0)(a As T0, b As M0, c As T1)
+  overload: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method0*
+  nameWithType.vb: MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method0(Of M0)(T0, M0, T1)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method0(Of M0)(T0, M0, T1)
+  name.vb: Method0(Of M0)(T0, M0, T1)
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method1(`3,System.Int32)
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method1(`3,System.Int32)
+  id: Method1(`3,System.Int32)
+  parent: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4
+  langs:
+  - csharp
+  - vb
+  name: Method1(T3, Int32)
+  nameWithType: MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method1(T3, Int32)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method1(T3, System.Int32)
+  type: Method
+  source:
+    id: Method1
+    path: ''
+    startLine: 38
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  syntax:
+    content: public void Method1(T3 a, int b)
+    parameters:
+    - id: a
+      type: '{T3}'
+    - id: b
+      type: System.Int32
+    content.vb: Public Sub Method1(a As T3, b As Integer)
+  overload: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method1*
+  nameWithType.vb: MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method1(T3, Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method1(T3, System.Int32)
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2(`2,`3)
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2(`2,`3)
+  id: Method2(`2,`3)
+  parent: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4
+  langs:
+  - csharp
+  - vb
+  name: Method2(T2, T3)
+  nameWithType: MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method2(T2, T3)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method2(T2, T3)
+  type: Method
+  source:
+    id: Method2
+    path: ''
+    startLine: 44
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  syntax:
+    content: public void Method2(T2 a, T3 b)
+    parameters:
+    - id: a
+      type: '{T2}'
+    - id: b
+      type: '{T3}'
+    content.vb: Public Sub Method2(a As T2, b As T3)
+  overload: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2*
+  nameWithType.vb: MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method2(T2, T3)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method2(T2, T3)
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2(`3,`2)
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2(`3,`2)
+  id: Method2(`3,`2)
+  parent: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4
+  langs:
+  - csharp
+  - vb
+  name: Method2(T3, T2)
+  nameWithType: MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method2(T3, T2)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method2(T3, T2)
+  type: Method
+  source:
+    id: Method2
+    path: ''
+    startLine: 50
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  syntax:
+    content: public void Method2(T3 a, T2 b)
+    parameters:
+    - id: a
+      type: '{T3}'
+    - id: b
+      type: '{T2}'
+    content.vb: Public Sub Method2(a As T3, b As T2)
+  overload: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2*
+  nameWithType.vb: MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method2(T3, T2)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method2(T3, T2)
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2``2(``0,``1)
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2``2(``0,``1)
+  id: Method2``2(``0,``1)
+  parent: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4
+  langs:
+  - csharp
+  - vb
+  name: Method2<M0, M1>(M0, M1)
+  nameWithType: MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method2<M0, M1>(M0, M1)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method2<M0, M1>(M0, M1)
+  type: Method
+  source:
+    id: Method2
+    path: ''
+    startLine: 56
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  syntax:
+    content: public void Method2<M0, M1>(M0 a, M1 b)
+    parameters:
+    - id: a
+      type: '{M0}'
+    - id: b
+      type: '{M1}'
+    typeParameters:
+    - id: M0
+    - id: M1
+    content.vb: Public Sub Method2(Of M0, M1)(a As M0, b As M1)
+  overload: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2*
+  nameWithType.vb: MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method2(Of M0, M1)(M0, M1)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method2(Of M0, M1)(M0, M1)
+  name.vb: Method2(Of M0, M1)(M0, M1)
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2``2(``1,``0)
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2``2(``1,``0)
+  id: Method2``2(``1,``0)
+  parent: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4
+  langs:
+  - csharp
+  - vb
+  name: Method2<M0, M1>(M1, M0)
+  nameWithType: MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method2<M0, M1>(M1, M0)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method2<M0, M1>(M1, M0)
+  type: Method
+  source:
+    id: Method2
+    path: ''
+    startLine: 62
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  syntax:
+    content: public void Method2<M0, M1>(M1 a, M0 b)
+    parameters:
+    - id: a
+      type: '{M1}'
+    - id: b
+      type: '{M0}'
+    typeParameters:
+    - id: M0
+    - id: M1
+    content.vb: Public Sub Method2(Of M0, M1)(a As M1, b As M0)
+  overload: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2*
+  nameWithType.vb: MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method2(Of M0, M1)(M1, M0)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method2(Of M0, M1)(M1, M0)
+  name.vb: Method2(Of M0, M1)(M1, M0)
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2
+  id: Method2
+  parent: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4
+  langs:
+  - csharp
+  - vb
+  name: Method2()
+  nameWithType: MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method2()
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method2()
+  type: Method
+  source:
+    id: Method2
+    path: ''
+    startLine: 68
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  syntax:
+    content: public void Method2()
+    content.vb: Public Sub Method2
+  overload: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2*
+  nameWithType.vb: MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method2()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method2()
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.ConfirmAllMembersCalled(System.Type)
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.ConfirmAllMembersCalled(System.Type)
+  id: ConfirmAllMembersCalled(System.Type)
+  parent: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4
+  langs:
+  - csharp
+  - vb
+  name: ConfirmAllMembersCalled(Type)
+  nameWithType: MemberMethodProbeTests.Generic<T0, T1, T2, T3>.ConfirmAllMembersCalled(Type)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic<T0, T1, T2, T3>.ConfirmAllMembersCalled(System.Type)
+  type: Method
+  source:
+    id: ConfirmAllMembersCalled
+    path: ''
+    startLine: 74
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  syntax:
+    content: public void ConfirmAllMembersCalled(Type instantiatedType)
+    parameters:
+    - id: instantiatedType
+      type: System.Type
+    content.vb: Public Sub ConfirmAllMembersCalled(instantiatedType As Type)
+  overload: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.ConfirmAllMembersCalled*
+  nameWithType.vb: MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).ConfirmAllMembersCalled(Type)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).ConfirmAllMembersCalled(System.Type)
+references:
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  commentId: N:pbuddy.TestsAsDocumentationUtility.EditModeTests
+  name: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  nameWithType: pbuddy.TestsAsDocumentationUtility.EditModeTests
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method0*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method0
+  name: Method0
+  nameWithType: MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method0
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method0
+  nameWithType.vb: MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method0
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method0
+- uid: '{T0}'
+  commentId: '!:T0'
+  definition: T0
+  name: T0
+  nameWithType: T0
+  fullName: T0
+- uid: '{M0}'
+  commentId: '!:M0'
+  definition: M0
+  name: M0
+  nameWithType: M0
+  fullName: M0
+- uid: '{T1}'
+  commentId: '!:T1'
+  definition: T1
+  name: T1
+  nameWithType: T1
+  fullName: T1
+- uid: T0
+  commentId: '!:T0'
+  name: T0
+  nameWithType: T0
+  fullName: T0
+- uid: M0
+  name: M0
+  nameWithType: M0
+  fullName: M0
+- uid: T1
+  commentId: '!:T1'
+  name: T1
+  nameWithType: T1
+  fullName: T1
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method1*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method1
+  name: Method1
+  nameWithType: MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method1
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method1
+  nameWithType.vb: MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method1
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method1
+- uid: '{T3}'
+  commentId: '!:T3'
+  definition: T3
+  name: T3
+  nameWithType: T3
+  fullName: T3
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: T3
+  name: T3
+  nameWithType: T3
+  fullName: T3
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.Method2
+  name: Method2
+  nameWithType: MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method2
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic<T0, T1, T2, T3>.Method2
+  nameWithType.vb: MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method2
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).Method2
+- uid: '{T2}'
+  commentId: '!:T2'
+  definition: T2
+  name: T2
+  nameWithType: T2
+  fullName: T2
+- uid: T2
+  name: T2
+  nameWithType: T2
+  fullName: T2
+- uid: '{M1}'
+  commentId: '!:M1'
+  definition: M1
+  name: M1
+  nameWithType: M1
+  fullName: M1
+- uid: M1
+  name: M1
+  nameWithType: M1
+  fullName: M1
+- uid: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.ConfirmAllMembersCalled*
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic`4.ConfirmAllMembersCalled
+  name: ConfirmAllMembersCalled
+  nameWithType: MemberMethodProbeTests.Generic<T0, T1, T2, T3>.ConfirmAllMembersCalled
+  fullName: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic<T0, T1, T2, T3>.ConfirmAllMembersCalled
+  nameWithType.vb: MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).ConfirmAllMembersCalled
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic(Of T0, T1, T2, T3).ConfirmAllMembersCalled
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type

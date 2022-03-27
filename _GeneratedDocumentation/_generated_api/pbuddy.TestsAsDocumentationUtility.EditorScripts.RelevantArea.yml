@@ -1,0 +1,102 @@
+### YamlMime:ManagedReference
+items:
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea
+  id: RelevantArea
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  children:
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea.BodyOnly
+  - pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea.DeclarationAndBody
+  langs:
+  - csharp
+  - vb
+  name: RelevantArea
+  nameWithType: RelevantArea
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea
+  type: Enum
+  source:
+    id: RelevantArea
+    path: ''
+    startLine: 1021
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public enum RelevantArea
+    content.vb: Public Enum RelevantArea
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea.BodyOnly
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea.BodyOnly
+  id: BodyOnly
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea
+  langs:
+  - csharp
+  - vb
+  name: BodyOnly
+  nameWithType: RelevantArea.BodyOnly
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea.BodyOnly
+  type: Field
+  source:
+    id: BodyOnly
+    path: ''
+    startLine: 1023
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: BodyOnly = 0
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea.DeclarationAndBody
+  commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea.DeclarationAndBody
+  id: DeclarationAndBody
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea
+  langs:
+  - csharp
+  - vb
+  name: DeclarationAndBody
+  nameWithType: RelevantArea.DeclarationAndBody
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea.DeclarationAndBody
+  type: Field
+  source:
+    id: DeclarationAndBody
+    path: ''
+    startLine: 1024
+  assemblies:
+  - cs.temp.dll
+  namespace: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  syntax:
+    content: DeclarationAndBody = 1
+    return:
+      type: pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  commentId: N:pbuddy.TestsAsDocumentationUtility.EditorScripts
+  name: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  nameWithType: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea
+  parent: pbuddy.TestsAsDocumentationUtility.EditorScripts
+  name: RelevantArea
+  nameWithType: RelevantArea
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea
