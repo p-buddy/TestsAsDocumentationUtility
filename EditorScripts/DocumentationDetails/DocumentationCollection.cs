@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
 using UnityEditor.SceneManagement;
 using UnityEngine.Assertions;
@@ -30,26 +31,29 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             groupingMap[doc.Group] = new DocumentationGroup(doc);
         }
 
-        public DocumentationGroup[] GetGroups()
+        public string GetXML()
         {
-            List<DocumentationGroup> documentation = new List<DocumentationGroup>();
-            foreach (Grouping groupName in GroupNames)
+            List<DocumentationGroup> groups = groupingMap.Values.ToList();
+            groups.Sort(DocumentationGroup.Comparer);
+            string[] xmlPerGroup = new string[groups.Count];
+            
+            int callCount = 0;
+            string ToTitle(string text)
             {
-                if (groupingMap.TryGetValue(groupName, out DocumentationGroup group))
+                string title = $"Example {callCount + 1}: {text}";
+                callCount++;
+                return title;
+            }
+            
+            for (int i = 0; i < groups.Count; i++)
+            {
+                if (groups[i].Group == Grouping.None)
                 {
-                    if (groupName == Grouping.Default)
-                    {
-                        // Split out default documents into their own separate groups
-                        group.GetDocuments().ForEach(doc => documentation.Add(new DocumentationGroup(doc)));
-                    }
-                    else
-                    {
-                        documentation.Add(group);
-                    }
+                    xmlPerGroup[i] = groups[i].GenerateXML(ToTitle);
                 }
             }
 
-            return documentation.ToArray();
+            return String.Join(Environment.NewLine, xmlPerGroup);
         }
     }
 }

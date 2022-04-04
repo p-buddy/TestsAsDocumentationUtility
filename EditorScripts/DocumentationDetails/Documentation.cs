@@ -7,22 +7,19 @@ using System.Text;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
-    public readonly struct Documentation
+    public readonly struct Documentation: IComparer<Documentation>
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public Grouping Group { get; }
+        public static IComparer<Documentation> Comparer => new Documentation();
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public IndexInGroup IndexInGroup { get; }
+        public GroupInfo GroupInfo { get; }
+
+        public Grouping Group => GroupInfo.Group;
         
         /// <summary>
-        ///
+        /// 
         /// </summary>
-        public MemberInfo MemberBeingDocumnted { get; }
+        public MemberInfo MemberBeingDocumented => GroupInfo.MemberBeingDocumented;
+
 
         /// <summary>
         /// 
@@ -48,7 +45,21 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         /// 
         /// </summary>
         public LineNumberRange DocumentationLineNumberRange { get; }
-
+    
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="documentationSubject"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="containingFile"></param>
+        /// <param name="attributeLineNumberRange"></param>
+        /// <param name="relevantArea"></param>
+        /// <param name="memberDoingTheDocumenting"></param>
+        /// <param name="group"></param>
+        /// <param name="indexInGroup"></param>
+        /// <param name="groupTitle"></param>
+        /// <param name="groupDescription"></param>
         public Documentation(MemberInfo documentationSubject,
                              string title,
                              string description,
@@ -57,53 +68,56 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                              RelevantArea relevantArea,
                              MemberInfo memberDoingTheDocumenting,
                              Grouping group,
-                             IndexInGroup indexInGroup)
+                             IndexInGroup indexInGroup,
+                             string groupTitle,
+                             string groupDescription)
         {
-            MemberBeingDocumnted = documentationSubject;
             Title = title;
             Description = description;
             ContainingFile = containingFile;
-            Group = group;
-            IndexInGroup = indexInGroup;
             MemberDoingTheDocumenting = memberDoingTheDocumenting;
+            GroupInfo = new GroupInfo(group, indexInGroup, groupTitle, groupDescription, documentationSubject);
             DocumentationLineNumberRange = FileParser.GetLineNumberRangeForMember(memberDoingTheDocumenting,
                 containingFile,
                 relevantArea,
                 attributeLineNumberRange.End);
         }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public int Compare(Documentation x, Documentation y)
+        {
+            return ((int)x.GroupInfo.IndexInGroup).CompareTo((int)y.GroupInfo.IndexInGroup);
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public string GetContents()
         {
             string[] lines = File.ReadAllLines(ContainingFile);
+            string whitespace = default;
             int index = DocumentationLineNumberRange.Start - 1;
             int length = DocumentationLineNumberRange.End - index;
-            return String.Join(Environment.NewLine, new ArraySegment<string>(lines, index, length));
-        }
-
-        public string GenerateMarkdown()
-        {
-            static string ToTitle(string text) => $"# {text}{Environment.NewLine}";
-            static string ToDescription(string text) => $"{text}{Environment.NewLine}";
-            static string ToCode(string text) => $"```csharp{Environment.NewLine}{text}{Environment.NewLine}```{Environment.NewLine}";
             
-            static string ToMarkdown(string text, Func<string, string> converter)
+            foreach (string line in new ArraySegment<string>(lines, index, length))
             {
-                if (String.IsNullOrEmpty(text))
+                if (String.IsNullOrWhiteSpace(line))
                 {
-                    return "";
+                    continue;
                 }
-
-                return converter.Invoke(text);
+                
+                whitespace = line.GetLeadingWhitespace();
+                break;
             }
 
-            var builder = new StringBuilder();
-            builder.Append(ToMarkdown(Title, ToTitle));
-            builder.Append(ToMarkdown(Description, ToDescription));
-            builder.Append(ToMarkdown(GetContents(), ToCode));
-            
-            return builder.ToString();
+            IEnumerable<string> trimmed = lines.ToList().Select(line => line.RemoveSubString(whitespace));
+            return String.Join(Environment.NewLine, trimmed);
         }
-        
-        
     }
 }

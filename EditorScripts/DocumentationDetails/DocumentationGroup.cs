@@ -1,19 +1,15 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
-    public readonly struct DocumentationGroup
+    public readonly struct DocumentationGroup : IComparer<DocumentationGroup>
     {
-        private struct DocumentComparer : IComparer<Documentation>
-        {
-            public int Compare(Documentation x, Documentation y)
-            {
-                return ((int)x.IndexInGroup).CompareTo((int)y.IndexInGroup);
-            }
-        }
-        
+        public static IComparer<DocumentationGroup> Comparer => new DocumentationGroup();
         public Grouping Group { get; }
+        public int Count => documents.Count;
         private readonly List<Documentation> documents;
 
         private DocumentationGroup(Grouping group)
@@ -22,22 +18,29 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             documents = new List<Documentation>();
         }
         
-        public DocumentationGroup(Documentation documentation) : this(documentation.Group)
+        public DocumentationGroup(Documentation documentation) : this(documentation.GroupInfo.Group)
         {
             documents.Add(documentation);
         }
 
         public void AddToGroup(Documentation documentation)
         {
-            Assert.IsTrue(documentation.Group == Group);
+            Assert.IsTrue(documentation.GroupInfo.Group == Group);
             documents.Add(documentation);
         }
 
         public List<Documentation> GetDocuments()
         {
-            var comparer = new DocumentComparer();
-            documents.Sort(comparer);
+            if (Group != Grouping.None)
+            {
+                documents.Sort(Documentation.Comparer);
+            }
             return documents;
+        }
+
+        public int Compare(DocumentationGroup x, DocumentationGroup y)
+        {
+            return x.Group.CompareTo(y.Group);
         }
     }
 }

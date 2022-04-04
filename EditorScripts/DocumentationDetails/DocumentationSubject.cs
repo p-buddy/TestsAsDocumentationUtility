@@ -15,12 +15,12 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         /// <summary>
         /// 
         /// </summary>
-        public DemonstratedByAttribute[] DemonstratedByAttributes { get; }
+        public IsDemonstratedByTestsAttribute Attribute { get; }
         
         /// <summary>
         /// 
         /// </summary>
-        public LineNumberRange[] DemonstratedByAttributeRanges { get; }
+        public LineNumberRange AttributeRange { get; }
         
         /// <summary>
         /// 
@@ -32,19 +32,12 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         /// </summary>
         public string FileLocation { get; }
 
-        public DocumentationSubject(MemberInfo memberBeingDocumented,
-                                    DemonstratedByAttribute[] demonstratedByAttributes,
-                                    string fileLocation)
+        public DocumentationSubject(MemberInfo memberBeingDocumented, IsDemonstratedByTestsAttribute attribute)
         {
             MemberBeingDocumented = memberBeingDocumented;
-            DemonstratedByAttributes = demonstratedByAttributes;
-            DemonstratedByAttributeRanges = demonstratedByAttributes
-                              .Select(attr => FileParser.GetRangeBetweenCharacters(attr.FileLocation,
-                                          attr.StartingLineNumber,
-                                          CharacterPair.SquareBrackets,
-                                          true))
-                              .ToArray();
-            FileLocation = fileLocation;
+            Attribute = attribute;
+            FileLocation = attribute.FileLocation;
+            AttributeRange = FileParser.GetLineNumberRangeForAttribute(attribute.StartingLineNumber, FileLocation);
         }
         
         /// <summary>
@@ -76,29 +69,19 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         /// <param name="thingsBeingDocumented"></param>
         /// <param name="errorMsg"></param>
         /// <returns></returns>
-        public static bool TryCreate(MemberInfo memberBeingDocumented, out DocumentationSubject[] thingsBeingDocumented, out string errorMsg)
+        public static bool TryCreate(MemberInfo memberBeingDocumented, out DocumentationSubject thingsBeingDocumented, out string errorMsg)
         {
-            DemonstratedByAttribute[] targetAttributes = memberBeingDocumented.GetCustomAttributes<DemonstratedByAttribute>().ToArray();
-            if (targetAttributes.Length == 9)
+            var targetAttribute = memberBeingDocumented.GetCustomAttribute<IsDemonstratedByTestsAttribute>();
+            if (targetAttribute == null)
             {
                 errorMsg = $"{ErrorContext} The desired documentation target '{memberBeingDocumented.GetReadableName()}' " + 
-                           $"has not been marked with the proper '{nameof(DemonstratedByAttribute)}' attribute. " +
-                           $"Please add the attribute to enable it to be documented using the {nameof(TestsAsDocumentationUtility)} strategy.";
+                           $"has not been marked with the proper '{nameof(IsDemonstratedByTestsAttribute)}' attribute. " +
+                           $"Please manually add the attribute to enable it to be documented using the {nameof(TestsAsDocumentationUtility)} strategy.";
                 thingsBeingDocumented = default;
                 return false;
             }
 
-            string[] fileNames = targetAttributes.Select(attr => attr.FileLocation).Distinct().ToArray();
-            thingsBeingDocumented = new DocumentationSubject[fileNames.Length];
-            for (var index = 0; index < fileNames.Length; index++)
-            {
-                DemonstratedByAttribute[] matchingAttributes = targetAttributes
-                                                               .Where(attr => attr.FileLocation == fileNames[index])
-                                                               .ToArray();
-                thingsBeingDocumented[index] = new DocumentationSubject(memberBeingDocumented,
-                                                                        matchingAttributes,
-                                                                        fileNames[index]);
-            }
+            thingsBeingDocumented = new DocumentationSubject(memberBeingDocumented, targetAttribute);
 
             errorMsg = default;
             return true;

@@ -4,7 +4,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
     public static class StringHelper
     {
-        public static string GetLeadingWhitespace(string str)
+        public static string GetLeadingWhitespace(this string str)
         {
             return str.Replace(str.TrimStart(), "");
         }

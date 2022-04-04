@@ -7,7 +7,6 @@ using System.Runtime.CompilerServices;
 using NUnit.Framework;
 using Newtonsoft.Json;
 using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
-using UnityEngine;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
@@ -27,9 +26,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                                             BindingFlags.DeclaredOnly |
                                                             BindingFlags.Instance;
         
-        public static void CreateDocumentation(bool enforceJsonHasBeenConfigured = true,
-                                                       ArgumentGuard guard = ArgumentGuard.GeneratedArgumentsGuard,
-                                                       [CallerFilePath] string filePassedByCompiler = "")
+        public static void CreateDocumentation(bool enforceJsonHasBeenConfigured = true, [CallerFilePath] string filePassedByCompiler = "")
         {
 
             /*
@@ -48,24 +45,21 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             var documentationBySubject = new Dictionary<MemberInfo, DocumentationCollection>();
             documents.ForEach(doc =>
             {
-                if (documentationBySubject.TryGetValue(doc.MemberBeingDocumnted, out DocumentationCollection collection))
+                if (documentationBySubject.TryGetValue(doc.MemberBeingDocumented, out DocumentationCollection collection))
                 {
                     collection.Add(doc);
                 }
                 else
                 {
-                    documentationBySubject[doc.MemberBeingDocumnted] = new DocumentationCollection(in doc);
+                    documentationBySubject[doc.MemberBeingDocumented] = new DocumentationCollection(in doc);
                 }
-                Debug.Log("hi");
-                Debug.Log(doc.GenerateMarkdown());
             });
-            
             
             return;
 
-            Assembly runtimeAssembly = typeof(DemonstratedByAttribute).Assembly;
+            Assembly runtimeAssembly = typeof(IsDemonstratedByTestsAttribute).Assembly;
             Assembly[] runtimeDependentAssemblies = runtimeAssembly.GetDependentAssemblies();
-            var demonstratedByAttributes = runtimeDependentAssemblies.GetAllAttributes<DemonstratedByAttribute>();
+            var demonstratedByAttributes = runtimeDependentAssemblies.GetAllAttributes<IsDemonstratedByTestsAttribute>();
         }
 
         private static void PrepDocumentationDirectory(string documentationDirectory)

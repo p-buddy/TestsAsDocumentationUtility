@@ -5,6 +5,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
     /// </summary>
     public enum Grouping
     {
+        None,
         Group0,
         Group1, 
         Group2, 
@@ -26,6 +27,5 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         Group18,
         Group19,
         Group20,
-        Default,
     }
 }
