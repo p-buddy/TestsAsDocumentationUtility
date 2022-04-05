@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using pbuddy.TestsAsDocumentationUtility.EditorScripts;
 
-namespace pbuddy.TestsAsDocumentationUtility.Genertator
+namespace pbuddy.TestsAsDocumentationUtility.Generator
 {
     public class Generator
     {

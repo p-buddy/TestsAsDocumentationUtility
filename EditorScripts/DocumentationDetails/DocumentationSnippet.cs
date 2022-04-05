@@ -56,7 +56,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         /// 
         /// </summary>
         public LineNumberRange DocumentationLineNumberRange { get; }
-    
+        
         /// <summary>
         /// 
         /// </summary>

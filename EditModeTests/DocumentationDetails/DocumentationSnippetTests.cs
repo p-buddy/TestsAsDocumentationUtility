@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+
 using NUnit.Framework;
-using pbuddy.TestsAsDocumentationUtility.EditorScripts;
 using UnityEngine;
+
+using pbuddy.TestsAsDocumentationUtility.EditorScripts;
+using pbuddy.TestsAsDocumentationUtility.Generator;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
 {
-    public class DocumentationSnippetTests
+    public class DocumentationSnippetTests : TestAsDocumentationBase
     {
         [Demonstrates(typeof(DemonstratesAttribute), RelevantArea.DeclarationAndBodyAndBelowAttributes, "The method under test", "", Grouping.Group0, IndexInGroup.Index1)]
+        [HighlightNext]
         [Demonstrates(typeof(DocumentationSnippetTests),
                       nameof(TestFunction),
                       RelevantArea.DeclarationAndBody,
@@ -38,11 +42,10 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
             
             MethodInfo testMethod = GetType().GetMethod(nameof(TestFunction));
             Assert.IsNotNull(testMethod);
-            
             DemonstratesAttribute demonstrates = testMethod.GetCustomAttributes<DemonstratesAttribute>()
                                                            .FirstOrDefault(demo => demo.MemberBeingDemonstrated == testMethod);
             Assert.IsNotNull(demonstrates);
-            
+            HighlightNext();
             DocumentationSnippet snippet = demonstrates.GetSnippet(testMethod);
             
             Assert.AreEqual("This is where the title goes", snippet.Title);

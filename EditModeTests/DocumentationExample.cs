@@ -51,10 +51,10 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         public int SomeProperty { get; set; }
         
         /// <summary>
-        /// Hello  <a href="file:///Docs.xml">Demonstrations</a>
-
+        /// Hello  
         /// </summary>
-        /// <include file='./Docs.xml' path='MyDocs/MyMembers[@name="test2"]/*' label="" />
+        /// <include file='./Docs.xml' path='MyDocs/MyMembers[@name="test2"]/*' />
+        /// 
         [IsDemonstratedByTests()]
         public void SomeMethod()
         {

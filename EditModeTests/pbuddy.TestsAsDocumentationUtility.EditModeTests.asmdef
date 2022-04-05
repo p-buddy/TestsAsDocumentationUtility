@@ -2,10 +2,11 @@
     "name": "pbuddy.TestsAsDocumentationUtility.EditModeTests",
     "rootNamespace": "",
     "references": [
-        "GUID:0acc523941302664db1f4e527237feb3",
-        "GUID:27619889b8ba8c24980f49ee34dbb44a",
-        "GUID:ea894c4f7e1204226a70aba1efc6443e",
-        "GUID:24cefa8409c614b598fa09650116eff6"
+        "UnityEditor.TestRunner",
+        "UnityEngine.TestRunner",
+        "pbuddy.TestsAsDocumentationUtility.EditorScripts",
+        "pbuddy.TestsAsDocumentation.RuntimeScripts",
+        "pbuddy.TestsAsDocumentationUtility.Generator"
     ],
     "includePlatforms": [
         "Editor"

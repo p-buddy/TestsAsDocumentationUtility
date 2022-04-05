@@ -58,5 +58,14 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             string description = withDescription.Count == 1 ? withDescription[0].GroupInfo.GroupDescription : null;
             return (title, description);
         }
+
+        public static void ExtractHighlightRanges(string codeSnippet,
+                                                  out string editedSnippet,
+                                                  out LineNumberRange[] highlightRanges)
+        {
+            string highlightCall = $"{nameof(IHighlighter.HighlightNext)}()";
+            editedSnippet = codeSnippet;
+            highlightRanges = default;
+        }
     }
 }

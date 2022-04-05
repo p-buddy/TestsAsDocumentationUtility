@@ -31,7 +31,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         private readonly string description;
         private readonly string groupTitle;
         private readonly string groupDescription;
-        private readonly LineNumberRange attributeLineNumberRange; 
+        private readonly LineNumberRange attributeLineNumberRange;
         private readonly Grouping grouping;
         private readonly IndexInGroup indexInGroup;
         private readonly RelevantArea relevantArea;
