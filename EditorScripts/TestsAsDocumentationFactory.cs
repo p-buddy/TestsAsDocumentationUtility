@@ -40,7 +40,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             Assembly editorAssembly = typeof(DemonstratesAttribute).Assembly;
             Assembly[] editorDependentAssemblies = editorAssembly.GetDependentAssemblies();
             List<MemberInfo> demonstratingMembers = editorDependentAssemblies.GetAllMembersWith<DemonstratesAttribute>();
-            List<Documentation> documents = demonstratingMembers.CreateDocuments();
+            List<DocumentationSnippet> documents = demonstratingMembers.CreateDocuments();
 
             var documentationBySubject = new Dictionary<MemberInfo, DocumentationCollection>();
             documents.ForEach(doc =>
@@ -161,14 +161,14 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             return attributes;
         }
 
-        private static List<Documentation> CreateDocuments(this List<MemberInfo> memberInfos)
+        private static List<DocumentationSnippet> CreateDocuments(this List<MemberInfo> memberInfos)
         {
-            var documents = new List<Documentation>(memberInfos.Count);
+            var documents = new List<DocumentationSnippet>(memberInfos.Count);
             foreach (MemberInfo member in memberInfos)
             {
                 foreach (DemonstratesAttribute demonstrates in member.GetCustomAttributes<DemonstratesAttribute>())
                 { 
-                    documents.Add(demonstrates.GetDocument(member));
+                    documents.Add(demonstrates.GetSnippet(member));
                 }
             }
 

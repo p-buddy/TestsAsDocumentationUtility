@@ -12,10 +12,12 @@ using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
     [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+    [IsDemonstratedByTests]
     public class DemonstratesAttribute : Attribute, ILineNumberRangeProvider
     {
         private const string FilledInByCompiler = "[Filled in by Compiler]";
         private const int InvalidLineNumber = -1;
+        public MemberInfo MemberBeingDemonstrated => memberBeingDemonstrated;
         public LineNumberRange LineNumberRange => attributeLineNumberRange;
         
         private const string ErrorContext = "[" + nameof(DemonstratesAttribute) + " ERROR]: ";
@@ -33,11 +35,9 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         private readonly Grouping grouping;
         private readonly IndexInGroup indexInGroup;
         private readonly RelevantArea relevantArea;
-        private readonly Type typeOfThingBeingDemonstrated;
-        private readonly MemberInfo memberInfoOfThingBeingDemonstrated;
+        private readonly MemberInfo memberBeingDemonstrated;
 
-        private DemonstratesAttribute(Type typeOfThingBeingDemonstrated,
-                                      Grouping grouping,
+        private DemonstratesAttribute(Grouping grouping,
                                       IndexInGroup indexInGroup,
                                       string filePath,
                                       int lineNumber,
@@ -47,7 +47,6 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                       string groupDescription,
                                       RelevantArea relevantArea)
         {
-            this.typeOfThingBeingDemonstrated = typeOfThingBeingDemonstrated;
             this.filePath = filePath;
             this.grouping = grouping;
             this.indexInGroup = indexInGroup;
@@ -84,8 +83,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                      string groupDescription = null,
                                      [CallerFilePath] string file = FilledInByCompiler, 
                                      [CallerLineNumber] int line = InvalidLineNumber) 
-            : this(typeOfThingBeingDemonstrated,
-                   grouping,
+            : this(grouping,
                    indexInGroup,
                    file,
                    line,
@@ -95,7 +93,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                    groupDescription,
                    relevantArea)
         {
-            memberInfoOfThingBeingDemonstrated = typeOfThingBeingDemonstrated;
+            memberBeingDemonstrated = typeOfThingBeingDemonstrated;
         }
         
         /// <summary>
@@ -123,8 +121,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                      string groupDescription = null,
                                      [CallerFilePath] string file = FilledInByCompiler, 
                                      [CallerLineNumber] int line = InvalidLineNumber) 
-            : this(typeOfThingBeingDemonstrated, 
-                   grouping, 
+            : this(grouping, 
                    indexInGroup, 
                    file, 
                    line, 
@@ -136,7 +133,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         {
             Assert.IsTrue(TryGetNonOverloadedMember(typeOfThingBeingDemonstrated,
                                                     memberName,
-                                                    out memberInfoOfThingBeingDemonstrated,
+                                                    out memberBeingDemonstrated,
                                                     out string errorMsg),
                           $"{ErrorContext}: {errorMsg}");
         }
@@ -169,8 +166,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                      string groupDescription = null,
                                      [CallerFilePath] string file = FilledInByCompiler, 
                                      [CallerLineNumber] int line = InvalidLineNumber) 
-            : this(typeOfThingBeingDemonstrated, 
-                   grouping, 
+            : this(grouping, 
                    indexInGroup, 
                    file, 
                    line, 
@@ -183,15 +179,15 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             Assert.IsTrue(TryGetOverloadedMember(typeOfThingBeingDemonstrated,
                                                  memberName,
                                                  argumentTypes,
-                                                 out memberInfoOfThingBeingDemonstrated,
+                                                 out memberBeingDemonstrated,
                                                  out string errorMsg),
                           $"{ErrorContext}: {errorMsg}");
         }
         #endregion Public Constructors
 
-        public Documentation GetDocument(MemberInfo memberDoingTheDocumenting)
+        public DocumentationSnippet GetSnippet(MemberInfo memberDoingTheDocumenting)
         {
-            return new Documentation(memberInfoOfThingBeingDemonstrated,
+            return new DocumentationSnippet(memberBeingDemonstrated,
                                      title,
                                      description,
                                      filePath,
@@ -206,7 +202,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 
         public bool TryGetDocumentationSubject(out DocumentationSubject thingsBeingDocumented)
         {
-            if (DocumentationSubject.TryCreate(memberInfoOfThingBeingDemonstrated, out thingsBeingDocumented, out string error))
+            if (DocumentationSubject.TryCreate(memberBeingDemonstrated, out thingsBeingDocumented, out string error))
             {
                 return true;
             }

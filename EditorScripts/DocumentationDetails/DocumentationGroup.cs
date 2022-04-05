@@ -9,31 +9,30 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
     {
         public static IComparer<DocumentationGroup> Comparer => new DocumentationGroup();
         public Grouping Group { get; }
-        public int Count => documents.Count;
-        private readonly List<Documentation> documents;
+        private readonly List<DocumentationSnippet> documents;
 
         private DocumentationGroup(Grouping group)
         {
             Group = group;
-            documents = new List<Documentation>();
+            documents = new List<DocumentationSnippet>();
         }
         
-        public DocumentationGroup(Documentation documentation) : this(documentation.GroupInfo.Group)
+        public DocumentationGroup(DocumentationSnippet documentationSnippet) : this(documentationSnippet.GroupInfo.Group)
         {
-            documents.Add(documentation);
+            documents.Add(documentationSnippet);
         }
 
-        public void AddToGroup(Documentation documentation)
+        public void AddToGroup(DocumentationSnippet documentationSnippet)
         {
-            Assert.IsTrue(documentation.GroupInfo.Group == Group);
-            documents.Add(documentation);
+            Assert.IsTrue(documentationSnippet.GroupInfo.Group == Group);
+            documents.Add(documentationSnippet);
         }
 
-        public List<Documentation> GetDocuments()
+        public List<DocumentationSnippet> GetSnippets()
         {
             if (Group != Grouping.None)
             {
-                documents.Sort(Documentation.Comparer);
+                documents.Sort(DocumentationSnippet.Comparer);
             }
             return documents;
         }

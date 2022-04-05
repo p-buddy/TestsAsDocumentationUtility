@@ -3,16 +3,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
-    public readonly struct Documentation: IComparer<Documentation>
+    /// <summary>
+    /// 
+    /// </summary>
+    public readonly struct DocumentationSnippet: IComparer<DocumentationSnippet>
     {
-        public static IComparer<Documentation> Comparer => new Documentation();
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IComparer<DocumentationSnippet> Comparer => new DocumentationSnippet();
 
+        /// <summary>
+        /// 
+        /// </summary>
         public GroupInfo GroupInfo { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public Grouping Group => GroupInfo.Group;
         
         /// <summary>
@@ -60,17 +71,17 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         /// <param name="indexInGroup"></param>
         /// <param name="groupTitle"></param>
         /// <param name="groupDescription"></param>
-        public Documentation(MemberInfo documentationSubject,
-                             string title,
-                             string description,
-                             string containingFile,
-                             LineNumberRange attributeLineNumberRange,
-                             RelevantArea relevantArea,
-                             MemberInfo memberDoingTheDocumenting,
-                             Grouping group,
-                             IndexInGroup indexInGroup,
-                             string groupTitle,
-                             string groupDescription)
+        public DocumentationSnippet(MemberInfo documentationSubject, 
+                                    string title,
+                                    string description, 
+                                    string containingFile,
+                                    LineNumberRange attributeLineNumberRange,
+                                    RelevantArea relevantArea,
+                                    MemberInfo memberDoingTheDocumenting,
+                                    Grouping group,
+                                    IndexInGroup indexInGroup,
+                                    string groupTitle,
+                                    string groupDescription)
         {
             Title = title;
             Description = description;
@@ -89,7 +100,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <returns></returns>
-        public int Compare(Documentation x, Documentation y)
+        public int Compare(DocumentationSnippet x, DocumentationSnippet y)
         {
             return ((int)x.GroupInfo.IndexInGroup).CompareTo((int)y.GroupInfo.IndexInGroup);
         }
@@ -101,23 +112,27 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         public string GetContents()
         {
             string[] lines = File.ReadAllLines(ContainingFile);
-            string whitespace = default;
             int index = DocumentationLineNumberRange.Start - 1;
             int length = DocumentationLineNumberRange.End - index;
-            
-            foreach (string line in new ArraySegment<string>(lines, index, length))
+            var section = new ArraySegment<string>(lines, index, length);
+            string whitespace = GetLeadingWhiteSpace(section);
+            IEnumerable<string> trimmed = section.Select(line => line.RemoveSubString(whitespace));
+            return String.Join(Environment.NewLine, trimmed);
+        }
+
+        private string GetLeadingWhiteSpace(IEnumerable<string> lines)
+        {
+            foreach (string line in lines)
             {
                 if (String.IsNullOrWhiteSpace(line))
                 {
                     continue;
                 }
                 
-                whitespace = line.GetLeadingWhitespace();
-                break;
+                return line.GetLeadingWhitespace();
             }
 
-            IEnumerable<string> trimmed = lines.ToList().Select(line => line.RemoveSubString(whitespace));
-            return String.Join(Environment.NewLine, trimmed);
+            throw new Exception("Could not retrieve leading whitespace!");
         }
     }
 }

@@ -54,7 +54,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         /// Hello  <a href="file:///Docs.xml">Demonstrations</a>
 
         /// </summary>
-        /// <include file='./Docs.xml' path='MyDocs/MyMembers[@name="test2"]/*' />
+        /// <include file='./Docs.xml' path='MyDocs/MyMembers[@name="test2"]/*' label="" />
         [IsDemonstratedByTests()]
         public void SomeMethod()
         {

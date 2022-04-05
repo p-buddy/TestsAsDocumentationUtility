@@ -1,0 +1,83 @@
+<MyDocs>
+    <MyMembers name="test">
+        <example>
+            The summary for this type.
+        </example>
+    </MyMembers>
+    <MyMembers name="test2">
+        <summary>
+            Adds two integers <paramref name="a"/> and <paramref name="b"/>
+            and returns the result.
+        </summary>
+        <example identifier="TestAsDocumentation">
+            <para identifier="GroupTitle">
+                <b>
+                    Example 1: Using the DemonstratesAttribute to construct a DocumentationSnippet
+                </b>
+            </para>
+            <para identifier="GroupDescription">
+                An test ...
+            </para>
+            <para identifier="SnippetTitle">
+                <i>
+                    GetLineNumberAndFile Helper Function
+                </i>
+            </para>
+            <para identifier="SnippetDescription">
+                Function that is called to retrieve the line number of the call site and the name of the enclosing file
+            </para>
+            <code lang="C#" identifier="CodeSnippet">
+            public (int line, string file) GetLineNumberAndFile([CallerFilePath] string file = null, [CallerLineNumber] int line = -1)
+            {
+                return (line, file);
+            }
+            </code>
+            <para identifier="SnippetTitle">
+                <i>
+                    The method under test
+                </i>
+            </para>
+            <code lang="C#" identifier="CodeSnippet">
+                public (int, string) TestFunction()
+                {
+                    return GetLineNumberAndFile();
+                }
+            </code>
+            <para identifier="SnippetTitle">
+                <i>
+                    The test
+                </i>
+            </para>
+            <code lang="C#" identifier="CodeSnippet">
+                <![CDATA[
+                (int line, string file) returnValue = TestFunction();
+                LineNumberRange range = new LineNumberRange(returnValue.line - 2, returnValue.line + 1);
+
+                MethodInfo testMethod = GetType().GetMethod(nameof(TestFunction));
+                Assert.IsNotNull(testMethod);
+
+                DemonstratesAttribute demonstrates = testMethod.GetCustomAttributes<DemonstratesAttribute>()
+                .FirstOrDefault(demo => demo.MemberBeingDemonstrated == testMethod);
+                Assert.IsNotNull(demonstrates);
+
+                DocumentationSnippet snippet = demonstrates.GetSnippet(testMethod);
+
+                Assert.AreEqual("This is where the title goes", snippet.Title);
+                Assert.AreEqual("This is where the description goes", snippet.Description);
+                Assert.AreEqual(Grouping.None, snippet.Group);
+                Assert.AreEqual(returnValue.file, snippet.ContainingFile);
+                Assert.AreEqual(testMethod, snippet.MemberBeingDocumented);
+                Assert.AreEqual(range, snippet.DocumentationLineNumberRange);
+
+                const string tab = "    ";
+                string expectContents = $"public (int, string) {nameof(TestFunction)}()" +
+                $"{Environment.NewLine}{{{Environment.NewLine}" +
+                $"{tab}return {nameof(GetLineNumberAndFile)}();" +
+                $"{Environment.NewLine}}}";
+
+                string contents = snippet.GetContents();
+                Assert.AreEqual(expectContents, contents);]]>
+            </code>
+        </example>
+    </MyMembers>
+</MyDocs>

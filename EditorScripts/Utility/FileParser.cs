@@ -18,8 +18,8 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                                                   int beginSearchLineNumber)
         {
             LineNumberRange attributesRange = GetAttributesRange<DemonstratesAttribute>(memberInfo);
-            int declarationStartLine = GetDeclarationStartLine(memberInfo, fileLocation, beginSearchLineNumber);
             string[] lines = File.ReadAllLines(fileLocation);
+            int declarationStartLine = GetDeclarationStartLine(memberInfo, lines, beginSearchLineNumber);
             
             switch (relevantArea)
             {
@@ -155,13 +155,13 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             throw new Exception();
         }
         
-        public static int GetDeclarationStartLine(MemberInfo memberInfo, string fileLocation, int startSearchLineNumber)
+        public static int GetDeclarationStartLine(MemberInfo memberInfo, string[] lines, int startSearchLineNumber)
         {
             string regex = CodeMatcher.GetDeclarationRegex(memberInfo);
-            string contents = File.ReadAllText(fileLocation).Substring(startSearchLineNumber);
+            string contents = String.Join(Environment.NewLine, new ArraySegment<String>(lines, startSearchLineNumber, lines.Length - startSearchLineNumber));
             var match = Regex.Match(contents, regex);
             string sub = contents.Substring(0, match.Index);
-            return sub.Split(new [] { Environment.NewLine }, StringSplitOptions.None).Length;
+            return sub.Split(new [] { Environment.NewLine }, StringSplitOptions.None).Length + startSearchLineNumber;
         }
 
         private static LineNumberRange GetBodyRange(int attributeLineNumber, string[] lines, bool includeCharacterLines)
