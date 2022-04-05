@@ -1,0 +1,914 @@
+{
+  "sitemap": {
+    "fileOptions": {
+      "_generated_api/*": {
+        "changefreq": "daily"
+      }
+    },
+    "baseUrl": "https://p-buddy.github.io/TestsAsDocumentationUtility/",
+    "changefreq": "weekly"
+  },
+  "homepages": [],
+  "source_base_path": "D:/a/TestsAsDocumentationUtility/TestsAsDocumentationUtility/.documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.CodeMatcherTests.GenericA-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.CodeMatcherTests.GenericA-1.html",
+          "hash": "O8Ij1HZzpE4Zh2zZBZT/WIE/naKpyMh19HwLo6flZTE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.CodeMatcherTests.GenericB-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.CodeMatcherTests.GenericB-3.html",
+          "hash": "khp3BHn0B8pf9c/iLsce1z3XmbtKILVu4cqn0wL15LE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.CodeMatcherTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.CodeMatcherTests.html",
+          "hash": "VjtPzZSUjFiEfWjEThKl3XmShgGKC/LonKt+NnigF8Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationDetails.DocumentationCollectionTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationDetails.DocumentationCollectionTests.html",
+          "hash": "ObISOTdd73YqOwo6XYCJNi1MBBipRC5ZyPjD9Ag6zd4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationDetails.DocumentationGroupTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationDetails.DocumentationGroupTests.html",
+          "hash": "HCHzM2bLG782UlfFIKcA26gvQKHClMCz5q+QSb85IOE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationDetails.html",
+          "hash": "2VDEd3/TBWq5zm6Zh8yZa9sDPgSIowlje2exGxdKl5A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationSnippetTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationSnippetTests.html",
+          "hash": "chSzNA0n49taU+8l8ZWsQ0swpPmRBRRTY0zyd2WxOBA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestExample.html",
+          "hash": "P7fSyIyQrDdd36+XeNadmAkvA02/s4Iz/CTgCK1zoFY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentedByTestExample.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentedByTestExample.html",
+          "hash": "JYLmEF3YVi8EegeVEgVQAIbjpsqaSrV3p4pQqnYnljA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.FileReaderTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.FileReaderTests.html",
+          "hash": "f5a1CYzt33clwr8PULwb/is7dqbBAF0YgrFNBD9WjoQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.GetDeclarationTestsBase.ImmediatelyAboveDeclarationAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.GetDeclarationTestsBase.ImmediatelyAboveDeclarationAttribute.html",
+          "hash": "9apni+jwTFjxPvao2twPJTX6pDxUW2r/sy+ZRM+xILE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.GetDeclarationTestsBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.GetDeclarationTestsBase.html",
+          "hash": "eeb+7iqpOtHzHFYYFRyPsKMz+Pf8LzI/bJDFSMRv/cs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.GetMethodDeclarationTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.GetMethodDeclarationTests.html",
+          "hash": "WokQKAXz2DcO+37m1LJQn4vg8DU7qrMh10cr4qAQQQU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.GetStructDeclarationTests.DummyStructB.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.GetStructDeclarationTests.DummyStructB.html",
+          "hash": "1FYzhbFSdTHuvXgmivs+gxw5++ItUJfHlVYH4VjjTpc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.GetStructDeclarationTests.DummyStructC.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.GetStructDeclarationTests.DummyStructC.html",
+          "hash": "NYVfSBsHJAKrFWsCzyUB+tjVe5vkayTuS6VYxTbaO/M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.GetStructDeclarationTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.GetStructDeclarationTests.html",
+          "hash": "Ww3B/crN8buJyMEYkDJN/3x4dc06ald9iWSnsO+uDPo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberHelperTests.ExampleClass.ExampleNestedStruct.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberHelperTests.ExampleClass.ExampleNestedStruct.html",
+          "hash": "cbolLfCYWkpvRobrUnIVWxn/dofLWLdcEW3l2fKgWHI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberHelperTests.ExampleClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberHelperTests.ExampleClass.html",
+          "hash": "hPWfdqnGpJxr0UL9X6IgTnqFgaBadrufV6CskqKJVVI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberHelperTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberHelperTests.html",
+          "hash": "n0XenrVEMRsLNPEW2zaKLMOHHKgySYeF/j90K/5ZKto="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic-4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.Generic-4.html",
+          "hash": "uegyREyGlDWC/SZ2bbBtrQXH8A6qmCSlFGW/O4Mq1Ds="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.MemberMethodProbeTests.html",
+          "hash": "pPBYMAPxORacoMUelRAwjf6CGMW5ccdszWgpC+b2ar4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditModeTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.html",
+          "hash": "66s4hq3GIfulsG/ZTxSzU8pm1I7fqWk/0d5KJQNdO9A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CharacterPair.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CharacterPair.html",
+          "hash": "+GDQPXfqRW0sUYmdBKjrDrNGP6+kUTO35bFeWBXxZcE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeMatcher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeMatcher.html",
+          "hash": "sN6ijla7vdLNx623Hg1LoHhJiAVhRipBGGa7rmfjPc8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DemonstratesAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DemonstratesAttribute.html",
+          "hash": "Kuac1VBI2H5vAE4SHnCNbZKSUxUgSvoS9J19J96GLyg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationCollection.html",
+          "hash": "xQZ7wPjvoHWO/N4+Pz09fylERdVB7Mdd3z7PRTYtZew="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationGroup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationGroup.html",
+          "hash": "zWypZWuHvQnLxVlsiXbLx2K0/mGt2S3XeiBxNDJ+ku0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.html",
+          "hash": "xAS8bP3E6K9hWfmx0dsSCZGNYsAJba5Ib31jPHiSRuM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSubject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSubject.html",
+          "hash": "ehqZ9bQd0yODxq552VOFzBOK2MIUZ0G812JfmwMw5Xg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.FileParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.FileParser.html",
+          "hash": "WdEMPEdvFWh+mE2kleonSKbRVqshWA3Nl7g1u1x0q5M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility.html",
+          "hash": "zY1uiciu9oYQzHhNGCMD+FVKrskeFGZLeI+gQcrsNEQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.html",
+          "hash": "79V3B2/nT44sYBxQ9mNpcioHhG6T07Ddstunr3zi/kg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.html",
+          "hash": "WgVp7iIHGUuLD9LUlaxFUMCBYvC+2PpvTasDqBj24eE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.ILineNumberRangeProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.ILineNumberRangeProvider.html",
+          "hash": "pBWU53mF5bK6NXt+zGbMl+w5ez4SWhLuBj96N13xHqo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.html",
+          "hash": "SBS+gaInKnujESsiyTryCeuX1AMCy0apzoHvceYMTvM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Keyword.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Keyword.html",
+          "hash": "565V30/RpS8MzPMI59B/wPxHBTcBI413Eh7ckRMlgi0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.LineNumberRange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.LineNumberRange.html",
+          "hash": "eKLpy93+Qmjvom4FV1Fsvl+UrvuJHtC0zEmepTo4MBc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.MemberHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.MemberHelper.html",
+          "hash": "Xy5bXKQgOWRGNLQ4iU/w0BZvPaGf4aTJmZIld30B5e0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.MemberMethodProbe.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.MemberMethodProbe.html",
+          "hash": "drX4pkf9EMD/08OcNv16xhnK3uPtpRLxXQsXYPTORRA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.RelevantArea.html",
+          "hash": "3upGIGyMRFjsNrKrCoDS2edj9ff8PFfmWbGf8pe9VFc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper.html",
+          "hash": "kJOQ5ljmKF6Tik74jnWecldxecx7EacTPHtt3PPESR8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.TargetType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.TargetType.html",
+          "hash": "TSM0t1K2kyJpQnQ7LYn7ah+67sQ8FQwFvz+8dybJO8k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationFactory.html",
+          "hash": "xUDH9+joY3e45uFySQwrNcSKCKClYWrjfFIQqJqewyA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.XMLGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.XMLGenerator.html",
+          "hash": "e1dmgjy+NP9a9Izbsv9cJFdz3K7RBdF1uVZ2h9B23OE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.html",
+          "hash": "YMtyI+S9ZBxjVZSTRN9f7s2FN3jShaLaPC7gFOsDCwM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.Genertator.Generator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.Genertator.Generator.html",
+          "hash": "qBFF0mZbdi+C2t/+Dl0Kt1M2lYx5E2vck4fAoixgG2w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.Genertator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.Genertator.html",
+          "hash": "eKoVqXgn4KvQ0tr2lF9jMnna99PL2XB/8x89Yb8QybI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.RuntimeScripts.IsDemonstratedByTestsAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.RuntimeScripts.IsDemonstratedByTestsAttribute.html",
+          "hash": "5R+66kr4oqoaFDDa8dVqhZxv2JAGjvTRo7+WkNfWfuQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.RuntimeScripts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.RuntimeScripts.html",
+          "hash": "OLHykE/gzqJW9JmTfk+hXkCWyNgevTNRbwE2Calp7So="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.GenericMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.GenericMethod.html",
+          "hash": "9sA0TWJDFxr1u/QBjSSSKjYGXHnGckmXQ/ZPq2hEBxg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.GenericMethodArgument0.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.GenericMethodArgument0.html",
+          "hash": "Ek/N9a2ulOk88k1RAQ6O3glQ3CGdtCeprAr+dhOzkcw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.GenericMethodArgument1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.GenericMethodArgument1.html",
+          "hash": "eqEB/BxF0YQk5LJZ14j3zflbD8x8UTZA5aNcQFHOl4I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.GenericMethodArgument2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.GenericMethodArgument2.html",
+          "hash": "2LHEyWrM+gBs7tBD8oukYXsO7Ni5tzVfp7Gb+u8rdh8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.GenericMethodArgument3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.GenericMethodArgument3.html",
+          "hash": "Kzh7BzbC4Nxnkj0zFUWM4ylG1AfthMV47HsN1lOaGb4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.GenericMethodArgument4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.GenericMethodArgument4.html",
+          "hash": "BTEsogFWAD9zWQdq0s0r6Qq9uD85uXU3w2eeVcx6Zfg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.GenericMethodArgument5.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.GenericMethodArgument5.html",
+          "hash": "6lOj7IiMD2g2aqub9QFBYF4FkzDSkAShIiubWmOk9ws="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.GenericType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.GenericType.html",
+          "hash": "ZqEtuyFKhpj48w418mS7lS4GqAWZBr6TciyWetcH8qk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.GenericTypeArgument0.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.GenericTypeArgument0.html",
+          "hash": "Q77oUZpg6zEjpVBY/q6uvsMfZp59JAlUZWJHi50PRWU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.GenericTypeArgument1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.GenericTypeArgument1.html",
+          "hash": "ynfRSTnuNjkbtJEnqbDUR0VlAg/Y3DIsAxD+1AZJQgQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.GenericTypeArgument2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.GenericTypeArgument2.html",
+          "hash": "w6XyxV+TbzaPwRydOwHc7bqz6iQOqI5N9onqZwiikMc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.GenericTypeArgument3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.GenericTypeArgument3.html",
+          "hash": "AUtvljou1RAYXlTHfyETcZ6mGVEoxPZc7xM/nbcKmkU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.GenericTypeArgument4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.GenericTypeArgument4.html",
+          "hash": "kNxR3qilrZr1KmhVYv7bEyN8rsUQji0u/4a+rWI1UDQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.GenericTypeArgument5.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.GenericTypeArgument5.html",
+          "hash": "zzFfsB7ok2T/o9vAdASdhU83zWv1LQRQKLy1l0ED5YU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.IGenericArgument.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.IGenericArgument.html",
+          "hash": "UE8EOUgdYpe4iL7aQM8LMiGlHON4p+5nvvdWn1Hisbk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.IGenericMethodArgument.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.IGenericMethodArgument.html",
+          "hash": "X1yOnA81nzH/eS6Po4zBnyYFqLvTzlz++ciJjwBkqBA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.IGenericTypeArgument.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.IGenericTypeArgument.html",
+          "hash": "bAurntCcB7UqfCJ8rYP67NUu0+81qkNYZtLD25NxNSQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TypeUtility.RuntimeScripts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TypeUtility.RuntimeScripts.html",
+          "hash": "QAKZ4zA0MoOrLwms8kVngoS5zCunEB/fUPNoXICFom4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/toc.html",
+          "hash": "CxvXBYCoPy11ti0eW4VOyBSTI2roDALJx+QZjjuhV+8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "lPoOsZG7ZMTz4w3BM+JFyYGzCgyqF8rjCtz0eoYjSPU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "6m+/uOVNi1EBm888U3wOgde6F9nQLIJTo5YkOIqud6M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 67,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
