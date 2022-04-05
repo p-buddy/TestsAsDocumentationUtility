@@ -997,6 +997,12 @@ references:
   isSpec: "True"
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DemonstratesAttribute.TryGetDocumentationSubject
   nameWithType: DemonstratesAttribute.TryGetDocumentationSubject
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocFxFlavoredMarkdownGenerator
+  name: DocFxFlavoredMarkdownGenerator
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocFxFlavoredMarkdownGenerator.html
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocFxFlavoredMarkdownGenerator
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocFxFlavoredMarkdownGenerator
+  nameWithType: DocFxFlavoredMarkdownGenerator
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationCollection
   name: DocumentationCollection
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationCollection.html
@@ -1511,6 +1517,22 @@ references:
   commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility
   nameWithType: GeneratorUtility
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility.ExtractHighlightRanges(System.String,System.String@,pbuddy.TestsAsDocumentationUtility.EditorScripts.LineNumberRange[]@)
+  name: ExtractHighlightRanges(String, out String, out LineNumberRange[])
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_GeneratorUtility_ExtractHighlightRanges_System_String_System_String__pbuddy_TestsAsDocumentationUtility_EditorScripts_LineNumberRange____
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility.ExtractHighlightRanges(System.String,System.String@,pbuddy.TestsAsDocumentationUtility.EditorScripts.LineNumberRange[]@)
+  name.vb: ExtractHighlightRanges(String, ByRef String, ByRef LineNumberRange())
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility.ExtractHighlightRanges(System.String, out System.String, out pbuddy.TestsAsDocumentationUtility.EditorScripts.LineNumberRange[])
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility.ExtractHighlightRanges(System.String, ByRef System.String, ByRef pbuddy.TestsAsDocumentationUtility.EditorScripts.LineNumberRange())
+  nameWithType: GeneratorUtility.ExtractHighlightRanges(String, out String, out LineNumberRange[])
+  nameWithType.vb: GeneratorUtility.ExtractHighlightRanges(String, ByRef String, ByRef LineNumberRange())
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility.ExtractHighlightRanges*
+  name: ExtractHighlightRanges
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_GeneratorUtility_ExtractHighlightRanges_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility.ExtractHighlightRanges
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility.ExtractHighlightRanges
+  nameWithType: GeneratorUtility.ExtractHighlightRanges
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility.GetGroupTitleAndDescription(List{pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet},pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping)
   name: GetGroupTitleAndDescription(List<DocumentationSnippet>, Grouping)
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_GeneratorUtility_GetGroupTitleAndDescription_List_pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet__pbuddy_TestsAsDocumentationUtility_EditorScripts_Grouping_
@@ -1749,6 +1771,44 @@ references:
   commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.None
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.None
   nameWithType: Grouping.None
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute
+  name: HighlightNextAttribute
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute.html
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute
+  nameWithType: HighlightNextAttribute
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute.#ctor(System.UInt32,System.String)
+  name: HighlightNextAttribute(UInt32, String)
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_HighlightNextAttribute__ctor_System_UInt32_System_String_
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute.#ctor(System.UInt32,System.String)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute.HighlightNextAttribute(System.UInt32, System.String)
+  nameWithType: HighlightNextAttribute.HighlightNextAttribute(UInt32, String)
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute.#ctor*
+  name: HighlightNextAttribute
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_HighlightNextAttribute__ctor_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute.#ctor
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute.HighlightNextAttribute
+  nameWithType: HighlightNextAttribute.HighlightNextAttribute
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IHighlighter
+  name: IHighlighter
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.IHighlighter.html
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.IHighlighter
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IHighlighter
+  nameWithType: IHighlighter
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IHighlighter.HighlightNext(System.UInt32,System.String)
+  name: HighlightNext(UInt32, String)
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.IHighlighter.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_IHighlighter_HighlightNext_System_UInt32_System_String_
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.IHighlighter.HighlightNext(System.UInt32,System.String)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IHighlighter.HighlightNext(System.UInt32, System.String)
+  nameWithType: IHighlighter.HighlightNext(UInt32, String)
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.IHighlighter.HighlightNext*
+  name: HighlightNext
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.IHighlighter.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_IHighlighter_HighlightNext_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.IHighlighter.HighlightNext
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IHighlighter.HighlightNext
+  nameWithType: IHighlighter.HighlightNext
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.ILineNumberRangeProvider
   name: ILineNumberRangeProvider
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.ILineNumberRangeProvider.html
@@ -1906,6 +1966,18 @@ references:
   commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index9
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.Index9
   nameWithType: IndexInGroup.Index9
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.JsonGenerator
+  name: JsonGenerator
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.JsonGenerator.html
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.JsonGenerator
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.JsonGenerator
+  nameWithType: JsonGenerator
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.JsonGenerator.Response
+  name: JsonGenerator.Response
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.JsonGenerator.Response.html
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.JsonGenerator.Response
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.JsonGenerator.Response
+  nameWithType: JsonGenerator.Response
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Keyword
   name: Keyword
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Keyword.html
@@ -2342,31 +2414,50 @@ references:
   isSpec: "True"
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.XMLGenerator.GenerateXML
   nameWithType: XMLGenerator.GenerateXML
-- uid: pbuddy.TestsAsDocumentationUtility.Genertator
-  name: pbuddy.TestsAsDocumentationUtility.Genertator
-  href: _generated_api/pbuddy.TestsAsDocumentationUtility.Genertator.html
-  commentId: N:pbuddy.TestsAsDocumentationUtility.Genertator
-  fullName: pbuddy.TestsAsDocumentationUtility.Genertator
-  nameWithType: pbuddy.TestsAsDocumentationUtility.Genertator
-- uid: pbuddy.TestsAsDocumentationUtility.Genertator.Generator
+- uid: pbuddy.TestsAsDocumentationUtility.Generator
+  name: pbuddy.TestsAsDocumentationUtility.Generator
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.Generator.html
+  commentId: N:pbuddy.TestsAsDocumentationUtility.Generator
+  fullName: pbuddy.TestsAsDocumentationUtility.Generator
+  nameWithType: pbuddy.TestsAsDocumentationUtility.Generator
+- uid: pbuddy.TestsAsDocumentationUtility.Generator.Generator
   name: Generator
-  href: _generated_api/pbuddy.TestsAsDocumentationUtility.Genertator.Generator.html
-  commentId: T:pbuddy.TestsAsDocumentationUtility.Genertator.Generator
-  fullName: pbuddy.TestsAsDocumentationUtility.Genertator.Generator
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.Generator.Generator.html
+  commentId: T:pbuddy.TestsAsDocumentationUtility.Generator.Generator
+  fullName: pbuddy.TestsAsDocumentationUtility.Generator.Generator
   nameWithType: Generator
-- uid: pbuddy.TestsAsDocumentationUtility.Genertator.Generator.GenerateDocumentation
+- uid: pbuddy.TestsAsDocumentationUtility.Generator.Generator.GenerateDocumentation
   name: GenerateDocumentation()
-  href: _generated_api/pbuddy.TestsAsDocumentationUtility.Genertator.Generator.html#pbuddy_TestsAsDocumentationUtility_Genertator_Generator_GenerateDocumentation
-  commentId: M:pbuddy.TestsAsDocumentationUtility.Genertator.Generator.GenerateDocumentation
-  fullName: pbuddy.TestsAsDocumentationUtility.Genertator.Generator.GenerateDocumentation()
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.Generator.Generator.html#pbuddy_TestsAsDocumentationUtility_Generator_Generator_GenerateDocumentation
+  commentId: M:pbuddy.TestsAsDocumentationUtility.Generator.Generator.GenerateDocumentation
+  fullName: pbuddy.TestsAsDocumentationUtility.Generator.Generator.GenerateDocumentation()
   nameWithType: Generator.GenerateDocumentation()
-- uid: pbuddy.TestsAsDocumentationUtility.Genertator.Generator.GenerateDocumentation*
+- uid: pbuddy.TestsAsDocumentationUtility.Generator.Generator.GenerateDocumentation*
   name: GenerateDocumentation
-  href: _generated_api/pbuddy.TestsAsDocumentationUtility.Genertator.Generator.html#pbuddy_TestsAsDocumentationUtility_Genertator_Generator_GenerateDocumentation_
-  commentId: Overload:pbuddy.TestsAsDocumentationUtility.Genertator.Generator.GenerateDocumentation
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.Generator.Generator.html#pbuddy_TestsAsDocumentationUtility_Generator_Generator_GenerateDocumentation_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.Generator.Generator.GenerateDocumentation
   isSpec: "True"
-  fullName: pbuddy.TestsAsDocumentationUtility.Genertator.Generator.GenerateDocumentation
+  fullName: pbuddy.TestsAsDocumentationUtility.Generator.Generator.GenerateDocumentation
   nameWithType: Generator.GenerateDocumentation
+- uid: pbuddy.TestsAsDocumentationUtility.Generator.TestAsDocumentationBase
+  name: TestAsDocumentationBase
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.Generator.TestAsDocumentationBase.html
+  commentId: T:pbuddy.TestsAsDocumentationUtility.Generator.TestAsDocumentationBase
+  fullName: pbuddy.TestsAsDocumentationUtility.Generator.TestAsDocumentationBase
+  nameWithType: TestAsDocumentationBase
+- uid: pbuddy.TestsAsDocumentationUtility.Generator.TestAsDocumentationBase.HighlightNext(System.UInt32,System.String)
+  name: HighlightNext(UInt32, String)
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.Generator.TestAsDocumentationBase.html#pbuddy_TestsAsDocumentationUtility_Generator_TestAsDocumentationBase_HighlightNext_System_UInt32_System_String_
+  commentId: M:pbuddy.TestsAsDocumentationUtility.Generator.TestAsDocumentationBase.HighlightNext(System.UInt32,System.String)
+  fullName: pbuddy.TestsAsDocumentationUtility.Generator.TestAsDocumentationBase.HighlightNext(System.UInt32, System.String)
+  nameWithType: TestAsDocumentationBase.HighlightNext(UInt32, String)
+- uid: pbuddy.TestsAsDocumentationUtility.Generator.TestAsDocumentationBase.HighlightNext*
+  name: HighlightNext
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.Generator.TestAsDocumentationBase.html#pbuddy_TestsAsDocumentationUtility_Generator_TestAsDocumentationBase_HighlightNext_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.Generator.TestAsDocumentationBase.HighlightNext
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.Generator.TestAsDocumentationBase.HighlightNext
+  nameWithType: TestAsDocumentationBase.HighlightNext
 - uid: pbuddy.TestsAsDocumentationUtility.RuntimeScripts
   name: pbuddy.TestsAsDocumentationUtility.RuntimeScripts
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.RuntimeScripts.html

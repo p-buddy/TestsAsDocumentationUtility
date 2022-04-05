@@ -99,7 +99,7 @@
       "output": {
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationSnippetTests.html",
-          "hash": "chSzNA0n49taU+8l8ZWsQ0swpPmRBRRTY0zyd2WxOBA="
+          "hash": "DScejwpRm3gjEl4OtTJyukVahy36ku3/GlMhH52L9ec="
         }
       },
       "is_incremental": false,
@@ -123,7 +123,7 @@
       "output": {
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentedByTestExample.html",
-          "hash": "JYLmEF3YVi8EegeVEgVQAIbjpsqaSrV3p4pQqnYnljA="
+          "hash": "DFId5gxgWvdCQxzvFtVDfGsEuAF0tRSRhyoiYt/TLnw="
         }
       },
       "is_incremental": false,
@@ -323,6 +323,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocFxFlavoredMarkdownGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocFxFlavoredMarkdownGenerator.html",
+          "hash": "88tJNycaoEDqTOaAuaV2hnYU9i+SfA/24+r315a4xm0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationCollection.yml",
       "output": {
         ".html": {
@@ -387,7 +399,7 @@
       "output": {
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.GeneratorUtility.html",
-          "hash": "zY1uiciu9oYQzHhNGCMD+FVKrskeFGZLeI+gQcrsNEQ="
+          "hash": "15T078JCfs5EiiRYXiDqy/mKQR7V9idI7EXKCGaFJbg="
         }
       },
       "is_incremental": false,
@@ -419,6 +431,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute.html",
+          "hash": "kJTGvUc+D1QE6/k/JDq4VmFKcLwL4NBqNFBozz/4ogs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.IHighlighter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.IHighlighter.html",
+          "hash": "Ynf/pt30G8wa9rkQt7tJizuThvWM7yB/ZNsmu/HErrE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.ILineNumberRangeProvider.yml",
       "output": {
         ".html": {
@@ -436,6 +472,30 @@
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.html",
           "hash": "SBS+gaInKnujESsiyTryCeuX1AMCy0apzoHvceYMTvM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.JsonGenerator.Response.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.JsonGenerator.Response.html",
+          "hash": "l9BPQACtnh7/vY8iRGjSlQ5pz9pU4UPgT5DdEUUA5Pg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.JsonGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.JsonGenerator.html",
+          "hash": "EddU9/0DWAC4iHrzdDZgITu6OmxrCYXBK9nmu2/EX90="
         }
       },
       "is_incremental": false,
@@ -555,7 +615,7 @@
       "output": {
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.html",
-          "hash": "YMtyI+S9ZBxjVZSTRN9f7s2FN3jShaLaPC7gFOsDCwM="
+          "hash": "ooYzKsZK4x0LCBomIx4GHFSe1m7ewhdbzhmQ9/R8Y1M="
         }
       },
       "is_incremental": false,
@@ -563,11 +623,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.Genertator.Generator.yml",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.Generator.Generator.yml",
       "output": {
         ".html": {
-          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.Genertator.Generator.html",
-          "hash": "qBFF0mZbdi+C2t/+Dl0Kt1M2lYx5E2vck4fAoixgG2w="
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.Generator.Generator.html",
+          "hash": "kUl9W5vOIyz/W/tjNmPDTOryq/A+1LJAVSjRbgXiI6M="
         }
       },
       "is_incremental": false,
@@ -575,11 +635,23 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.Genertator.yml",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.Generator.TestAsDocumentationBase.yml",
       "output": {
         ".html": {
-          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.Genertator.html",
-          "hash": "eKoVqXgn4KvQ0tr2lF9jMnna99PL2XB/8x89Yb8QybI="
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.Generator.TestAsDocumentationBase.html",
+          "hash": "aUCL/9Vh7qtMljBU5ShCdxhnQ1XJq6FJjOgeALF9pbM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.Generator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.Generator.html",
+          "hash": "qyG8r/wOWxHLiTpJyUipk0k696h8Xmv21GwiwDQLVfA="
         }
       },
       "is_incremental": false,
@@ -831,7 +903,7 @@
       "output": {
         ".html": {
           "relative_path": "_generated_api/toc.html",
-          "hash": "CxvXBYCoPy11ti0eW4VOyBSTI2roDALJx+QZjjuhV+8="
+          "hash": "yonuXPbxOFdDsDwpx54u29DmA3JXiJWHIdKWAZesAQE="
         }
       },
       "is_incremental": false,
@@ -882,7 +954,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 67,
+          "total_file_count": 73,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {

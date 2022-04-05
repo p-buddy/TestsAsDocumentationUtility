@@ -90,35 +90,11 @@
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><span class="xref">DocumentationSnippetTests</span></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditModeTests.html">pbuddy.TestsAsDocumentationUtility.EditModeTests</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="pbuddy_TestsAsDocumentationUtility_EditModeTests_DocumentationSnippetTests_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DocumentationSnippetTests</code></pre>
+    <pre><code class="lang-csharp hljs">public class DocumentationSnippetTests : TestAsDocumentationBase</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
@@ -200,6 +176,7 @@ public (int line, string file) GetLineNumberAndFile(string file = null, int line
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Demonstrates(typeof(DemonstratesAttribute), RelevantArea.DeclarationAndBodyAndBelowAttributes, &quot;The method under test&quot;, &quot;&quot;, Grouping.Group0, IndexInGroup.Index1, null, null, &quot;[Filled in by Compiler]&quot;, -1)]
+[HighlightNext(1U, null)]
 [Demonstrates(typeof(DocumentationSnippetTests), &quot;TestFunction&quot;, RelevantArea.DeclarationAndBody, &quot;This is where the title goes&quot;, &quot;This is where the description goes&quot;, Grouping.None, IndexInGroup.Default, null, null, &quot;[Filled in by Compiler]&quot;, -1)]
 public (int, string) TestFunction()</code></pre>
   </div>
