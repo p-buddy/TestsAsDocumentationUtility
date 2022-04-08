@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -21,11 +18,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         public LineNumberRange LineNumberRange => attributeLineNumberRange;
         
         private const string ErrorContext = "[" + nameof(DemonstratesAttribute) + " ERROR]: ";
-        private const BindingFlags ComprehensiveFlags = BindingFlags.Public | 
-                                                        BindingFlags.NonPublic | 
-                                                        BindingFlags.Static | 
-                                                        BindingFlags.Instance | 
-                                                        BindingFlags.DeclaredOnly;
+
         private readonly string filePath;
         private readonly string title;
         private readonly string description;
@@ -131,11 +124,11 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                    groupDescription,
                    relevantArea)
         {
-            Assert.IsTrue(TryGetNonOverloadedMember(typeOfThingBeingDemonstrated,
-                                                    memberName,
-                                                    out memberBeingDemonstrated,
-                                                    out string errorMsg),
-                          $"{ErrorContext}: {errorMsg}");
+            bool result = typeOfThingBeingDemonstrated.TryGetNonOverloadedMember(memberName,
+                out memberBeingDemonstrated,
+                out string errorMsg);
+            
+            Assert.IsTrue(result, $"{ErrorContext}: {errorMsg}");
         }
         
         /// <summary>
@@ -176,12 +169,11 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                    groupDescription,
                    relevantArea)
         {
-            Assert.IsTrue(TryGetOverloadedMember(typeOfThingBeingDemonstrated,
-                                                 memberName,
-                                                 argumentTypes,
-                                                 out memberBeingDemonstrated,
-                                                 out string errorMsg),
-                          $"{ErrorContext}: {errorMsg}");
+            bool result = typeOfThingBeingDemonstrated.TryGetOverloadedMember(memberName,
+                                                                              argumentTypes,
+                                                                              out memberBeingDemonstrated,
+                                                                              out string errorMsg);
+            Assert.IsTrue(result, $"{ErrorContext}: {errorMsg}");
         }
         #endregion Public Constructors
 
@@ -208,82 +200,6 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             }
             
             Debug.LogError(error);
-            return false;
-        }
-        
-        private static bool TryGetNonOverloadedMember(Type type, string memberName, out MemberInfo memberInfo, out string errorMsg)
-        {
-            MemberInfo[] members = type.GetMember(memberName, ComprehensiveFlags);
-            if (members.Length == 0)
-            {
-                memberInfo = default;
-                errorMsg = $"Unable to locate member '{memberName}' on {type.Name} type";
-                return false;
-            }
-            
-            if (members.Length == 1)
-            {
-                memberInfo = members[0];
-                errorMsg = default;
-                return true;
-            }
-
-            foreach (MemberInfo member in members)
-            {
-                if (member.MemberType != MemberTypes.Method || new MemberMethodProbe(member).ArgumentCount != 0)
-                {
-                    continue;
-                }
-
-                memberInfo = member;
-                errorMsg = default;
-                return true;
-            }
-            
-            memberInfo = default;
-            errorMsg = $"There were multiple member methods named '{memberName}' on {type.Name} type. " +
-                       $"Use an alternative {nameof(DemonstratesAttribute)} constructor to better specify which member you are targeting.";
-            return false;
-        }
-
-
-        private static bool TryGetOverloadedMember(Type type,
-                                                   string memberName,
-                                                   Type[] argumentTypes,
-                                                   out MemberInfo memberInfo,
-                                                   out string errorMsg)
-        {
-            MemberInfo[] members = type.GetMember(memberName, ComprehensiveFlags);
-            if (members.Length == 0)
-            {
-                memberInfo = default;
-                errorMsg = $"Unable to locate member '{memberName}' on {type.Name} type";
-                return false;
-            }
-
-            foreach (MemberInfo member in members)
-            {
-                if (member.MemberType != MemberTypes.Method || !new MemberMethodProbe(member).TypesMatch(argumentTypes))
-                {
-                    continue;
-                }
-
-                memberInfo = member;
-                errorMsg = default;
-                return true;
-            }
-
-            IEnumerable<string> argumentsOfOverloads = members.Select(member => new MemberMethodProbe(member))
-                                                              .Select(probe => String.Join(", ",
-                                                                          probe.DescriptiveArgumentTypeNames))
-                                                              .Select(args => $"({args})");
-
-            memberInfo = default;
-            errorMsg = $"No method named '{memberName}' with arguments of " +
-                       String.Join(", ", argumentTypes.Select(t => t.Name)) + " " +
-                       $"could be found on {type.Name} type. " +
-                       $"Below are the argument types for all of the overloads of '{memberName}' that do exist:" +
-                       String.Join($"\n\t-{memberName}", argumentsOfOverloads);
             return false;
         }
     }

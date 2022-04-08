@@ -26,7 +26,107 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         private static string MemberSegment(string member) => InsertIntoTag(MemberTagName, member);
         private static string AssemblyQualifiedSegment(string name) => InsertIntoTag(AssemblyQualifiedTagName, name);
         private static string ConstructArgsSegment(string text) => InsertIntoTag(ConstructorTagName, text);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="memberName"></param>
+        /// <param name="memberInfo"></param>
+        /// <param name="errorMsg"></param>
+        /// <returns></returns>
+        public static bool TryGetNonOverloadedMember(this Type type,
+                                                     string memberName,
+                                                     out MemberInfo memberInfo,
+                                                     out string errorMsg)
+        {
+            MemberInfo[] members = type.GetMember(memberName, PermissiveFlags);
+            if (members.Length == 0)
+            {
+                memberInfo = default;
+                errorMsg = $"Unable to locate member '{memberName}' on {type.Name} type";
+                return false;
+            }
+            
+            if (members.Length == 1)
+            {
+                memberInfo = members[0];
+                errorMsg = default;
+                return true;
+            }
 
+            foreach (MemberInfo member in members)
+            {
+                if (member.MemberType != MemberTypes.Method || new MemberMethodProbe(member).ArgumentCount != 0)
+                {
+                    continue;
+                }
+
+                memberInfo = member;
+                errorMsg = default;
+                return true;
+            }
+            
+            memberInfo = default;
+            errorMsg = $"There were multiple member methods named '{memberName}' on {type.Name} type. " +
+                       $"Use an alternative {nameof(DemonstratesAttribute)} constructor to better specify which member you are targeting.";
+            return false;
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="memberName"></param>
+        /// <param name="argumentTypes"></param>
+        /// <param name="memberInfo"></param>
+        /// <param name="errorMsg"></param>
+        /// <returns></returns>
+        public static bool TryGetOverloadedMember(this Type type,
+                                                  string memberName,
+                                                  Type[] argumentTypes,
+                                                  out MemberInfo memberInfo,
+                                                  out string errorMsg)
+        {
+            MemberInfo[] members = type.GetMember(memberName, PermissiveFlags);
+            if (members.Length == 0)
+            {
+                memberInfo = default;
+                errorMsg = $"Unable to locate member '{memberName}' on {type.Name} type";
+                return false;
+            }
+
+            foreach (MemberInfo member in members)
+            {
+                if (member.MemberType != MemberTypes.Method || !new MemberMethodProbe(member).TypesMatch(argumentTypes))
+                {
+                    continue;
+                }
+
+                memberInfo = member;
+                errorMsg = default;
+                return true;
+            }
+
+            IEnumerable<string> argumentsOfOverloads = members.Select(member => new MemberMethodProbe(member))
+                                                              .Select(probe => String.Join(", ",
+                                                                          probe.DescriptiveArgumentTypeNames))
+                                                              .Select(args => $"({args})");
+
+            memberInfo = default;
+            errorMsg = $"No method named '{memberName}' with arguments of " +
+                       String.Join(", ", argumentTypes.Select(t => t.Name)) + " " +
+                       $"could be found on {type.Name} type. " +
+                       $"Below are the argument types for all of the overloads of '{memberName}' that do exist:" +
+                       String.Join($"\n\t-{memberName}", argumentsOfOverloads);
+            return false;
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="memberInfo"></param>
+        /// <returns></returns>
         public static string GetReadableName(this MemberInfo memberInfo)
         {
             const string comma = ", ";
@@ -46,8 +146,6 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                     : string.Empty;
             }
             
-            
-
             switch (memberInfo.MemberType)
             {
                 case MemberTypes.TypeInfo:
@@ -82,6 +180,11 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             }
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="memberInfo"></param>
+        /// <returns></returns>
         public static string GetTypeRecoverableName(this MemberInfo memberInfo)
         {
             switch (memberInfo.MemberType)
@@ -125,6 +228,12 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             }
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="memberInfo"></param>
+        /// <returns></returns>
         public static bool TryGetMemberFromTypeRecoverableName(this string text, out MemberInfo memberInfo)
         {
             string typeName = GetTextWithinTag(AssemblyNameTag, text);
@@ -169,7 +278,13 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             memberInfo = default;
             return false;
         }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="fullName"></param>
+        /// <returns></returns>
         public static string GetNonGenericName(this Type type, bool fullName = false)
         {
             if (!type.IsGenericType)
@@ -181,6 +296,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             return name.Substring(0, name.LastIndexOf("`", StringComparison.Ordinal));
         }
         
+        #region Private Members
         private static string GetReadableTypeName(this Type type)
         {
             if (!type.IsGenericType)
@@ -195,7 +311,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                 return aggregate + (aggregate == "<" ? "" : ",") + GetReadableTypeName(genericTypeArgument);
             }
 
-            sb.Append(type.FullName.Substring(0, type.FullName.LastIndexOf("`", StringComparison.Ordinal)));
+            sb.Append(type.FullName?.Substring(0, type.FullName.LastIndexOf("`", StringComparison.Ordinal)));
             sb.Append(type.GetGenericArguments().Aggregate("<", AppendGenericTypeArgument));
             sb.Append(">");
 
@@ -338,5 +454,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         
         private static string GetParameterTypeAssemblyName(Type type) => type.AssemblyQualifiedName ?? type.Name;
         private static bool IsNullOrEmpty(this Array array) =>  array == null || array.Length == 0;
+        #endregion Private Members
+
     }
 }

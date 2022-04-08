@@ -1,12 +1,14 @@
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using NUnit.Framework;
 using pbuddy.TestsAsDocumentationUtility.EditorScripts;
 using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
+using pbuddy.TypeUtility.RuntimeScripts;
 using UnityEngine.UI;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
 {
-    public class DocumentationTestExample
+    public class DocumentationTestsExample : TestsAsDocumentationBase
     {
         [Test]
         [Demonstrates(typeof(DocumentedByTestExample), RelevantArea.DeclarationAndBody, "How to: " + nameof(DocumentedByTestExample.SomeMethod))]
@@ -58,7 +60,6 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         [IsDemonstratedByTests()]
         public void SomeMethod()
         {
-            
         }
     }
 }

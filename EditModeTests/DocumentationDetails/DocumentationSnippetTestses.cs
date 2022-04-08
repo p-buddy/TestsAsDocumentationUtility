@@ -12,11 +12,11 @@ using pbuddy.TestsAsDocumentationUtility.Generator;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
 {
-    public class DocumentationSnippetTests : TestAsDocumentationBase
+    public class DocumentationSnippetTestses : TestsAsDocumentationBase
     {
         [Demonstrates(typeof(DemonstratesAttribute), RelevantArea.DeclarationAndBodyAndBelowAttributes, "The method under test", "", Grouping.Group0, IndexInGroup.Index1)]
         [HighlightNext]
-        [Demonstrates(typeof(DocumentationSnippetTests),
+        [Demonstrates(typeof(DocumentationSnippetTestses),
                       nameof(TestFunction),
                       RelevantArea.DeclarationAndBody,
                       "This is where the title goes",
