@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Struct GroupInfo
+    <title>Struct Addition
    | Tests As Documentation Utility </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Struct GroupInfo
+    <meta name="title" content="Struct Addition
    | Tests As Documentation Utility ">
     <meta name="generator" content="docfx 2.59.1.0">
     
@@ -78,16 +78,16 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo">
+            <article class="content wrap" id="_content" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition">
   
   
-  <h1 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo" class="text-break">Struct GroupInfo
+  <h1 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition" class="text-break">Struct Addition
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">IEqualityComparer</span>&lt;<a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.html">GroupInfo</a>&gt;</div>
+    <div><a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup.html">IMarkup</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -112,21 +112,21 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.html">pbuddy.TestsAsDocumentationUtility.EditorScripts</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_syntax">Syntax</h5>
+  <h5 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly struct GroupInfo</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Addition : IMarkup</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   
   
-  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo__ctor_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.#ctor*"></a>
-  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo__ctor_pbuddy_TestsAsDocumentationUtility_EditorScripts_Grouping_pbuddy_TestsAsDocumentationUtility_EditorScripts_IndexInGroup_System_String_System_String_System_Reflection_MemberInfo_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.#ctor(pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping,pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup,System.String,System.String,System.Reflection.MemberInfo)">GroupInfo(Grouping, IndexInGroup, String, String, MemberInfo)</h4>
+  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition__ctor_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.#ctor*"></a>
+  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition__ctor_System_String_System_Int32_System_String_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.#ctor(System.String,System.Int32,System.String,pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo)">Addition(String, Int32, String, AppliesTo)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GroupInfo(Grouping grouping, IndexInGroup indexInGroup, string groupTitle, string groupDescription, MemberInfo memberBeingDocumented)</code></pre>
+    <pre><code class="lang-csharp hljs">public Addition(string file, int line, string contents, AppliesTo appliesTo)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -139,28 +139,23 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.html">Grouping</a></td>
-        <td><span class="parametername">grouping</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">file</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.html">IndexInGroup</a></td>
-        <td><span class="parametername">indexInGroup</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">line</span></td>
         <td></td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">groupTitle</span></td>
+        <td><span class="parametername">contents</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">groupDescription</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a></td>
-        <td><span class="parametername">memberBeingDocumented</span></td>
+        <td><a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo.html">AppliesTo</a></td>
+        <td><span class="parametername">appliesTo</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -169,13 +164,13 @@
   </h3>
   
   
-  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_Group_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.Group*"></a>
-  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_Group" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.Group">Group</h4>
+  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition_AppliesTo_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.AppliesTo*"></a>
+  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition_AppliesTo" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.AppliesTo">AppliesTo</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly Grouping Group { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly AppliesTo AppliesTo { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -187,45 +182,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.Grouping.html">Grouping</a></td>
+        <td><a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo.html">AppliesTo</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_GroupDescription_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.GroupDescription*"></a>
-  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_GroupDescription" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.GroupDescription">GroupDescription</h4>
+  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition_Contents_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.Contents*"></a>
+  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition_Contents" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.Contents">Contents</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly string GroupDescription { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_GroupTitle_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.GroupTitle*"></a>
-  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_GroupTitle" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.GroupTitle">GroupTitle</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly string GroupTitle { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly string Contents { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -244,13 +214,13 @@
   </table>
   
   
-  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_IndexInGroup_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.IndexInGroup*"></a>
-  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_IndexInGroup" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.IndexInGroup">IndexInGroup</h4>
+  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition_Filepath_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.Filepath*"></a>
+  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition_Filepath" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.Filepath">Filepath</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly IndexInGroup IndexInGroup { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly string Filepath { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -262,20 +232,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.IndexInGroup.html">IndexInGroup</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_MemberBeingDocumented_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.MemberBeingDocumented*"></a>
-  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_MemberBeingDocumented" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.MemberBeingDocumented">MemberBeingDocumented</h4>
+  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition_Range_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.Range*"></a>
+  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition_Range" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.Range">Range</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly MemberInfo MemberBeingDocumented { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly LineNumberRange Range { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -287,46 +257,22 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a></td>
+        <td><a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.LineNumberRange.html">LineNumberRange</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h3 id="methods">Methods
-  </h3>
   
   
-  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_Equals_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.Equals*"></a>
-  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_Equals_pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.Equals(pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo,pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo)">Equals(GroupInfo, GroupInfo)</h4>
+  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition_Type_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.Type*"></a>
+  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition_Type" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.Type">Type</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly bool Equals(GroupInfo x, GroupInfo y)</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly MarkupType Type { get; }</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.html">GroupInfo</a></td>
-        <td><span class="parametername">x</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.html">GroupInfo</a></td>
-        <td><span class="parametername">y</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -336,56 +282,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_GetHashCode_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.GetHashCode*"></a>
-  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_GetHashCode_pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.GetHashCode(pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo)">GetHashCode(GroupInfo)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly int GetHashCode(GroupInfo obj)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.html">GroupInfo</a></td>
-        <td><span class="parametername">obj</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.MarkupType.html">MarkupType</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <span class="xref">IEqualityComparer&lt;&gt;</span>
+      <a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup.html">IMarkup</a>
   </div>
 </article>
           </div>

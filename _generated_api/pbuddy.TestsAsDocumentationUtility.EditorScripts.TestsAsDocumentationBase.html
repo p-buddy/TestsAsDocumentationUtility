@@ -126,13 +126,13 @@
   </h3>
   
   
-  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_AddEndOfLineCommentToNext_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddEndOfLineCommentToNext*"></a>
-  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_AddEndOfLineCommentToNext_System_String_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddEndOfLineCommentToNext(System.String,pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo)">AddEndOfLineCommentToNext(String, AppliesTo)</h4>
+  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_AddHere_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddHere*"></a>
+  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_AddHere_System_String_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo_System_String_System_Int32_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddHere(System.String,pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo,System.String,System.Int32)">AddHere(String, AppliesTo, String, Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void AddEndOfLineCommentToNext(string comment, AppliesTo appliesTo)</code></pre>
+    <pre><code class="lang-csharp hljs">protected void AddHere(string contents, AppliesTo appliesTo, string file = &quot;[Filled in by Compiler]&quot;, int line = -1)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -146,7 +146,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">comment</span></td>
+        <td><span class="parametername">contents</span></td>
         <td></td>
       </tr>
       <tr>
@@ -154,68 +154,14 @@
         <td><span class="parametername">appliesTo</span></td>
         <td></td>
       </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_AddLineComment_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddLineComment*"></a>
-  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_AddLineComment_System_String_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddLineComment(System.String,pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo)">AddLineComment(String, AppliesTo)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void AddLineComment(string comment, AppliesTo appliesTo)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">comment</span></td>
+        <td><span class="parametername">file</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo.html">AppliesTo</a></td>
-        <td><span class="parametername">appliesTo</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_AddMultiLineComment_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddMultiLineComment*"></a>
-  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_AddMultiLineComment_System_String___pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddMultiLineComment(System.String[],pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo)">AddMultiLineComment(String[], AppliesTo)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void AddMultiLineComment(string[] commentLines, AppliesTo appliesTo)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>[]</td>
-        <td><span class="parametername">commentLines</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo.html">AppliesTo</a></td>
-        <td><span class="parametername">appliesTo</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">line</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -232,13 +178,23 @@
   </div>
   
   
-  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_HighlightNext_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.HighlightNext*"></a>
-  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_HighlightNext_System_UInt32_System_String_System_Nullable_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo__" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.HighlightNext(System.UInt32,System.String,System.Nullable{pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo})">HighlightNext(UInt32, String, Nullable&lt;AppliesTo&gt;)</h4>
+  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_GetGeneratedDocumentationEntries_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.GetGeneratedDocumentationEntries*"></a>
+  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_GetGeneratedDocumentationEntries" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.GetGeneratedDocumentationEntries">GetGeneratedDocumentationEntries()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void HighlightNext(uint numberOfLines = 1U, string detail = null, AppliesTo? appliesTo = null)</code></pre>
+    <pre><code class="lang-csharp hljs">protected void GetGeneratedDocumentationEntries()</code></pre>
+  </div>
+  
+  
+  <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_HighlightNext_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.HighlightNext*"></a>
+  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_HighlightNext_System_UInt32_System_String_System_Nullable_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo__System_String_System_Int32_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.HighlightNext(System.UInt32,System.String,System.Nullable{pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo},System.String,System.Int32)">HighlightNext(UInt32, String, Nullable&lt;AppliesTo&gt;, String, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void HighlightNext(uint numberOfLines = 1U, string detail = null, AppliesTo? appliesTo = null, string file = &quot;[Filled in by Compiler]&quot;, int line = -1)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -265,17 +221,27 @@
         <td><span class="parametername">appliesTo</span></td>
         <td></td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">file</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">line</span></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   
   
   <a id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_RemoveNext_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext*"></a>
-  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_RemoveNext_System_UInt32_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32,pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo)">RemoveNext(UInt32, AppliesTo)</h4>
+  <h4 id="pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_RemoveNext_System_UInt32_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo_System_String_System_Int32_" data-uid="pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32,pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo,System.String,System.Int32)">RemoveNext(UInt32, AppliesTo, String, Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void RemoveNext(uint numberOfLines, AppliesTo appliesTo)</code></pre>
+    <pre><code class="lang-csharp hljs">protected void RemoveNext(uint numberOfLines, AppliesTo appliesTo, string file = &quot;[Filled in by Compiler]&quot;, int line = -1)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -295,6 +261,16 @@
       <tr>
         <td><a class="xref" href="pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo.html">AppliesTo</a></td>
         <td><span class="parametername">appliesTo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">file</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">line</span></td>
         <td></td>
       </tr>
     </tbody>

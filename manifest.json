@@ -99,7 +99,7 @@
       "output": {
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationSnippetTestses.html",
-          "hash": "PPyCID01wQLiZ5+bavmczIk0venvdlqJfM9T86e7PSA="
+          "hash": "iOtSDRDBO2om7yWckKr+LyN1jzglJrgZ54DIdXrB30E="
         }
       },
       "is_incremental": false,
@@ -111,7 +111,7 @@
       "output": {
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditModeTests.DocumentationTestsExample.html",
-          "hash": "Q9SWBiZ6I4w5+IBb0R/sO5cT3k6hmTrqO/+ZNy5wC90="
+          "hash": "6G5kKs67pEExvd7e6DOyPkI9w8SmiLoB+okBcECt5Ok="
         }
       },
       "is_incremental": false,
@@ -287,11 +287,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.html",
+          "hash": "tSbHleqlqDPhCf9FE/WanBGIBABOMDAYsmdpqV/m/Ic="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo.yml",
       "output": {
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo.html",
           "hash": "5uaQmdlbFWPM5fPM6VU8rRNkLKDk41FuAGjSBFmwqYc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.AssemblyHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.AssemblyHelper.html",
+          "hash": "XT0QoXGIx0WEKfEzSkf7pzK/YVCDs8Guta9aa8DBxp4="
         }
       },
       "is_incremental": false,
@@ -351,7 +375,7 @@
       "output": {
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationCollection.html",
-          "hash": "xQZ7wPjvoHWO/N4+Pz09fylERdVB7Mdd3z7PRTYtZew="
+          "hash": "k7GOY7LpireS3AziaMbyjwImNYInLDFmxkjBNy+aKgg="
         }
       },
       "is_incremental": false,
@@ -363,7 +387,7 @@
       "output": {
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationGroup.html",
-          "hash": "zWypZWuHvQnLxVlsiXbLx2K0/mGt2S3XeiBxNDJ+ku0="
+          "hash": "AHbW0q2TjnUvBPa0AAYigVnR7nU2SMZyOok4Pwk1PKI="
         }
       },
       "is_incremental": false,
@@ -375,7 +399,7 @@
       "output": {
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.html",
-          "hash": "xAS8bP3E6K9hWfmx0dsSCZGNYsAJba5Ib31jPHiSRuM="
+          "hash": "M+1Ah2xXqkGk2jkGD8bjwihgxtalZLvCdabsW6e4KF4="
         }
       },
       "is_incremental": false,
@@ -423,7 +447,7 @@
       "output": {
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.html",
-          "hash": "79V3B2/nT44sYBxQ9mNpcioHhG6T07Ddstunr3zi/kg="
+          "hash": "kjur0hiBBHdb2hn5cKe+VZ04+gyc70pbmgAiwyRDqVY="
         }
       },
       "is_incremental": false,
@@ -443,6 +467,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Highlight.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Highlight.html",
+          "hash": "sGU78vS7wXbJfPrsEVOUsj0jEzZLwmwBwF09w1kt8T0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute.yml",
       "output": {
         ".html": {
@@ -455,35 +491,23 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Highlighting.IncludeGroups.yml",
-      "output": {
-        ".html": {
-          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Highlighting.IncludeGroups.html",
-          "hash": "boSHxdZutjqjushkX+qRPee3Krpzf8Sdqj6usN/PQPw="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Highlighting.yml",
-      "output": {
-        ".html": {
-          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Highlighting.html",
-          "hash": "GYzvR1Bb0azIAb0atBB+IRoyXUPfc+aF5m/fuXrU/X8="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.ILineNumberRangeProvider.yml",
       "output": {
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.ILineNumberRangeProvider.html",
           "hash": "pBWU53mF5bK6NXt+zGbMl+w5ez4SWhLuBj96N13xHqo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup.html",
+          "hash": "N/L8hpZDVs5vjdnbrcWhoBWgJDajy5JShFpkFT/Mc1w="
         }
       },
       "is_incremental": false,
@@ -551,6 +575,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.MarkupType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.MarkupType.html",
+          "hash": "5muQ0gdLVhlKJkZcZkXBJZsj1dp0jvVNo2dVHwSDCeU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.MemberHelper.yml",
       "output": {
         ".html": {
@@ -587,11 +623,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.html",
+          "hash": "bvE/m6sxd7QIJQIadBsS/Joo45TwV5Za4qDcXBt4yUo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper.yml",
       "output": {
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper.html",
-          "hash": "kJOQ5ljmKF6Tik74jnWecldxecx7EacTPHtt3PPESR8="
+          "hash": "RmWdCWp/AKrUqcAsHSV9ZK7UnzYtfWiVQ0MgfoAuljs="
         }
       },
       "is_incremental": false,
@@ -615,7 +663,7 @@
       "output": {
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.html",
-          "hash": "EGkh18iHYvOZzrO6/GmPKkxiCvRYmLOoNjRF1kpuxmY="
+          "hash": "bFYUJ7Pon85DPbP9GPSG+GQkitcbX126Nv7+qYfhoE0="
         }
       },
       "is_incremental": false,
@@ -628,6 +676,30 @@
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationFactory.html",
           "hash": "xUDH9+joY3e45uFySQwrNcSKCKClYWrjfFIQqJqewyA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.With-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.With-1.html",
+          "hash": "ZI6CDNZx4LlmKzWjhNhGddkoGcw6rUrmsBLCn8MIxoc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Without-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Without-1.html",
+          "hash": "OyzXhyib24SR3IgFNAS3CH+1ML2sB+p6O433tEl3D9k="
         }
       },
       "is_incremental": false,
@@ -651,7 +723,7 @@
       "output": {
         ".html": {
           "relative_path": "_generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.html",
-          "hash": "YT1h3utzVHEc6nm4ABw0H6beFihu4g5QWWUTNIesilU="
+          "hash": "3o7CBeA31yu9TQDEh09VRXORdC5avcwbxJV9ARO4OwU="
         }
       },
       "is_incremental": false,
@@ -927,7 +999,7 @@
       "output": {
         ".html": {
           "relative_path": "_generated_api/toc.html",
-          "hash": "QpYyFH8LxSSemK3n3Nv3tLrf3axjHlTZWN3N7CjmIm8="
+          "hash": "XQ0QVrBFCADrvbsT9dRO+QUuo4QbFttW6+IBuCadcmg="
         }
       },
       "is_incremental": false,
@@ -978,7 +1050,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 75,
+          "total_file_count": 81,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
