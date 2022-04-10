@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Reflection;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
@@ -5,7 +7,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
     /// <summary>
     /// 
     /// </summary>
-    public readonly struct GroupInfo
+    public readonly struct GroupInfo : IEqualityComparer<GroupInfo>
     {
         /// <summary>
         /// 
@@ -43,6 +45,28 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             GroupTitle = groupTitle;
             GroupDescription = groupDescription;
             MemberBeingDocumented = memberBeingDocumented;
+        }
+
+        public bool Equals(GroupInfo x, GroupInfo y)
+        {
+            return x.Group == y.Group &&
+                   x.IndexInGroup == y.IndexInGroup &&
+                   x.GroupTitle == y.GroupTitle &&
+                   x.GroupDescription == y.GroupDescription &&
+                   Equals(x.MemberBeingDocumented, y.MemberBeingDocumented);
+        }
+
+        public int GetHashCode(GroupInfo obj)
+        {
+            unchecked
+            {
+                var hashCode = (int)obj.Group;
+                hashCode = (hashCode * 397) ^ (int)obj.IndexInGroup;
+                hashCode = (hashCode * 397) ^ (obj.GroupTitle != null ? obj.GroupTitle.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (obj.GroupDescription != null ? obj.GroupDescription.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (obj.MemberBeingDocumented != null ? obj.MemberBeingDocumented.GetHashCode() : 0);
+                return hashCode;
+            }
         }
     }
 }

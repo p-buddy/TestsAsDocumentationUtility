@@ -117,21 +117,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         private static string GetDocumentationDirectory(string testFile) =>
             Path.Combine(Directory.GetParent(Path.GetDirectoryName(testFile)).FullName, DocumentationDirectory);
         private static string GetEditorScriptsPath([CallerFilePath] string callingFile = "") => Path.GetDirectoryName(callingFile);
-
-        private static Assembly[] GetDependentAssemblies(this Assembly assembly)
-        {
-            bool IsDependencyAssembly(AssemblyName assemblyRef) => assemblyRef.Name == assembly.GetName().Name;
-
-            bool DoesReferenceDependency(Assembly otherAssembly)
-            { 
-                return otherAssembly.GetReferencedAssemblies().ToList().Any(IsDependencyAssembly);
-            }
-            
-            return AppDomain.CurrentDomain.GetAssemblies()
-                            .ToList()
-                            .Where(DoesReferenceDependency)
-                            .ToArray();
-        }
+        
 
         private static List<MemberInfo> GetAllMembersWith<TAttributeType>(this Assembly[] assemblies)
             where TAttributeType : Attribute

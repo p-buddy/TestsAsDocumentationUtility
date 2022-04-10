@@ -45,7 +45,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
             DemonstratesAttribute demonstrates = testMethod.GetCustomAttributes<DemonstratesAttribute>()
                                                            .FirstOrDefault(demo => demo.MemberBeingDemonstrated == testMethod);
             Assert.IsNotNull(demonstrates);
-            HighlightNext();
+
             DocumentationSnippet snippet = demonstrates.GetSnippet(testMethod);
             
             Assert.AreEqual("This is where the title goes", snippet.Title);

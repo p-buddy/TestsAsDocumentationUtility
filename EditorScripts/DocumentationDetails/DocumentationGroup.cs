@@ -17,12 +17,20 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             documents = new List<DocumentationSnippet>();
         }
         
-        public DocumentationGroup(DocumentationSnippet documentationSnippet) : this(documentationSnippet.GroupInfo.Group)
+        public DocumentationGroup(in DocumentationSnippet documentationSnippet) : this(documentationSnippet.GroupInfo.Group)
         {
             documents.Add(documentationSnippet);
         }
 
-        public void AddToGroup(DocumentationSnippet documentationSnippet)
+        public void TryAddToGroup(in DocumentationSnippet documentationSnippet)
+        {
+            if (documentationSnippet.GroupInfo.Group == Group)
+            {
+                documents.Add(documentationSnippet);
+            }
+        }
+        
+        public void AddToGroup(in DocumentationSnippet documentationSnippet)
         {
             Assert.IsTrue(documentationSnippet.GroupInfo.Group == Group);
             documents.Add(documentationSnippet);
@@ -33,6 +41,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             if (Group != Grouping.None)
             {
                 documents.Sort(DocumentationSnippet.Comparer);
+                CheckForDuplicates(documents);
             }
             return documents;
         }
@@ -40,6 +49,32 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         public int Compare(DocumentationGroup x, DocumentationGroup y)
         {
             return x.Group.CompareTo(y.Group);
+        }
+
+        private static void CheckForDuplicates(List<DocumentationSnippet> sortedDocuments)
+        {
+            DocumentationSnippet? previousDocument = null;
+            foreach (DocumentationSnippet document in sortedDocuments)
+            {
+                if (!previousDocument.HasValue)
+                {
+                    previousDocument = document;
+                    continue;
+                }
+
+                if (previousDocument.Value.GroupInfo.IndexInGroup == document.GroupInfo.IndexInGroup)
+                {
+                    string subject = document.MemberBeingDocumented.GetReadableName();
+                    string index = document.GroupInfo.IndexInGroup.ToString();
+                    string memberA = previousDocument.Value.MemberDoingTheDocumenting.GetReadableName();
+                    string memberB = document.MemberDoingTheDocumenting.GetReadableName();
+                    throw new InvalidOperationException(nameof(CheckForDuplicates).ErrorContext<DocumentationGroup>(true) +
+                                                        $"The following demonstrating members of ${subject} " +
+                                                        $"both share ${index} in {document.Group}:" +
+                                                        $"{Environment.NewLine}- ${memberA}" +
+                                                        $"{Environment.NewLine}- ${memberB}");
+                }
+            }
         }
     }
 }

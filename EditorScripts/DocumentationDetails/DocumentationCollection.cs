@@ -10,14 +10,22 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 
         public DocumentationCollection(in DocumentationSnippet doc)
         {
-            Add(doc);
+            Add(in doc);
         }
         
         public DocumentationCollection(params DocumentationSnippet[] docs)
         {
             foreach (DocumentationSnippet doc in docs)
             {
-                Add(doc);
+                Add(in doc);
+            }
+        }
+        
+        public DocumentationCollection(IEnumerable<DocumentationSnippet> docs)
+        {
+            foreach (DocumentationSnippet doc in docs)
+            {
+                Add(in doc);
             }
         }
         

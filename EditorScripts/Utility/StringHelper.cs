@@ -4,6 +4,11 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
 {
     public static class StringHelper
     {
+        private const string Space = " ";
+        public static string ErrorContext<T>(this string functionName, bool endingSpace = false) =>
+            $"[{nameof(T)} Error in ${functionName}()]:{(endingSpace ? Space : String.Empty)}";
+        public static string ErrorContext<T>(this T self, string functionName, bool endingSpace = false) =>
+            $"[{nameof(T)} Error in ${functionName}()]:{(endingSpace ? Space : String.Empty)}";
         public static string GetLeadingWhitespace(this string str)
         {
             return str.Replace(str.TrimStart(), "");
