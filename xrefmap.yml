@@ -810,18 +810,27 @@ references:
   commentId: N:pbuddy.TestsAsDocumentationUtility.EditorScripts
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts
   nameWithType: pbuddy.TestsAsDocumentationUtility.EditorScripts
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.AddAtRelativeLine
+  name: AddAtRelativeLine
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.AddAtRelativeLine.html
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.AddAtRelativeLine
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.AddAtRelativeLine
+  nameWithType: AddAtRelativeLine
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition
   name: Addition
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.html
   commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition
   nameWithType: Addition
-- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.#ctor(System.String,System.Int32,System.String,pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo)
-  name: Addition(String, Int32, String, AppliesTo)
-  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition__ctor_System_String_System_Int32_System_String_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo_
-  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.#ctor(System.String,System.Int32,System.String,pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo)
-  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.Addition(System.String, System.Int32, System.String, pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo)
-  nameWithType: Addition.Addition(String, Int32, String, AppliesTo)
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.#ctor(System.String,System.Int32,System.String,System.Nullable{pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo})
+  name: Addition(String, Int32, String, Nullable<AppliesTo>)
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition__ctor_System_String_System_Int32_System_String_System_Nullable_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo__
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.#ctor(System.String,System.Int32,System.String,System.Nullable{pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo})
+  name.vb: Addition(String, Int32, String, Nullable(Of AppliesTo))
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.Addition(System.String, System.Int32, System.String, System.Nullable<pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo>)
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.Addition(System.String, System.Int32, System.String, System.Nullable(Of pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo))
+  nameWithType: Addition.Addition(String, Int32, String, Nullable<AppliesTo>)
+  nameWithType.vb: Addition.Addition(String, Int32, String, Nullable(Of AppliesTo))
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.#ctor*
   name: Addition
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Addition.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_Addition__ctor_
@@ -1060,6 +1069,19 @@ references:
   isSpec: "True"
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.HighlightRegions
   nameWithType: CodeBlock.HighlightRegions
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.NullifyTitleAndDescription
+  name: NullifyTitleAndDescription()
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_CodeBlock_NullifyTitleAndDescription
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.NullifyTitleAndDescription
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.NullifyTitleAndDescription()
+  nameWithType: CodeBlock.NullifyTitleAndDescription()
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.NullifyTitleAndDescription*
+  name: NullifyTitleAndDescription
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_CodeBlock_NullifyTitleAndDescription_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.NullifyTitleAndDescription
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.NullifyTitleAndDescription
+  nameWithType: CodeBlock.NullifyTitleAndDescription
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Title
   name: Title
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_CodeBlock_Title
@@ -1311,6 +1333,61 @@ references:
   commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry
   nameWithType: DocumentationEntry
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.#ctor(pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationGroup@,List{pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup})
+  name: DocumentationEntry(in DocumentationGroup, List<IMarkup>)
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationEntry__ctor_pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationGroup__List_pbuddy_TestsAsDocumentationUtility_EditorScripts_IMarkup__
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.#ctor(pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationGroup@,List{pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup})
+  name.vb: DocumentationEntry(ByRef DocumentationGroup, List(Of IMarkup))
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.DocumentationEntry(in pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationGroup, List<pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup>)
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.DocumentationEntry(ByRef pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationGroup, List(Of pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup))
+  nameWithType: DocumentationEntry.DocumentationEntry(in DocumentationGroup, List<IMarkup>)
+  nameWithType.vb: DocumentationEntry.DocumentationEntry(ByRef DocumentationGroup, List(Of IMarkup))
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.#ctor*
+  name: DocumentationEntry
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationEntry__ctor_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.#ctor
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.DocumentationEntry
+  nameWithType: DocumentationEntry.DocumentationEntry
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Blocks
+  name: Blocks
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationEntry_Blocks
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Blocks
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Blocks
+  nameWithType: DocumentationEntry.Blocks
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Blocks*
+  name: Blocks
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationEntry_Blocks_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Blocks
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Blocks
+  nameWithType: DocumentationEntry.Blocks
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Description
+  name: Description
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationEntry_Description
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Description
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Description
+  nameWithType: DocumentationEntry.Description
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Description*
+  name: Description
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationEntry_Description_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Description
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Description
+  nameWithType: DocumentationEntry.Description
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Title
+  name: Title
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationEntry_Title
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Title
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Title
+  nameWithType: DocumentationEntry.Title
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Title*
+  name: Title
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationEntry_Title_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Title
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.Title
+  nameWithType: DocumentationEntry.Title
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationGroup
   name: DocumentationGroup
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationGroup.html
@@ -1530,22 +1607,35 @@ references:
   isSpec: "True"
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Equals
   nameWithType: DocumentationSnippet.Equals
-- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContents(List{pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup})
-  name: GetContents(List<IMarkup>)
-  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_GetContents_List_pbuddy_TestsAsDocumentationUtility_EditorScripts_IMarkup__
-  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContents(List{pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup})
-  name.vb: GetContents(List(Of IMarkup))
-  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContents(List<pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup>)
-  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContents(List(Of pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup))
-  nameWithType: DocumentationSnippet.GetContents(List<IMarkup>)
-  nameWithType.vb: DocumentationSnippet.GetContents(List(Of IMarkup))
-- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContents*
-  name: GetContents
-  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_GetContents_
-  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContents
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetCodeBlock(List{pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup})
+  name: GetCodeBlock(List<IMarkup>)
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_GetCodeBlock_List_pbuddy_TestsAsDocumentationUtility_EditorScripts_IMarkup__
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetCodeBlock(List{pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup})
+  name.vb: GetCodeBlock(List(Of IMarkup))
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetCodeBlock(List<pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup>)
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetCodeBlock(List(Of pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup))
+  nameWithType: DocumentationSnippet.GetCodeBlock(List<IMarkup>)
+  nameWithType.vb: DocumentationSnippet.GetCodeBlock(List(Of IMarkup))
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetCodeBlock*
+  name: GetCodeBlock
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_GetCodeBlock_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetCodeBlock
   isSpec: "True"
-  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContents
-  nameWithType: DocumentationSnippet.GetContents
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetCodeBlock
+  nameWithType: DocumentationSnippet.GetCodeBlock
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContent
+  name: GetContent()
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_GetContent
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContent
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContent()
+  nameWithType: DocumentationSnippet.GetContent()
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContent*
+  name: GetContent
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_GetContent_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContent
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContent
+  nameWithType: DocumentationSnippet.GetContent
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetHashCode(pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet)
   name: GetHashCode(DocumentationSnippet)
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_GetHashCode_pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_
@@ -2342,6 +2432,12 @@ references:
   isSpec: "True"
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.Range
   nameWithType: HighlightRegion.Range
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRelativeRangeAttribute
+  name: HighlightRelativeRangeAttribute
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRelativeRangeAttribute.html
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRelativeRangeAttribute
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRelativeRangeAttribute
+  nameWithType: HighlightRelativeRangeAttribute
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.ILineNumberRangeProvider
   name: ILineNumberRangeProvider
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.ILineNumberRangeProvider.html
@@ -2921,12 +3017,15 @@ references:
   commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal
   nameWithType: Removal
-- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.#ctor(System.String,System.Int32,System.UInt32,pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo)
-  name: Removal(String, Int32, UInt32, AppliesTo)
-  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_Removal__ctor_System_String_System_Int32_System_UInt32_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo_
-  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.#ctor(System.String,System.Int32,System.UInt32,pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo)
-  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.Removal(System.String, System.Int32, System.UInt32, pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo)
-  nameWithType: Removal.Removal(String, Int32, UInt32, AppliesTo)
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.#ctor(System.String,System.Int32,System.UInt32,System.Nullable{pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo})
+  name: Removal(String, Int32, UInt32, Nullable<AppliesTo>)
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_Removal__ctor_System_String_System_Int32_System_UInt32_System_Nullable_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo__
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.#ctor(System.String,System.Int32,System.UInt32,System.Nullable{pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo})
+  name.vb: Removal(String, Int32, UInt32, Nullable(Of AppliesTo))
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.Removal(System.String, System.Int32, System.UInt32, System.Nullable<pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo>)
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.Removal(System.String, System.Int32, System.UInt32, System.Nullable(Of pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo))
+  nameWithType: Removal.Removal(String, Int32, UInt32, Nullable<AppliesTo>)
+  nameWithType.vb: Removal.Removal(String, Int32, UInt32, Nullable(Of AppliesTo))
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.#ctor*
   name: Removal
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_Removal__ctor_
@@ -2973,19 +3072,19 @@ references:
   isSpec: "True"
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.Filepath
   nameWithType: Removal.Filepath
-- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.Range
-  name: Range
-  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_Removal_Range
-  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.Range
-  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.Range
-  nameWithType: Removal.Range
-- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.Range*
-  name: Range
-  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_Removal_Range_
-  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.Range
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.SelfRange
+  name: SelfRange
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_Removal_SelfRange
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.SelfRange
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.SelfRange
+  nameWithType: Removal.SelfRange
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.SelfRange*
+  name: SelfRange
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_Removal_SelfRange_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.SelfRange
   isSpec: "True"
-  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.Range
-  nameWithType: Removal.Range
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.SelfRange
+  nameWithType: Removal.SelfRange
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.Type
   name: Type
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_Removal_Type
@@ -2999,12 +3098,31 @@ references:
   isSpec: "True"
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.Removal.Type
   nameWithType: Removal.Type
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.RemoveRangeAttribute
+  name: RemoveRangeAttribute
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.RemoveRangeAttribute.html
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.RemoveRangeAttribute
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.RemoveRangeAttribute
+  nameWithType: RemoveRangeAttribute
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper
   name: StringHelper
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper.html
   commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper
   nameWithType: StringHelper
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper.DelimitCamelCase(System.String,System.String)
+  name: DelimitCamelCase(String, String)
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_StringHelper_DelimitCamelCase_System_String_System_String_
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper.DelimitCamelCase(System.String,System.String)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper.DelimitCamelCase(System.String, System.String)
+  nameWithType: StringHelper.DelimitCamelCase(String, String)
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper.DelimitCamelCase*
+  name: DelimitCamelCase
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_StringHelper_DelimitCamelCase_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper.DelimitCamelCase
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper.DelimitCamelCase
+  nameWithType: StringHelper.DelimitCamelCase
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper.ErrorContext*
   name: ErrorContext
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.StringHelper.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_StringHelper_ErrorContext_
@@ -3086,12 +3204,15 @@ references:
   commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase
   nameWithType: TestsAsDocumentationBase
-- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddHere(System.String,pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo,System.String,System.Int32)
-  name: AddHere(String, AppliesTo, String, Int32)
-  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_AddHere_System_String_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo_System_String_System_Int32_
-  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddHere(System.String,pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo,System.String,System.Int32)
-  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddHere(System.String, pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo, System.String, System.Int32)
-  nameWithType: TestsAsDocumentationBase.AddHere(String, AppliesTo, String, Int32)
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddHere(System.String,System.Nullable{pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo},System.String,System.Int32)
+  name: AddHere(String, Nullable<AppliesTo>, String, Int32)
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_AddHere_System_String_System_Nullable_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo__System_String_System_Int32_
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddHere(System.String,System.Nullable{pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo},System.String,System.Int32)
+  name.vb: AddHere(String, Nullable(Of AppliesTo), String, Int32)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddHere(System.String, System.Nullable<pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo>, System.String, System.Int32)
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddHere(System.String, System.Nullable(Of pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo), System.String, System.Int32)
+  nameWithType: TestsAsDocumentationBase.AddHere(String, Nullable<AppliesTo>, String, Int32)
+  nameWithType.vb: TestsAsDocumentationBase.AddHere(String, Nullable(Of AppliesTo), String, Int32)
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.AddHere*
   name: AddHere
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_AddHere_
@@ -3141,12 +3262,15 @@ references:
   isSpec: "True"
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.HighlightNext
   nameWithType: TestsAsDocumentationBase.HighlightNext
-- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32,pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo,System.String,System.Int32)
-  name: RemoveNext(UInt32, AppliesTo, String, Int32)
-  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_RemoveNext_System_UInt32_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo_System_String_System_Int32_
-  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32,pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo,System.String,System.Int32)
-  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32, pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo, System.String, System.Int32)
-  nameWithType: TestsAsDocumentationBase.RemoveNext(UInt32, AppliesTo, String, Int32)
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32,System.Nullable{pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo},System.String,System.Int32)
+  name: RemoveNext(UInt32, Nullable<AppliesTo>, String, Int32)
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_RemoveNext_System_UInt32_System_Nullable_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo__System_String_System_Int32_
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32,System.Nullable{pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo},System.String,System.Int32)
+  name.vb: RemoveNext(UInt32, Nullable(Of AppliesTo), String, Int32)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32, System.Nullable<pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo>, System.String, System.Int32)
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32, System.Nullable(Of pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo), System.String, System.Int32)
+  nameWithType: TestsAsDocumentationBase.RemoveNext(UInt32, Nullable<AppliesTo>, String, Int32)
+  nameWithType.vb: TestsAsDocumentationBase.RemoveNext(UInt32, Nullable(Of AppliesTo), String, Int32)
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext*
   name: RemoveNext
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_RemoveNext_
