@@ -1015,6 +1015,64 @@ references:
   commentId: F:pbuddy.TestsAsDocumentationUtility.EditorScripts.CharacterPair.SquareBrackets
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.CharacterPair.SquareBrackets
   nameWithType: CharacterPair.SquareBrackets
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock
+  name: CodeBlock
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.html
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock
+  nameWithType: CodeBlock
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Content
+  name: Content
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_CodeBlock_Content
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Content
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Content
+  nameWithType: CodeBlock.Content
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Content*
+  name: Content
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_CodeBlock_Content_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Content
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Content
+  nameWithType: CodeBlock.Content
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Description
+  name: Description
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_CodeBlock_Description
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Description
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Description
+  nameWithType: CodeBlock.Description
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Description*
+  name: Description
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_CodeBlock_Description_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Description
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Description
+  nameWithType: CodeBlock.Description
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.HighlightRegions
+  name: HighlightRegions
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_CodeBlock_HighlightRegions
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.HighlightRegions
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.HighlightRegions
+  nameWithType: CodeBlock.HighlightRegions
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.HighlightRegions*
+  name: HighlightRegions
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_CodeBlock_HighlightRegions_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.HighlightRegions
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.HighlightRegions
+  nameWithType: CodeBlock.HighlightRegions
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Title
+  name: Title
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_CodeBlock_Title
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Title
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Title
+  nameWithType: CodeBlock.Title
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Title*
+  name: Title
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_CodeBlock_Title_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Title
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeBlock.Title
+  nameWithType: CodeBlock.Title
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeMatcher
   name: CodeMatcher
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.CodeMatcher.html
@@ -1247,6 +1305,12 @@ references:
   isSpec: "True"
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationCollection.GetGroups
   nameWithType: DocumentationCollection.GetGroups
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry
+  name: DocumentationEntry
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry.html
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationEntry
+  nameWithType: DocumentationEntry
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationGroup
   name: DocumentationGroup
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationGroup.html
@@ -1372,6 +1436,22 @@ references:
   isSpec: "True"
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.DocumentationSnippet
   nameWithType: DocumentationSnippet.DocumentationSnippet
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ApplyMarkup(List{pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup})
+  name: ApplyMarkup(List<IMarkup>)
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_ApplyMarkup_List_pbuddy_TestsAsDocumentationUtility_EditorScripts_IMarkup__
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ApplyMarkup(List{pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup})
+  name.vb: ApplyMarkup(List(Of IMarkup))
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ApplyMarkup(List<pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup>)
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ApplyMarkup(List(Of pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup))
+  nameWithType: DocumentationSnippet.ApplyMarkup(List<IMarkup>)
+  nameWithType.vb: DocumentationSnippet.ApplyMarkup(List(Of IMarkup))
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ApplyMarkup*
+  name: ApplyMarkup
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_ApplyMarkup_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ApplyMarkup
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.ApplyMarkup
+  nameWithType: DocumentationSnippet.ApplyMarkup
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Compare(pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet,pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet)
   name: Compare(DocumentationSnippet, DocumentationSnippet)
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_Compare_pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_
@@ -1450,12 +1530,15 @@ references:
   isSpec: "True"
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.Equals
   nameWithType: DocumentationSnippet.Equals
-- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContents
-  name: GetContents()
-  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_GetContents
-  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContents
-  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContents()
-  nameWithType: DocumentationSnippet.GetContents()
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContents(List{pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup})
+  name: GetContents(List<IMarkup>)
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_GetContents_List_pbuddy_TestsAsDocumentationUtility_EditorScripts_IMarkup__
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContents(List{pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup})
+  name.vb: GetContents(List(Of IMarkup))
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContents(List<pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup>)
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContents(List(Of pbuddy.TestsAsDocumentationUtility.EditorScripts.IMarkup))
+  nameWithType: DocumentationSnippet.GetContents(List<IMarkup>)
+  nameWithType.vb: DocumentationSnippet.GetContents(List(Of IMarkup))
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.GetContents*
   name: GetContents
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.DocumentationSnippet.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_DocumentationSnippet_GetContents_
@@ -1861,12 +1944,24 @@ references:
   isSpec: "True"
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.GroupInfo
   nameWithType: GroupInfo.GroupInfo
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.Equals(pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo)
+  name: Equals(GroupInfo)
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_Equals_pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.Equals(pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.Equals(pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo)
+  nameWithType: GroupInfo.Equals(GroupInfo)
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.Equals(pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo,pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo)
   name: Equals(GroupInfo, GroupInfo)
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_Equals_pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_
   commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.Equals(pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo,pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo)
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.Equals(pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo, pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo)
   nameWithType: GroupInfo.Equals(GroupInfo, GroupInfo)
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.Equals(System.Object)
+  name: Equals(Object)
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_Equals_System_Object_
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.Equals(System.Object)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.Equals(System.Object)
+  nameWithType: GroupInfo.Equals(Object)
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.Equals*
   name: Equals
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_Equals_
@@ -1874,6 +1969,12 @@ references:
   isSpec: "True"
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.Equals
   nameWithType: GroupInfo.Equals
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.GetHashCode
+  name: GetHashCode()
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_GetHashCode
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.GetHashCode
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.GetHashCode()
+  nameWithType: GroupInfo.GetHashCode()
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.GetHashCode(pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo)
   name: GetHashCode(GroupInfo)
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.GroupInfo.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_GetHashCode_pbuddy_TestsAsDocumentationUtility_EditorScripts_GroupInfo_
@@ -2209,6 +2310,38 @@ references:
   isSpec: "True"
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightNextAttribute.HighlightNextAttribute
   nameWithType: HighlightNextAttribute.HighlightNextAttribute
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion
+  name: HighlightRegion
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.html
+  commentId: T:pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion
+  nameWithType: HighlightRegion
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.Comment
+  name: Comment
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_HighlightRegion_Comment
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.Comment
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.Comment
+  nameWithType: HighlightRegion.Comment
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.Comment*
+  name: Comment
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_HighlightRegion_Comment_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.Comment
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.Comment
+  nameWithType: HighlightRegion.Comment
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.Range
+  name: Range
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_HighlightRegion_Range
+  commentId: P:pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.Range
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.Range
+  nameWithType: HighlightRegion.Range
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.Range*
+  name: Range
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_HighlightRegion_Range_
+  commentId: Overload:pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.Range
+  isSpec: "True"
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.HighlightRegion.Range
+  nameWithType: HighlightRegion.Range
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.ILineNumberRangeProvider
   name: ILineNumberRangeProvider
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.ILineNumberRangeProvider.html
