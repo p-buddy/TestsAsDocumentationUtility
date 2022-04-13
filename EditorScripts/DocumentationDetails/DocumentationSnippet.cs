@@ -113,7 +113,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         /// 
         /// </summary>
         /// <returns></returns>
-        public string GetContents()
+        public CodeBlock GetContents(List<IMarkup> markups)
         {
             IEnumerable<string> trimmed = GetLines();
             return String.Join(Environment.NewLine, trimmed);
@@ -162,6 +162,11 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                     throw new InvalidOperationException(context + msg);
                 }
             }
+        }
+
+        public void ApplyMarkup(List<IMarkup> markups)
+        {
+            
         }
 
         public bool Equals(DocumentationSnippet x, DocumentationSnippet y)

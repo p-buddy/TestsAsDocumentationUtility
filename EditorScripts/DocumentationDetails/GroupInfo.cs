@@ -7,7 +7,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
     /// <summary>
     /// 
     /// </summary>
-    public readonly struct GroupInfo : IEqualityComparer<GroupInfo>
+    public readonly struct GroupInfo : IEqualityComparer<GroupInfo>, IEquatable<GroupInfo>
     {
         /// <summary>
         /// 
@@ -65,6 +65,33 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                 hashCode = (hashCode * 397) ^ (obj.GroupTitle != null ? obj.GroupTitle.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (obj.GroupDescription != null ? obj.GroupDescription.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (obj.MemberBeingDocumented != null ? obj.MemberBeingDocumented.GetHashCode() : 0);
+                return hashCode;
+            }
+        }
+
+        public bool Equals(GroupInfo other)
+        {
+            return Group == other.Group &&
+                   IndexInGroup == other.IndexInGroup &&
+                   GroupTitle == other.GroupTitle &&
+                   GroupDescription == other.GroupDescription &&
+                   Equals(MemberBeingDocumented, other.MemberBeingDocumented);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is GroupInfo other && Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = (int)Group;
+                hashCode = (hashCode * 397) ^ (int)IndexInGroup;
+                hashCode = (hashCode * 397) ^ (GroupTitle != null ? GroupTitle.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (GroupDescription != null ? GroupDescription.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (MemberBeingDocumented != null ? MemberBeingDocumented.GetHashCode() : 0);
                 return hashCode;
             }
         }

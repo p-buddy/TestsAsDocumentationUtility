@@ -11,16 +11,12 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
     public abstract partial class TestsAsDocumentationBase
     {
         private static readonly Assembly EditorAssembly = typeof(DemonstratesAttribute).Assembly;
-        private static readonly With<Attribute> With = With<Attribute>.This<DemonstratesAttribute>();
-        private static readonly Without<Attribute> Without = Without<Attribute>.These<TestAttribute, UnityTestAttribute>();
+        private static readonly With<Attribute> WithDemonstratesAttr = With<Attribute>.This<DemonstratesAttribute>();
+        private static readonly Without<Attribute> WithoutTestAttr = Without<Attribute>.These<TestAttribute, UnityTestAttribute>();
         
         private static readonly Dictionary<AssemblyName, Assembly> RelevantAssemblyByName;
-        private static readonly Dictionary<Assembly, AssemblyName[]> ReferencesByAssembly;
-        
-        /// <summary>
-        /// Documentation snippets 
-        /// </summary>
-        private static readonly Dictionary<Assembly, DocumentationSnippet[]> AuxiliarySnippets;
+        private static readonly Dictionary<Assembly, Assembly[]> ReferencesByAssembly;
+        private static readonly Dictionary<Assembly, DocumentationSnippet[]> AuxiliarySnippetsByAssembly;
 
         static TestsAsDocumentationBase()
         {
@@ -30,34 +26,35 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                 RelevantAssemblyByName.Add(dependentAssembly.GetName(), dependentAssembly);
             }
             
-            ReferencesByAssembly = new Dictionary<Assembly, AssemblyName[]>();
-            AuxiliarySnippets = new Dictionary<Assembly, DocumentationSnippet[]>();
+            ReferencesByAssembly = new Dictionary<Assembly, Assembly[]>();
+            AuxiliarySnippetsByAssembly = new Dictionary<Assembly, DocumentationSnippet[]>();
         }
 
-        protected void GetGeneratedDocumentationEntries()
+        protected IEnumerable<DocumentationEntry> GetGeneratedDocumentationEntries()
         {
+            MemberInfo currentTest = GetCurrentTest();
+            Assembly assembly = Assembly.GetAssembly(GetType());
+            Assembly[] references = GetReferencedDemonstratingAssemblies(assembly);
+
+            List<DocumentationSnippet> auxiliarySnippets = GetAuxiliarySnippets(new List<Assembly>(references){assembly});
             
+            var testSnippets = currentTest.GetCustomAttributes<DemonstratesAttribute>()
+                                          .Select(demonstration => demonstration.GetSnippet(currentTest))
+                                          .ToList();
+            
+            return testSnippets.Select(snippet =>
+            {
+                DocumentationGroup group = new DocumentationGroup(snippet);
+                auxiliarySnippets.ForEach(aux => group.TryAddToGroup(in aux));
+                IEnumerable<CodeBlock> blocks = group.GetSnippets().Select(snip => snip.GetContents(CurrentMarkups));
+                return new DocumentationEntry();
+            });
         }
         
         [TearDown]
         public void CreateDocumentation()
         {
-            MemberInfo currentTest = GetCurrentTest();
-            Assembly assembly = Assembly.GetAssembly(GetType());
-            
-            BuildAssemblyMap(assembly);
-
-            foreach (DemonstratesAttribute demonstratesAttribute in currentTest.GetCustomAttributes<DemonstratesAttribute>())
-            {
-                DocumentationSnippet snippet = demonstratesAttribute.GetSnippet(currentTest);
-                DocumentationGroup group = new DocumentationGroup(snippet);
-                TryAddAllAuxiliarySnippets(assembly, in group);
-                group.GetSnippets();
-                // each documentation snippet is a single copy
-                // so can process additions and removals first, which will affect line count
-                // then process line ranges for highlights
-            }
-            
+            GetGeneratedDocumentationEntries();
             CurrentMarkups.Clear();
         }
 
@@ -68,46 +65,46 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             return matchingMembers[0];
         }
 
-        private void BuildAssemblyMap(Assembly assembly)
+        private Assembly[] GetReferencedDemonstratingAssemblies(Assembly assembly)
         {
-            if (ReferencesByAssembly.ContainsKey(assembly)) return;
-            
-            List<AssemblyName> references = new List<AssemblyName>();
-            foreach (AssemblyName reference in assembly.GetReferencedAssemblies())
+            if (ReferencesByAssembly.TryGetValue(assembly, out Assembly[] references))
             {
-                if (!RelevantAssemblyByName.TryGetValue(reference, out Assembly referencedAssembly))
-                {
-                    continue;
-                }
-                    
-                BuildAuxiliarySnippetMap(referencedAssembly);
-                references.Add(reference);
+                return references;
             }
-            ReferencesByAssembly.Add(assembly, references.ToArray());
+
+            Assembly[] relevantReferences = assembly.GetReferencedAssemblies()
+                                                                   .Where(name => RelevantAssemblyByName.ContainsKey(name))
+                                                                   .Select(name => RelevantAssemblyByName[name])
+                                                                   .ToArray();
+            
+            ReferencesByAssembly.Add(assembly, relevantReferences);
+            return relevantReferences;
         }
 
-        private static void BuildAuxiliarySnippetMap(Assembly assembly)
+        private List<DocumentationSnippet> GetAuxiliarySnippets(List<Assembly> assemblies)
         {
-            if (AuxiliarySnippets.ContainsKey(assembly)) return;
+            List<DocumentationSnippet> snippets = new List<DocumentationSnippet>();
 
-            List<MemberInfo> members = assembly.GetAllMembersWithAndWithout(in With, in Without);
-
-            int snippetCountEstimate = members.Count + (int)(members.Count * 0.1);
-            List<DocumentationSnippet> snippets = new List<DocumentationSnippet>(snippetCountEstimate);
-            foreach (MemberInfo member in members)
+            assemblies.ForEach(assembly =>
             {
-                foreach (DemonstratesAttribute demonstrates in member.GetCustomAttributes<DemonstratesAttribute>())
+                if (!AuxiliarySnippetsByAssembly.TryGetValue(assembly, out DocumentationSnippet[] snips))
                 {
-                    snippets.Add(demonstrates.GetSnippet(member));
+                    snips = assembly.GetAllMembersWithAndWithout(in WithDemonstratesAttr, in WithoutTestAttr)
+                                    .Select(ExtractSnippetsFromMembers)
+                                    .SelectMany(Flatten)
+                                    .ToArray();
+                    AuxiliarySnippetsByAssembly[assembly] = snips;
                 }
-            }
+                snippets.AddRange(snips);
+            });
             
-            AuxiliarySnippets.Add(assembly, snippets.Distinct().ToArray());
-        }
-
-        private static void TryAddAllAuxiliarySnippets(Assembly assembly, in DocumentationGroup group)
-        {
+            return snippets;
             
+            IEnumerable<DocumentationSnippet> ExtractSnippetsFromMembers(MemberInfo member) =>
+                member.GetCustomAttributes<DemonstratesAttribute>()
+                      .Select(demonstrates => demonstrates.GetSnippet(member));
+            
+            T Flatten<T>(T self) => self;
         }
     }
 }
