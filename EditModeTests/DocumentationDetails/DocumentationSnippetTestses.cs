@@ -61,7 +61,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
                                     $"{tab}return {nameof(GetLineNumberAndFile)}();" +
                                     $"{Environment.NewLine}}}";
 
-            string contents = snippet.GetContents();
+            string contents = snippet.GetContent();
             Assert.AreEqual(expectContents, contents);
         }
         

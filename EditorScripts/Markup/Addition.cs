@@ -4,11 +4,11 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
     {
         public MarkupType Type { get; }
         public LineNumberRange Range { get; }
-        public AppliesTo AppliesTo { get; }
+        public AppliesTo? AppliesTo { get; }
         public string Contents { get; }
         public string Filepath { get; }
 
-        public Addition(string file, int line, string contents, AppliesTo appliesTo)
+        public Addition(string file, int line, string contents, AppliesTo? appliesTo)
         {
             Type = MarkupType.Addition;
             AppliesTo = appliesTo;

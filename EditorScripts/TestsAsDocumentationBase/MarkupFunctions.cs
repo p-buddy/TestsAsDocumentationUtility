@@ -20,7 +20,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         }
         
         protected void RemoveNext(uint numberOfLines,
-                                  AppliesTo appliesTo,
+                                  AppliesTo? appliesTo = null,
                                   [CallerFilePath] string file = FilledInByCompiler,
                                   [CallerLineNumber] int line = InvalidLineNumber)
         {
@@ -28,7 +28,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         }
 
         protected void AddHere(string contents, 
-                               AppliesTo appliesTo, 
+                               AppliesTo? appliesTo = null, 
                                [CallerFilePath] string file = FilledInByCompiler, 
                                [CallerLineNumber] int line = InvalidLineNumber)
         {

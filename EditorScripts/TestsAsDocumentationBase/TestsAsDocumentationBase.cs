@@ -29,8 +29,15 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             ReferencesByAssembly = new Dictionary<Assembly, Assembly[]>();
             AuxiliarySnippetsByAssembly = new Dictionary<Assembly, DocumentationSnippet[]>();
         }
+        
+        [TearDown]
+        public void CreateDocumentation()
+        {
+            IEnumerable<DocumentationEntry> entries = GetGeneratedDocumentationEntries();
+            CurrentMarkups.Clear();
+        }
 
-        protected IEnumerable<DocumentationEntry> GetGeneratedDocumentationEntries()
+        protected List<DocumentationEntry> GetGeneratedDocumentationEntries()
         {
             MemberInfo currentTest = GetCurrentTest();
             Assembly assembly = Assembly.GetAssembly(GetType());
@@ -42,20 +49,19 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                                           .Select(demonstration => demonstration.GetSnippet(currentTest))
                                           .ToList();
             
-            return testSnippets.Select(snippet =>
+            return testSnippets.Select(GetEntry).ToList();
+
+            #region Local Function(s)
+            DocumentationEntry GetEntry(DocumentationSnippet snippet)
             {
                 DocumentationGroup group = new DocumentationGroup(snippet);
-                auxiliarySnippets.ForEach(aux => group.TryAddToGroup(in aux));
-                IEnumerable<CodeBlock> blocks = group.GetSnippets().Select(snip => snip.GetContents(CurrentMarkups));
-                return new DocumentationEntry();
-            });
-        }
-        
-        [TearDown]
-        public void CreateDocumentation()
-        {
-            GetGeneratedDocumentationEntries();
-            CurrentMarkups.Clear();
+                if (snippet.Group != Grouping.None)
+                {
+                    auxiliarySnippets.ForEach(aux => group.TryAddToGroup(in aux));
+                }
+                return new DocumentationEntry(in group, CurrentMarkups);
+            }
+            #endregion
         }
 
         private MemberInfo GetCurrentTest()
@@ -100,11 +106,13 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             
             return snippets;
             
+            #region Local Function(s)
             IEnumerable<DocumentationSnippet> ExtractSnippetsFromMembers(MemberInfo member) =>
                 member.GetCustomAttributes<DemonstratesAttribute>()
                       .Select(demonstrates => demonstrates.GetSnippet(member));
             
             T Flatten<T>(T self) => self;
+            #endregion Local Function(s)
         }
     }
 }

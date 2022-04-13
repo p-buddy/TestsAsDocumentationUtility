@@ -108,15 +108,20 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             Assert.AreEqual(x.GroupInfo.Group, y.GroupInfo.Group);
             return ((int)x.GroupInfo.IndexInGroup).CompareTo((int)y.GroupInfo.IndexInGroup);
         }
-
+        
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public CodeBlock GetContents(List<IMarkup> markups)
+        public string GetContent()
         {
             IEnumerable<string> trimmed = GetLines();
             return String.Join(Environment.NewLine, trimmed);
+        }
+        
+        public CodeBlock GetCodeBlock(List<IMarkup> markups)
+        {
+            return default;
         }
 
         public IEnumerable<string> GetLines()

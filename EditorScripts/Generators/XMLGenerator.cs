@@ -71,7 +71,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
                     Add(OpenXml(Example, TagID.TestAsDocumentation));
                     Add(ExampleTitleToXml(toExampleTitle.Invoke(doc.Title)));
                     Add(ExampleDescriptionToXml(doc.Description));
-                    Add(CodeToXml(doc.GetContents()));
+                    Add(CodeToXml(doc.GetContent()));
                     Add(CloseXml(Example));
                 }
 
@@ -85,7 +85,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
             {
                 Add(SnippetTitleToXml(doc.Title));
                 Add(SnippetDescriptionToXml(doc.Description));
-                Add(CodeToXml(doc.GetContents()));
+                Add(CodeToXml(doc.GetContent()));
             }
             Add(CloseXml(Example));
 

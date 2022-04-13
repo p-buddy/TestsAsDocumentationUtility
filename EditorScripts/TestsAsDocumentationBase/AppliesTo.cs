@@ -12,7 +12,6 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         private readonly Grouping? grouping;
         private readonly IndexInGroup? indexInGroup;
         
-        
         public AppliesTo(Type typeOfThing,
                          Grouping? grouping = null,
                          IndexInGroup? indexInGroup = null)
