@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Newtonsoft.Json.Serialization;
 using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
 using UnityEngine.Assertions;
 

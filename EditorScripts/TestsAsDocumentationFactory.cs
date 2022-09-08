@@ -4,8 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using NUnit.Framework;
 using Newtonsoft.Json;
+using NUnit.Framework;
 using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
