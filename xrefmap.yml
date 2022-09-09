@@ -3262,15 +3262,15 @@ references:
   isSpec: "True"
   fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.HighlightNext
   nameWithType: TestsAsDocumentationBase.HighlightNext
-- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32,System.Nullable{pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo},System.String,System.Int32)
-  name: RemoveNext(UInt32, Nullable<AppliesTo>, String, Int32)
-  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_RemoveNext_System_UInt32_System_Nullable_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo__System_String_System_Int32_
-  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32,System.Nullable{pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo},System.String,System.Int32)
-  name.vb: RemoveNext(UInt32, Nullable(Of AppliesTo), String, Int32)
-  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32, System.Nullable<pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo>, System.String, System.Int32)
-  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32, System.Nullable(Of pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo), System.String, System.Int32)
-  nameWithType: TestsAsDocumentationBase.RemoveNext(UInt32, Nullable<AppliesTo>, String, Int32)
-  nameWithType.vb: TestsAsDocumentationBase.RemoveNext(UInt32, Nullable(Of AppliesTo), String, Int32)
+- uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32,System.Nullable{pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo},System.String,System.String,System.Int32)
+  name: RemoveNext(UInt32, Nullable<AppliesTo>, String, String, Int32)
+  href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_RemoveNext_System_UInt32_System_Nullable_pbuddy_TestsAsDocumentationUtility_EditorScripts_AppliesTo__System_String_System_String_System_Int32_
+  commentId: M:pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32,System.Nullable{pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo},System.String,System.String,System.Int32)
+  name.vb: RemoveNext(UInt32, Nullable(Of AppliesTo), String, String, Int32)
+  fullName: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32, System.Nullable<pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo>, System.String, System.String, System.Int32)
+  fullName.vb: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext(System.UInt32, System.Nullable(Of pbuddy.TestsAsDocumentationUtility.EditorScripts.AppliesTo), System.String, System.String, System.Int32)
+  nameWithType: TestsAsDocumentationBase.RemoveNext(UInt32, Nullable<AppliesTo>, String, String, Int32)
+  nameWithType.vb: TestsAsDocumentationBase.RemoveNext(UInt32, Nullable(Of AppliesTo), String, String, Int32)
 - uid: pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.RemoveNext*
   name: RemoveNext
   href: _generated_api/pbuddy.TestsAsDocumentationUtility.EditorScripts.TestsAsDocumentationBase.html#pbuddy_TestsAsDocumentationUtility_EditorScripts_TestsAsDocumentationBase_RemoveNext_
