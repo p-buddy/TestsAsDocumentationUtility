@@ -21,6 +21,7 @@ namespace pbuddy.TestsAsDocumentationUtility.EditorScripts
         
         protected void RemoveNext(uint numberOfLines,
                                   AppliesTo? appliesTo = null,
+                                  string replaceWith = "...",
                                   [CallerFilePath] string file = FilledInByCompiler,
                                   [CallerLineNumber] int line = InvalidLineNumber)
         {

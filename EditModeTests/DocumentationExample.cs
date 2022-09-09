@@ -4,6 +4,7 @@ using NUnit.Framework;
 using pbuddy.TestsAsDocumentationUtility.EditorScripts;
 using pbuddy.TestsAsDocumentationUtility.RuntimeScripts;
 using pbuddy.TypeUtility.RuntimeScripts;
+using UnityEditor;
 using UnityEngine.UI;
 
 namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
@@ -23,13 +24,13 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         }
         
         [Test]
-        [Demonstrates(typeof(DocumentedByTestExample),
-                      nameof(DocumentedByTestExample.SomeProperty),
-                      RelevantArea.DeclarationAndBodyAndBelowAttributes,
-                      null, 
-                      null,
-                      Grouping.Group0,
-                      IndexInGroup.Index0)]
+        [Demonstrates(typeOfThingBeingDemonstrated: typeof(DocumentedByTestExample),
+                      memberName: nameof(DocumentedByTestExample.SomeProperty),
+                      relevantArea: RelevantArea.DeclarationAndBodyAndBelowAttributes,
+                      title: null, 
+                      description: null,
+                      grouping: Grouping.Group0,
+                      indexInGroup: IndexInGroup.Index0)]
         //Howdy
         public void TestOfSomeProperty()
         {
@@ -53,8 +54,9 @@ namespace pbuddy.TestsAsDocumentationUtility.EditModeTests
         public int SomeProperty { get; set; }
         
         /// <summary>
-        /// Hello  
+        /// Hello
         /// </summary>
+        /// 
         /// <include file='./Docs.xml' path='MyDocs/MyMembers[@name="test2"]/*' />
         /// 
         [IsDemonstratedByTests()]
