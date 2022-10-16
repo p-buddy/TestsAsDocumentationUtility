@@ -6,7 +6,6 @@
         "UnityEngine.TestRunner",
         "pbuddy.TestUtility.EditorScripts",
         "pbuddy.LoggingUtility.RuntimeScripts",
-        "pbuddy.TypeUtility.RuntimeScripts",
         "pbuddy.TestsAsDocumentation.RuntimeScripts"
     ],
     "includePlatforms": [
